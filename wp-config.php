@@ -80,8 +80,8 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
-define('WP_SITEURL','http://shopforgirl.dev');
-define('WP_HOME','http://shopforgirl.dev');
+//define('WP_SITEURL','http://shopforgirl.dev');
+//define('WP_HOME','http://shopforgirl.dev');
 
 /* That's all, stop editing! Happy blogging. */
 
