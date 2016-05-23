@@ -27,7 +27,7 @@ define('DB_NAME', 'shopforgirl_db');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '2601');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -79,6 +79,9 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
+
+define('WP_SITEURL','http://shopforgirl.dev');
+define('WP_HOME','http://shopforgirl.dev');
 
 /* That's all, stop editing! Happy blogging. */
 
