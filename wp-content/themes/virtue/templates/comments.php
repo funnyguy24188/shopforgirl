@@ -3,7 +3,10 @@
     return;
   }
 
- if (have_comments()) : ?>
+  get_template_part('templates/content','facebook-comments');
+
+ // prevent show comment of WP
+ if (have_comments() && 1==2) : ?>
   <section id="comments">
     <h3><?php printf(_n('One Response ', '%1$s Responses ', get_comments_number(), 'virtue'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
 
@@ -46,7 +49,7 @@
   <?php } else { } ?>
 <?php endif; ?>
 
-<?php if (comments_open()) : ?>
+<?php if (comments_open() && 1==2) : ?>
   <section id="respond">
   <?php $comment_args = array( 'fields' => apply_filters( 'comment_form_default_fields', array(
            'author' => '<div class="col-md-4">' . '<label for="author">' . __('Name', 'virtue') . ( $req ? ' <span class="comment-required">*</span>' : '' ) . '</label> ' .
@@ -55,7 +58,7 @@
                         '<input type="email" class="text" name="email" id="email" value="' . esc_attr(  $comment_author_email ) . '" ' . ( $req ? 'aria-required="true"' : '') . ' /></div>',
             'url'    => '<div class="col-md-4"><label for="url">' . __( 'Website', 'virtue' ) . '</label> ' .
                         '<input id="url" name="url" type="url" value="' . esc_attr( $comment_author_url ) . '" /></div>',
-                        ) 
+                        )
             ),
               'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'virtue' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="8" class="input-xlarge" aria-required="true" required="required"></textarea></p>',
               'comment_notes_before' => '',

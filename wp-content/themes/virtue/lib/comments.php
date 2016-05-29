@@ -78,3 +78,15 @@ function kadence_custom_comments_after_feilds() {
    echo '</div>';
 }
 add_action ('comment_form_after_fields', 'kadence_custom_comments_after_feilds', 5);
+
+// rempove default reviews data tabe for woo comerse
+add_filter( 'woocommerce_product_tabs', 'sb_woo_remove_reviews_tab', 98);
+function sb_woo_remove_reviews_tab($tabs) {
+
+  unset($tabs['reviews']);
+  return $tabs;
+}
+
+add_action('woocommerce_after_single_product',function(){
+  get_template_part('templates/content','facebook-comments');
+},98);

@@ -15,12 +15,12 @@
           }
       }
       if (!empty($height)) {
-        $slideheight = $height; 
+        $slideheight = $height;
       } else {
         $slideheight = 400;
       }
       if (!empty($swidth)) {
-        $slidewidth = $swidth; 
+        $slidewidth = $swidth;
       } else {
         $slidewidth = $slide_sidebar;
       } ?>
@@ -54,8 +54,8 @@
                                     if(empty($image)) {$image = $attachment_url;}
                                   echo '<li><img src="'.esc_url($image).'" itemprop="image"/></li>';
                                 }
-                              } 
-                          } ?>                            
+                              }
+                          } ?>
                   </ul>
                 </div> <!--Flex Slides-->
               </section>
@@ -65,7 +65,7 @@
                 <?php echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
             </div>
           </section>
-        <?php } else if ($headcontent == 'image') {          
+        <?php } else if ($headcontent == 'image') {
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' );
                     $image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
@@ -78,10 +78,10 @@
                       </div>
                     <?php endif; ?>
         <?php } ?>
-    <?php get_template_part('templates/post', 'date'); ?> 
+    <?php get_template_part('templates/post', 'date'); ?>
     <header>
       <h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry', 'meta-subhead'); ?>  
+      <?php get_template_part('templates/entry', 'meta-subhead'); ?>
     </header>
     <div class="entry-content" itemprop="description articleBody">
       <?php the_content(); ?>
@@ -93,14 +93,14 @@
       <?php $authorbox = get_post_meta( $post->ID, '_kad_blog_author', true );
       if(empty($authorbox) || $authorbox == 'default') {
           if(isset($virtue['post_author_default']) && ($virtue['post_author_default'] == 'yes')) {
-            virtue_author_box(); 
+            virtue_author_box();
           }
-      } else if($authorbox == 'yes'){ 
-        virtue_author_box(); 
+      } else if($authorbox == 'yes'){
+        virtue_author_box();
       }?>
-      <?php $blog_carousel_recent = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true ); 
+      <?php $blog_carousel_recent = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true );
       if(empty($blog_carousel_recent) || $blog_carousel_recent == 'default' ) { if(isset($virtue['post_carousel_default'])) {$blog_carousel_recent = $virtue['post_carousel_default']; } }
-      if ($blog_carousel_recent == 'similar') { 
+      if ($blog_carousel_recent == 'similar') {
         get_template_part('templates/similarblog', 'carousel');
       } else if($blog_carousel_recent == 'recent') {
         get_template_part('templates/recentblog', 'carousel');

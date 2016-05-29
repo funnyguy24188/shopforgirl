@@ -1,14 +1,14 @@
- <?php global $post; 
+ <?php global $post;
       $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
-      $height      = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
+      $height      = get_post_meta( $post->ID, '_kad_posthead_height', true );
       $swidth      = get_post_meta( $post->ID, '_kad_posthead_width', true );
       if (!empty($height)) {
-        $slideheight = $height; 
+        $slideheight = $height;
       } else {
         $slideheight = 400;
       }
       if (!empty($swidth)) {
-        $slidewidth = $swidth; 
+        $slidewidth = $swidth;
       } else {
         $slidewidth = 1140;
       }
@@ -40,8 +40,8 @@
                                     if(empty($image)) {$image = $attachment_url;}
                                   echo '<li><img src="'.esc_url($image).'"/></li>';
                                 }
-                              } 
-                          } ?>               
+                              }
+                          } ?>
             </ul>
           </div> <!--Flex Slides-->
         </section>
@@ -51,11 +51,11 @@
               <?php global $post; echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
           </div>
         </section>
-        <?php } else if ($headcontent == 'image') {           
+        <?php } else if ($headcontent == 'image') {
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' );
                     $image = aq_resize( $img_url, $slidewidth, $slideheight, true );
-                     if(empty($image)) { $image = $img_url; } 
+                     if(empty($image)) { $image = $img_url; }
                     ?>
                     <?php if($image) : ?>
                       <div class="imghoverclass">
@@ -65,7 +65,7 @@
                       </div>
                     <?php endif; ?>
         <?php } ?>
-    <?php get_template_part('templates/post', 'date'); ?> 
+    <?php get_template_part('templates/post', 'date'); ?>
     <header>
       <a href="<?php the_permalink() ?>"><h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1></a>
       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
@@ -77,14 +77,14 @@
     </div>
     <footer class="single-footer">
       <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
-      
+
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'virtue'), 'after' => '</p></nav>')); ?>
   <?php
   if ( comments_open() ) :
     echo '<p class="kad_comments_link">';
-      comments_popup_link( 
-        __( 'Leave a Reply', 'virtue' ), 
-        __( '1 Comment', 'virtue' ), 
+      comments_popup_link(
+        __( 'Leave a Reply', 'virtue' ),
+        __( '1 Comment', 'virtue' ),
         __( '% Comments', 'virtue' ),
         'comments-link',
         __( 'Comments are Closed', 'virtue' )

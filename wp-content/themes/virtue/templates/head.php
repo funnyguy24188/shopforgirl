@@ -8,4 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <?php wp_head(); ?>
+  <meta property="fb:app_id" content="508842445974753" />
+  <meta property="fb:admins" content="100001811255272"/>
 </head>
