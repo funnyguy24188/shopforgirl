@@ -10,4 +10,5 @@
   <?php wp_head(); ?>
   <meta property="fb:app_id" content="508842445974753" />
   <meta property="fb:admins" content="100001811255272"/>
+  <meta name="google-site-verification" content="RR03Dt9VoiOJEK0Kyo4z7KqNiCtnVSDu1NS28ZSh5Tw" />
 </head>
