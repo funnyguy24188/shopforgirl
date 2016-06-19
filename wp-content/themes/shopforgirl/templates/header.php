@@ -22,7 +22,7 @@
     }?>
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-2 clearfix kad-header-left">
+      <div class="col-xs-12 col-sm-12 col-md-1 clearfix kad-header-left">
             <div id="logo" class="logocase">
               <a class="brand logofont" href="<?php echo home_url(); ?>/">
                 <?php if (!empty($virtue['x1_virtue_logo_upload']['url'])) { ?>
@@ -41,7 +41,7 @@
            </div> <!-- Close #logo -->
        </div><!-- close logo span -->
        <?php if (has_nav_menu('primary_navigation')) : ?>
-         <div class="col-xs-12 col-sm-12 col-md-10 kad-header-right">
+         <div class="col-xs-12 col-sm-12 col-md-11 kad-header-right">
            <nav id="nav-main" class="clearfix">
               <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'sf-menu')); ?>
            </nav> 
@@ -87,3 +87,4 @@
       </div>
   <?php } ?>
 </header>
+<span class="ubermenu-divider"></span>
