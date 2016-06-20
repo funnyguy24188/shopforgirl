@@ -18,7 +18,7 @@
       <?php do_action('kt_afterheader');
 
           include kadence_template_path(); ?>
-            
+
           <?php if (kadence_display_sidebar()) : ?>
             <aside class="<?php echo esc_attr(kadence_sidebar_class()); ?> kad-sidebar" role="complementary">
               <div class="sidebar">
@@ -27,10 +27,10 @@
             </aside><!-- /aside -->
           <?php endif; ?>
           </div><!-- /.row-->
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_native_toolbox"></div>
         </div><!-- /.content -->
       </div><!-- /.wrap -->
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-       <div class="addthis_native_toolbox"></div>
       <?php do_action('get_footer');
       get_template_part('templates/footer'); ?>
     </div><!--Wrapper-->
