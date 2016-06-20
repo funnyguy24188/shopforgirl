@@ -2,4 +2,9 @@
     .ubermenu-main .ubermenu-nav .ubermenu-item-level-0  {
         font-size: 14px !important;
     }
+
+    #wp-live-chat {
+        height: 105px;
+    }
 }
+
