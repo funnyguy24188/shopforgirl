@@ -46,6 +46,13 @@
 			if($show_pagetitle == true) { ?>
 				<div id="homeheader" class="welcomeclass">
 					<div class="container">
+						<!-- Your like button code -->
+						<div class="fb-like"
+							 data-href="https://www.facebook.com/shop4girl.2011"
+							 data-layout="standard"
+							 data-action="like"
+							 data-show-faces="true">
+						</div>
 						<?php get_template_part('templates/page', 'header'); ?>
 					</div>
 				</div><!--titleclass-->

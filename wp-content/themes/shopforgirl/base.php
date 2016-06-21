@@ -9,6 +9,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
   <body <?php body_class(); ?>>
+  <!-- Load Facebook SDK for JavaScript -->
     <div id="wrapper" class="container">
     <?php do_action('get_header');
         get_template_part('templates/header');
@@ -27,8 +28,6 @@
             </aside><!-- /aside -->
           <?php endif; ?>
           </div><!-- /.row-->
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div class="addthis_native_toolbox"></div>
         </div><!-- /.content -->
       </div><!-- /.wrap -->
       <?php do_action('get_footer');
