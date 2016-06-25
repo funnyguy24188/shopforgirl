@@ -11,6 +11,10 @@
         cursor: pointer;
     }
     /** Order page **/
+    /** Disable the live chat **/
+    .order-product #wplc_hovercard, #wp-live-chat{
+        display:none !important;
+    }
 
     #order-page .order-form-wrap {
         width: 80%;
@@ -39,7 +43,16 @@
 
     }
 
-
+    #order-page-header #total-amount {
+        float: right;
+        border: none;
+        font-size: 3em;
+        text-align: right;
+        color: #b71414;
+        outline: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+    }
 
     #order-page #quantity {
         width: 20%;
@@ -52,6 +65,8 @@
         float:right;
     }
 
+
+
     #order-page .customer-basic-info .customer-name-group {
         padding-left: 0;
         padding-right: 0;
@@ -61,13 +76,24 @@
         padding-right: 0;
     }
 
+    #order-page  .customer-address-group {
+        float: right;
+    }
+
     #product-list-show .product-item input {
         border: none;
     }
 
-    #product-list-show table th, td {
+    #product-list-show .product-list-table th, td {
         width: 20%;
     }
+
+
+    #product-list-show .product-list-table tbody{
+        height: 350px;
+        overflow-y: scroll;
+    }
+
 
 
 
