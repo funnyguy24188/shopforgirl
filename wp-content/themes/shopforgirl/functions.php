@@ -1,5 +1,6 @@
 <?php
 
+require_once  'src/BarCodeMetaBox.php';
 
 function add_simple_product_barcode_field()
 {
@@ -167,5 +168,9 @@ function get_product_info()
 add_action('wp_ajax_nopriv_get_product_info', 'get_product_info');
 add_action('wp_ajax_get_product_info', 'get_product_info');
 
+//add_action('admin_head',function (){
+    $barcode_meta_box = new BarCodeMetaBox();
+    $barcode_meta_box->init();
 
+//});
 
