@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php 
 require_once 'Config.php';
 require_once 'GoogleCloudPrint.php';
 
