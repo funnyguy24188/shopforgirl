@@ -1,6 +1,5 @@
 <?php
 require_once 'lib/google-cloud-print/GoogleCloudPrint.php';
-session_start();
 // Create object
 $gcp = new GoogleCloudPrint();
 $gcp->setAuthToken($_SESSION['accessToken']);

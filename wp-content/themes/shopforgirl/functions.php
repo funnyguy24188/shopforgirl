@@ -1,4 +1,6 @@
 <?php
+if(session_id() == '')
+    session_start();
 require_once  'src/BarCodeMetaBox.php';
 
 function add_simple_product_barcode_field()
