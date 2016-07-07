@@ -40,7 +40,6 @@ if (isset($_GET['op'])) {
 	}
 }
 
-session_start();
 
 // Google redirected back with code in query string.
 if(isset($_GET['code']) && !empty($_GET['code'])) {
