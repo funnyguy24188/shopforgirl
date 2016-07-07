@@ -31,12 +31,10 @@ require_once 'lib/google-cloud-print/GoogleCloudPrint.php';
 if (isset($_GET['op'])) {
 
     if ($_GET['op']=="getauth") {
-        header("Location: ".$urlconfig['authorization_url']."?".http_build_query($redirectConfig));
-        exit;
+        wp_redirect($urlconfig['authorization_url']."?".http_build_query($redirectConfig));
     }
     else if ($_GET['op']=="offline") {
-        header("Location: ".$urlconfig['authorization_url']."?".http_build_query(array_merge($redirectConfig,$offlineAccessConfig)));
-        exit;
+        wp_redirect($urlconfig['authorization_url']."?".http_build_query(array_merge($redirectConfig,$offlineAccessConfig)));
     }
 }
 
