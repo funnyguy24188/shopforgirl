@@ -6,8 +6,9 @@ require_once 'GoogleCloudPrint.php';
 if (isset($_GET['op'])) {
 
 	if ($_GET['op']=="getauth") {
-		header("Location: ".$urlconfig['authorization_url']."?".http_build_query($redirectConfig));
-		exit;
+		?>
+		<a href="<?php echo $urlconfig['authorization_url']."?".http_build_query($redirectConfig) ?>">Login to Google</a>
+		<?php
 	}
 	else if ($_GET['op']=="offline") {
 		header("Location: ".$urlconfig['authorization_url']."?".http_build_query(array_merge($redirectConfig,$offlineAccessConfig)));
