@@ -55,12 +55,12 @@ if(isset($_GET['code']) && !empty($_GET['code'])) {
     $accessToken = $responseObj->access_token;
 
     // We requested offline access
-    if (isset($responseObj->refresh_token)) {
+    /*if (isset($responseObj->refresh_token)) {
 	header("Location: offlineToken.php?offlinetoken=".$responseObj->refresh_token);
 	exit;
-    }
+    }*/
     $_SESSION['accessToken'] = $accessToken;
-    header("Location: example.php");
+  //  header("Location: example.php");
 }
 
 ?>
