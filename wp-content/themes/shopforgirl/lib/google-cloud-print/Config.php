@@ -28,7 +28,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     $redirectConfig = array(
         'client_id' 	=> '344077324813-8195513uscudkemqe7k00cp9v7upspc5.apps.googleusercontent.com',
-        'redirect_uri' 	=> 'http://shopforgirl.local/oauthredirect/',
+        'redirect_uri' 	=> 'http://shopforgirl.net/oauthredirect/',
         'response_type' => 'code',
         'scope'         => 'https://www.googleapis.com/auth/cloudprint',
     );
@@ -37,7 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         'code' => '',
         'client_id' 	=> '344077324813-8195513uscudkemqe7k00cp9v7upspc5.apps.googleusercontent.com',
         'client_secret' => 'OE3-XfICh0QW63_pElDVLo56',
-        'redirect_uri' 	=> 'http://shopforgirl.local/oauthredirect/',
+        'redirect_uri' 	=> 'http://shopforgirl.net/oauthredirect/',
         "grant_type"    => "authorization_code"
     );
     
