@@ -1,11 +1,7 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 08/07/2016
- * Time: 02:26
- */
+require_once "GoogleCloudPrint.php";
+
 class GoogleCloudPrintCustomize extends GoogleCloudPrint
 {
     public function __construct()
