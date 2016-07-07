@@ -25,8 +25,8 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-require_once 'Config.php';
-require_once 'GoogleCloudPrint.php';
+require_once 'lib/google-cloud-print/Config.php';
+require_once 'lib/google-cloud-print/GoogleCloudPrint.php';
 
 if (isset($_GET['op'])) {
 
