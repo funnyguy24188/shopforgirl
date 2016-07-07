@@ -33,9 +33,9 @@ class GoogleCloudPrint {
 	const PRINT_URL = "https://www.google.com/cloudprint/submit";
     const JOBS_URL = "https://www.google.com/cloudprint/jobs";
 
-	private $authtoken;
-	private $httpRequest;
-	private $refreshtoken;
+	protected $authtoken;
+	protected $httpRequest;
+	protected $refreshtoken;
 	
 	/**
 	 * Function __construct

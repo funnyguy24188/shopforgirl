@@ -1,11 +1,10 @@
 <?php
-require_once 'lib/google-cloud-print/GoogleCloudPrint.php';
+require_once 'lib/google-cloud-print/GoogleCloudPrintCustomize.php';
 // Create object
-$gcp = new GoogleCloudPrint();
+$gcp = new GoogleCloudPrintCustomize();
 $gcp->setAuthToken($_SESSION['accessToken']);
 
 $printers = $gcp->getPrinters();
-print_r($printers);die;
 
 $printerid = "";
 if(count($printers)==0) {
