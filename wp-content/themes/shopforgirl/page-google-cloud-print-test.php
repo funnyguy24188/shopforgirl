@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'lib/google-cloud-print/GoogleCloudPrint.php';
 
 // Create object
