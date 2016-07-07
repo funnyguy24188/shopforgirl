@@ -41,7 +41,7 @@ class GoogleCloudPrintCustomize extends GoogleCloudPrint
             'printerid' => $printerid,
             'title' => $printjobtitle,
             'contentTransferEncoding' => 'base64',
-            'content' => base64_encode('ABCDEF'), // encode file content as base64
+            'content' => base64_encode('True LOVE is the most POWER help people overcome difficult :D'), // encode file content as base64
             'contentType' => $contenttype
         );
         // Prepare authorization headers
