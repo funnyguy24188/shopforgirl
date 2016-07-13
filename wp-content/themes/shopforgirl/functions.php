@@ -1,5 +1,5 @@
 <?php
-if (session_id() == '')
+/*if (session_id() == '')
     session_start();
 require_once 'src/SPGBarCodeMetaBox.php';
 require_once 'src/bill/SPGOrder.php';
@@ -37,5 +37,5 @@ add_action('wp_loaded',function(){
 
 add_action('wp_enqueue_scripts',function(){
     wp_enqueue_script('spgScript', get_stylesheet_directory_uri()  . '/assets/js/spg_script.js',array('jquery'),'1.0');
-});
+});*/
 

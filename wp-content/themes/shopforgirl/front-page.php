@@ -1,4 +1,3 @@
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <?php  global $virtue;
 			if(isset($virtue['mobile_switch'])) {
 				$mobile_slider = $virtue['mobile_switch'];
