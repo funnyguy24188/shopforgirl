@@ -12,12 +12,15 @@
     }
     /** Order page **/
     /** Disable the live chat **/
+    .order-product .container {
+        width: 100%;
+    }
+
     .order-product #wplc_hovercard, #wp-live-chat{
         display:none !important;
     }
 
     #order-page .order-form-wrap {
-        width: 80%;
         margin: 0 auto;
     }
 
@@ -37,10 +40,7 @@
     }
 
     #order-page #barcode {
-        width:58%;
-        float:left;
         height: 44px;
-
     }
 
     #order-page-header #total-amount {
@@ -55,17 +55,16 @@
     }
 
     #order-page #quantity {
-        width: 20%;
-        float: left;
-        margin-left: 10px;
         height: 44px;
     }
+
     #order-page #add-more-product {
-        width:18%;
-        float:right;
+        width: 100%;
     }
 
-
+    #order-page button[type="submit"] {
+        width: 100%;
+    }
 
     #order-page .customer-basic-info .customer-name-group {
         padding-left: 0;

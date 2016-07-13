@@ -16,7 +16,7 @@ function kadence_scripts() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-
+    
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr.min.js', false, null, false);
   wp_register_script('kadence_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', false, '267', true);
   wp_register_script('kadence_main', get_template_directory_uri() . '/assets/js/main.js', false, '267', true);

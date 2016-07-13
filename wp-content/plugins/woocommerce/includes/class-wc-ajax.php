@@ -246,6 +246,7 @@ class WC_AJAX {
 				$chosen_shipping_methods[ $i ] = wc_clean( $value );
 			}
 		}
+		
 
 		WC()->session->set( 'chosen_shipping_methods', $chosen_shipping_methods );
 

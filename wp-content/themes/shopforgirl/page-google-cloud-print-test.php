@@ -17,7 +17,7 @@ else {
     $printerid = $printers[0]['id']; // Pass id of any printer to be used for print
     // Send document to the printer
     $resarray = $gcp->sendPrintToPrinter($printerid, "Printing Doc using Google Cloud Printing", "./pdf.pdf", "application/pdf");
-
+    
     if($resarray['status']==true) {
 
         echo "Document has been sent to printer and should print shortly.";
