@@ -1,3 +1,6 @@
+<?php global $spg_cart; ?>
+<?php //$spg_cart->calculate_totals(); ?>
+<?php //echo WC()->cart->get_total(); ?>
 <div id="order-page-header" class="titleclass">
     <div class="container">
         <h2 style="float:left;margin-top:0">Hóa đơn</h2>
@@ -86,11 +89,20 @@
                                     <div class="col-xs-12 col-sm-12 customer-shipping-address-group">
                                         <label class="form-label">Địa chỉ giao hàng</label>
                                         <input class="form-control" name="order[customer][shiping_address]" type="text"
-                                              value="Khách lấy hàng tại shop"  placeholder="Nhập địa chỉ giao hàng">
+                                               value="Khách lấy hàng tại shop" placeholder="Nhập địa chỉ giao hàng">
                                     </div>
                                     <div class="col-xs-12 col-sm-12 customer-shipping-fee-group">
                                         <label class="form-label">Phí giao giao hàng</label>
-                                        
+
+                                        <?php /*if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : */?><!--
+
+                                            <?php /*do_action('woocommerce_cart_totals_before_shipping'); */?>
+
+                                            <?php /*wc_cart_totals_shipping_html(); */?>
+
+                                            <?php /*do_action('woocommerce_cart_totals_after_shipping'); */?>
+
+                                        --><?php /*endif; */?>
                                     </div>
                                 </div>
                             </fieldset>
@@ -103,7 +115,15 @@
         <script type="text/javascript">
             jQuery(document).ready(function () {
 
+                var cart_data = '<?php echo json_encode($spg_cart->parse_products_data()); ?>';
                 var OrderHandler = function () {
+
+                    this.initCartFontEndData = function (data) {
+                        var self = this;
+                        self.renderCart(jQuery('#product-list-show table tbody'), data)
+                    };
+
+
                     this.initDomListener = function () {
                         var self = this;
 
@@ -117,7 +137,15 @@
 
                         // remove the product
                         jQuery('body').on('click', '.fa-remove', function () {
-                            self.removeProduct(jQuery(this));
+                            var barcode = jQuery(this).closest('tr').data('barcode');
+
+                            self.searchProductAndRemoveFromCart(barcode).done(function (rep) {
+                                if (rep.result) {
+                                    var data = rep.data;
+                                    data['quantity'] = quantity;
+                                    self.renderCart(jQuery('#product-list-show table tbody'), data);
+                                }
+                            });
                         });
 
                         jQuery("#quantity").keydown(function (e) {
@@ -144,14 +172,14 @@
                         jQuery('#add-more-product').click(function (e) {
                             e.preventDefault();
                             var barcode = jQuery('#barcode').val();
-                            var searchProduct = self.searchProduct(barcode);
+                            var quantity = jQuery('#quantity').val();
+                            var searchProductAndAddToCart = self.searchProductAndAddToCart(barcode, quantity);
 
-                            searchProduct.done(function (rep) {
+                            searchProductAndAddToCart.done(function (rep) {
                                 if (rep.result) {
                                     var data = rep.data;
-                                    var quantity = jQuery('#quantity').val();
                                     data['quantity'] = quantity;
-                                    self.addProduct(jQuery('#product-list-show table tbody'), data);
+                                    self.renderCart(jQuery('#product-list-show table tbody'), data);
                                     // clear barcode
                                     jQuery('#barcode').val('');
                                 } else {
@@ -191,6 +219,17 @@
                         });
 
 
+                        jQuery('.shipping_method').click(function () {
+                            var shipping_method = jQuery(this).val();
+                            self.addShipingMethod(shipping_method).done(function (rep) {
+                                if (rep.result) {
+                                    var data = rep.data;
+                                    self.renderCart(jQuery('#product-list-show table tbody'), data);
+                                }
+                            });
+                        });
+
+
                     };
 
                     /**
@@ -204,6 +243,35 @@
                             data: {action: 'get_product_info', barcode: barcode}
                         });
                     };
+
+                    this.searchProductAndAddToCart = function searchProduct(barcode, quantity) {
+                        return jQuery.ajax({
+                            method: 'POST',
+                            dataType: 'json',
+                            url: window.location.origin + '/wp-admin/admin-ajax.php',
+                            data: {action: 'ajax_add_product_to_cart', barcode: barcode, quantity: quantity}
+                        });
+                    };
+
+
+                    this.searchProductAndRemoveFromCart = function (barcode) {
+                        return jQuery.ajax({
+                            method: 'POST',
+                            dataType: 'json',
+                            url: window.location.origin + '/wp-admin/admin-ajax.php',
+                            data: {action: 'ajax_remove_product_to_cart', barcode: barcode}
+                        });
+                    };
+
+                    this.addShipingMethod = function (shipping_method) {
+                        return jQuery.ajax({
+                            method: 'POST',
+                            dataType: 'json',
+                            url: window.location.origin + '/wp-admin/admin-ajax.php',
+                            data: {action: 'ajax_add_shipping_method', shipping: shipping_method}
+                        });
+                    };
+
                     /**
                      * Search customer via phone
                      */
@@ -217,70 +285,38 @@
                     };
 
                     /**
-                     * Add product to order list
+                     * Render the cart  in front end
                      */
-                    this.addProduct = function (elem, arg) {
+                    this.renderCart = function (elem, data) {
                         var self = this;
-                        var name = arg.name;
-                        var barcode = arg.barcode.trim();
-                        var quantity = parseInt(arg.quantity);
-                        var price = parseInt(arg.regular_price);
-                        var addNew = true;
-                        var row_pattern = '<tr class="product-item" data-barcode="{barcode}">' +
-                            '<td><span class="product-item-num">{product_num}</span></td>' +
-                            '<td><input name="order[product][{barcode}]name" readonly class="product-name"  value="{product_name}"></td>' +
-                            '<td><input name="order[product][{barcode}]quantity"  readonly class="product-quantity" value="{product_quantity}"></td>' +
-                            '<td><input class="product-price" type="text" readonly value="{price}"></td>' +
-                            '<td><input class="product-amount" type="text" readonly value="{amount}"></td>' +
-                            '<td><span><i class="fa fa-remove"></i></span></td>' +
-                            '</tr>';
+                        // remove old data
+                        elem.find('tr').remove();
+                        jQuery.each(data, function (k, arg) {
+                            var name = arg.name;
+                            var barcode = arg.barcode.trim();
+                            var quantity = parseInt(arg.quantity);
+                            var price = parseInt(arg.regular_price);
+                            var row_pattern = '<tr class="product-item" data-barcode="{barcode}">' +
+                                '<td><span class="product-item-num">{product_num}</span></td>' +
+                                '<td><input name="order[product][{barcode}]name" readonly class="product-name"  value="{product_name}"></td>' +
+                                '<td><input name="order[product][{barcode}]quantity"  readonly class="product-quantity" value="{product_quantity}"></td>' +
+                                '<td><input class="product-price" type="text" readonly value="{price}"></td>' +
+                                '<td><input class="product-amount" type="text" readonly value="{amount}"></td>' +
+                                '<td><span><i class="fa fa-remove"></i></span></td>' +
+                                '</tr>';
 
-
-                        // search product exist on the product list
-                        var product_list = jQuery('.product-item');
-                        jQuery(product_list).each(function (k, item) {
-                            var currentQuantity = jQuery(item).find('.product-quantity').val();
-                            var barcodeCurrent = jQuery(item).data('barcode');
-                            if (barcodeCurrent == barcode) {
-                                addNew = false;
-                                quantity += parseInt(currentQuantity);
-                                var html = row_pattern.replace('{product_num}', k + 1)
-                                    .replace('{barcode}', barcode)
-                                    .replace('{product_name}', name)
-                                    .replace('{product_quantity}', quantity)
-                                    .replace('{price}', price)
-                                    .replace('{amount}', price * quantity);
-
-                                jQuery(item).replaceWith(html);
-                            }
-
-
-                        });
-
-                        // add new
-                        if (addNew) {
-                            var num = jQuery('.product-item').length || 1;
-                            var html = row_pattern.replace('{product_num}', num)
+                            // add new
+                            var html = row_pattern.replace('{product_num}', k + 1)
                                 .replace(/{barcode}/g, barcode)
                                 .replace('{product_name}', name)
                                 .replace('{product_quantity}', quantity)
                                 .replace('{price}', price)
                                 .replace('{amount}', price * quantity);
                             jQuery(elem).append(html);
-                        }
-
-                        // calculate amount
-                        self.calculateTotalAmount();
+                            // calculate amount
+                            self.calculateTotalAmount();
+                        })
                     };
-
-                    /**
-                     * Remove product out of order
-                     */
-                    this.removeProduct = function (elem) {
-                        jQuery(elem).closest('.product-item').remove();
-                        this.calculateTotalAmount();
-                    };
-
 
                     this.calculateTotalAmount = function () {
                         var product_list = jQuery('.product-item');
@@ -295,6 +331,7 @@
 
                 var orderHandler = new OrderHandler();
                 orderHandler.initDomListener();
+                orderHandler.initCartFontEndData(JSON.parse(cart_data));
             });
 
         </script>

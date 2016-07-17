@@ -1,5 +1,4 @@
 <?php global $post; ?>
-<?php if (!$post->post_name == 'order-product'): ?>
     <footer id="containerfooter" class="footerclass" role="contentinfo">
         <div class="container">
             <div class="row">
@@ -90,4 +89,3 @@
     </footer>
 
     <?php wp_footer(); ?>
-<?php endif; ?>
