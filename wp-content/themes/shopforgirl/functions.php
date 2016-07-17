@@ -23,8 +23,7 @@ $spg_cart->init_hook();
 $customer_finding = new SPGCustomerDetail();
 $customer_finding->init_hook();
 // init_shipping
-//$customize_shipping = new CustomizeShippingInit();
-//$customize_shipping->init_shipping();
+
 
 
 add_action('wp_enqueue_scripts', function () {
