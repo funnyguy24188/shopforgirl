@@ -61,7 +61,7 @@ class SPGCartGlobalManager
         }
     }
 
-    public function empty_cart($cart_index)
+    public function empty_cart()
     {
         WC()->cart->empty_cart();
     }
@@ -113,8 +113,8 @@ class SPGCartGlobalManager
     public function calculate_totals()
     {
         WC()->cart->calculate_totals();
-       /* WC()->cart->calculate_shipping();
-        WC()->cart->calculate_fees();*/
+        WC()->cart->calculate_shipping();
+        WC()->cart->calculate_fees();
     }
 
     public function init_hook()
