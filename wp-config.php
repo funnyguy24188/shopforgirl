@@ -1,4 +1,10 @@
+
 <?php
+
+ini_set('xdebug.var_display_max_depth', 50);
+ini_set('xdebug.var_display_max_children', 2560);
+ini_set('xdebug.var_display_max_data', 10240);
+
 /**
  * The base configuration for WordPress
  *

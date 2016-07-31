@@ -1,10 +1,10 @@
 <?php global $spg_cart; ?>
-<?php //$spg_cart->calculate_totals(); ?>
-<?php //echo WC()->cart->get_total(); ?>
+<?php $spg_cart->calculate_totals();
+?>
 <div id="order-page-header" class="titleclass">
     <div class="container">
         <h2 style="float:left;margin-top:0">Hóa đơn</h2>
-        <input type="text" readonly id="total-amount" value="0">
+        <input type="text" readonly id="total-amount" value="<?php echo $spg_cart->get_total(); ?>">
     </div><!--container-->
 </div><!--titleclass-->
 
@@ -18,26 +18,24 @@
                             <fieldset id="product-barcode-scanner" title="product-barcode-scanner">
                                 <legend>Mã vạch</legend>
                                 <div class="form-group">
-                                    <div class="col-xs-12 col-sm-6">
+                                    <div class="col-xs-12 col-sm-7">
                                         <input id="barcode" class="form-control barcode" type="text"
                                                placeholder="Barcode">
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-2">
+                                    <div class="col-xs-12 col-sm-3">
                                         <input id="quantity" class="form-control" type="text" value="1"
                                                placeholder="Số lượng">
                                     </div>
                                     <div class="col-xs-12 col-sm-2">
                                         <button id="add-more-product" type="button" class="button">Thêm</button>
                                     </div>
-                                    <div class="col-xs-12 col-sm-2">
-                                        <button class="button primary-button" type="submit">Lưu</button>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12 col-sm-12">
                                         <label class="form-label" for="print-order">In hóa đơn</label>
-                                        <input id="print-order" checked type="checkbox" value="1">
+                                        <input id="print-order" name="order[print_order]" checked type="checkbox"
+                                               value="1">
                                     </div>
 
                                 </div>
@@ -88,21 +86,33 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 customer-shipping-address-group">
                                         <label class="form-label">Địa chỉ giao hàng</label>
-                                        <input class="form-control" name="order[customer][shiping_address]" type="text"
+                                        <input class="form-control" name="order[customer][shipping_address]" type="text"
                                                value="Khách lấy hàng tại shop" placeholder="Nhập địa chỉ giao hàng">
                                     </div>
-                                    <div class="col-xs-12 col-sm-12 customer-shipping-fee-group">
+
+
+                                    <div class="col-xs-6 col-sm-6 customer-shipping-fee-group">
                                         <label class="form-label">Phí giao giao hàng</label>
+                                        <?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
+                                            <?php wc_cart_totals_shipping_html(); ?>
+                                        <?php endif; ?>
+                                    </div>
 
-                                        <?php /*if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : */?><!--
+                                    <div class="col-xs-6 col-sm-6 customer-payment-status-group">
+                                        <label class="form-label">Trạng thái order</label>
+                                        <label for="payment-comleted">Đã thanh toán
+                                            <input checked id="payment-comleted" type="radio" name="order[status]"
+                                                   value="completed">
+                                        </label>
+                                        <label for="payment-pending">Chờ thanh toán
+                                            <input id="payment-pending" type="radio" name="order[status]"
+                                                   value="pending">
+                                        </label>
 
-                                            <?php /*do_action('woocommerce_cart_totals_before_shipping'); */?>
+                                    </div>
 
-                                            <?php /*wc_cart_totals_shipping_html(); */?>
-
-                                            <?php /*do_action('woocommerce_cart_totals_after_shipping'); */?>
-
-                                        --><?php /*endif; */?>
+                                    <div class="col-xs-12 col-sm-12 customer-save-order-group">
+                                        <button class="button primary-button" type="submit">Lưu</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -111,11 +121,26 @@
                 </div>
             </div>
         </div><!-- /.main -->
+        <div id="printerDiv" style="display: none"></div>
 
         <script type="text/javascript">
-            jQuery(document).ready(function () {
 
-                var cart_data = '<?php echo json_encode($spg_cart->parse_products_data()); ?>';
+            var order_pdf_link = '<?php if (!empty($_SESSION['order_pdf_link'])) {
+                $pdf_link = $_SESSION['order_pdf_link'];
+                unset($_SESSION['order_pdf_link']);
+                echo $pdf_link;
+            } else {
+                echo '';
+            }?>';
+            //var order_pdf_link = 'http://shopforgirl.local/wp-content/uploads/order_tmp/8c4a3b.pdf';
+
+            jQuery(document).ready(function () {
+                var nonce = '<?php echo wp_create_nonce("update-shipping-method") ?>';
+                var cart_data = '<?php echo json_encode(array(
+                    'cart_items' => $spg_cart->parse_products_data(),
+                    'cart_total' => $spg_cart->get_total()
+                )); ?>';
+                var shipping_block = true;
                 var OrderHandler = function () {
 
                     this.initCartFontEndData = function (data) {
@@ -146,8 +171,22 @@
                                     self.renderCart(jQuery('#product-list-show table tbody'), data);
                                 }
                             });
-                        });
+                            // change shipping method
+                        }).on('click', '.shipping_method', function (evt) {
+                            var shipping_methods = {};
+                            var target = evt.currentTarget;
+                            jQuery('select.shipping_method, input[name^=shipping_method][type=radio]:checked, input[name^=shipping_method][type=hidden]').each(function () {
+                                shipping_methods[jQuery(target).data('index')] = jQuery(target).val();
+                            });
 
+                            self.addShipingMethod(shipping_methods).done(function (rep) {
+                                if (rep.result) {
+                                    jQuery('#total-amount').val(rep.data);
+
+                                }
+                            });
+                        });
+                        // quantity keydown listener
                         jQuery("#quantity").keydown(function (e) {
                             // Allow: backspace, delete, tab, escape, enter and .
                             if (jQuery.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
@@ -168,7 +207,7 @@
                             }
                         });
 
-
+                        // add more product click listener
                         jQuery('#add-more-product').click(function (e) {
                             e.preventDefault();
                             var barcode = jQuery('#barcode').val();
@@ -211,6 +250,7 @@
                             }
                         });
 
+                        // barcode enter
                         jQuery('#barcode').keyup(function (e) {
                             e.preventDefault();
                             if (e.keyCode == 13) {
@@ -218,16 +258,11 @@
                             }
                         });
 
+                        // call print action if pdf link exist
+                        if (order_pdf_link) {
 
-                        jQuery('.shipping_method').click(function () {
-                            var shipping_method = jQuery(this).val();
-                            self.addShipingMethod(shipping_method).done(function (rep) {
-                                if (rep.result) {
-                                    var data = rep.data;
-                                    self.renderCart(jQuery('#product-list-show table tbody'), data);
-                                }
-                            });
-                        });
+                            this.callToPrint(order_pdf_link);
+                        }
 
 
                     };
@@ -268,7 +303,7 @@
                             method: 'POST',
                             dataType: 'json',
                             url: window.location.origin + '/wp-admin/admin-ajax.php',
-                            data: {action: 'ajax_add_shipping_method', shipping: shipping_method}
+                            data: {action: 'ajax_add_shipping_method', shipping_method: shipping_method}
                         });
                     };
 
@@ -291,42 +326,52 @@
                         var self = this;
                         // remove old data
                         elem.find('tr').remove();
-                        jQuery.each(data, function (k, arg) {
-                            var name = arg.name;
-                            var barcode = arg.barcode.trim();
-                            var quantity = parseInt(arg.quantity);
-                            var price = parseInt(arg.regular_price);
-                            var row_pattern = '<tr class="product-item" data-barcode="{barcode}">' +
-                                '<td><span class="product-item-num">{product_num}</span></td>' +
-                                '<td><input name="order[product][{barcode}]name" readonly class="product-name"  value="{product_name}"></td>' +
-                                '<td><input name="order[product][{barcode}]quantity"  readonly class="product-quantity" value="{product_quantity}"></td>' +
-                                '<td><input class="product-price" type="text" readonly value="{price}"></td>' +
-                                '<td><input class="product-amount" type="text" readonly value="{amount}"></td>' +
-                                '<td><span><i class="fa fa-remove"></i></span></td>' +
-                                '</tr>';
+                        if (!shipping_block) {
+                            jQuery('#shipping_method, .shipping').remove();
+                        }
+                        jQuery.each(data.cart_items, function (k, arg) {
+                            if (typeof arg == 'object') {
+                                var name = arg.name;
+                                var barcode = arg.barcode.trim();
+                                var quantity = parseInt(arg.quantity);
+                                var price = parseInt(arg.regular_price);
+                                var row_pattern = '<tr class="product-item" data-barcode="{barcode}">' +
+                                    '<td><span class="product-item-num">{product_num}</span></td>' +
+                                    '<td><input name="order[product][{barcode}]name" readonly class="product-name"  value="{product_name}"></td>' +
+                                    '<td><input name="order[product][{barcode}]quantity"  readonly class="product-quantity" value="{product_quantity}"></td>' +
+                                    '<td><input class="product-price" type="text" readonly value="{price}"></td>' +
+                                    '<td><input class="product-amount" type="text" readonly value="{amount}"></td>' +
+                                    '<td><span><i class="fa fa-remove"></i></span></td>' +
+                                    '</tr>';
 
-                            // add new
-                            var html = row_pattern.replace('{product_num}', k + 1)
-                                .replace(/{barcode}/g, barcode)
-                                .replace('{product_name}', name)
-                                .replace('{product_quantity}', quantity)
-                                .replace('{price}', price)
-                                .replace('{amount}', price * quantity);
-                            jQuery(elem).append(html);
-                            // calculate amount
-                            self.calculateTotalAmount();
-                        })
-                    };
-
-                    this.calculateTotalAmount = function () {
-                        var product_list = jQuery('.product-item');
-                        var totalAmount = 0;
-                        jQuery(product_list).each(function (k, item) {
-                            var amountItem = jQuery(item).find('.product-amount').val();
-                            totalAmount += parseInt(amountItem);
+                                // add new
+                                var html = row_pattern.replace('{product_num}', k + 1)
+                                    .replace(/{barcode}/g, barcode)
+                                    .replace('{product_name}', name)
+                                    .replace('{product_quantity}', quantity)
+                                    .replace('{price}', price)
+                                    .replace('{amount}', price * quantity);
+                                jQuery(elem).append(html);
+                            }
                         });
-                        jQuery('#total-amount').val(totalAmount);
+
+
+                        if (!jQuery('select.shipping_method, input[name^=shipping_method][type=radio]:checked, input[name^=shipping_method][type=hidden]').length) {
+                            jQuery('.customer-shipping-fee-group').append(data['shipping_block'])
+                        }
+
+                        // change total in front end
+                        jQuery('#total-amount').val(data.cart_total);
+
+                        // set shipping is false mark for shipping block is rendered
+                        shipping_block = false;
                     };
+
+                    this.callToPrint = function (order_pdf_link) {
+                        var div = document.getElementById("printerDiv");
+                        div.innerHTML = '<iframe style="margin: 0; padding:0; display: block" id="printer-iframe" src=' + order_pdf_link + ' onload="this.contentWindow.print();"></iframe>';
+                    }
+
                 };
 
                 var orderHandler = new OrderHandler();

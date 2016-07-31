@@ -94,9 +94,9 @@ class BarCodeWrap
         // Pad the edges of the barcode
         $code_length = 20;
         if ($print) {
-            $text_height = 30;
+            $text_height = 20;
         } else {
-            $text_height = 0;
+            $text_height = 30;
         }
 
         for ( $i=1; $i <= strlen($code_string); $i++ ){

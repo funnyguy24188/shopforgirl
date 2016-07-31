@@ -7,6 +7,22 @@
 class SPGProductDetail
 {
 
+    /**
+     * Get the main product id
+     * @param $product
+     * @return bool
+     */
+
+    public static function get_product_id($product)
+    {
+        if (empty($product)) {
+            return false;
+        }
+        if ($product->is_type('variation')) {
+            return $product->variation_id;
+        }
+        return $product->id;
+    }
 
     /**
      * Get product variation data

@@ -34,7 +34,7 @@ class SPGCustomerDetail
     {
         $ret = false;
         if (!$phone) {
-            $phone = $_POST['phone'];
+            $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
         }
 
         $ret_pattern = array(

@@ -79,12 +79,16 @@
         float: right;
     }
 
+    #order-page  .customer-shipping-address-group {
+        overflow: hidden;
+    }
+
     #product-list-show .product-item input {
         border: none;
     }
 
-    #product-list-show .product-list-table th, td {
-        width: 20%;
+    #product-list-show .product-list-table {
+        table-layout: fixed;
     }
 
 
@@ -93,6 +97,9 @@
         overflow-y: scroll;
     }
 
+    #order-page .customer-save-order-group {
+        overflow: hidden;
+    }
 
 
 
