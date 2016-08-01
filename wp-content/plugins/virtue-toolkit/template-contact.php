@@ -3,7 +3,7 @@
 Template Name: Contact
 */
 get_header(); 
-global $post;
+global $post, $pinnacle;
 	$form 		= get_post_meta( $post->ID, '_kad_contact_form', true );
 	$map 		= get_post_meta( $post->ID, '_kad_contact_map', true );
 	$pageemail 	= get_post_meta( $post->ID, '_kad_contact_form_email', true ); 
@@ -18,11 +18,15 @@ global $post;
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.validate-ck.js"></script>
 	<?php } 
 	if ($map == 'yes') { ?>
-		    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 		    <?php 	$address 	= get_post_meta( $post->ID, '_kad_contact_address', true ); 
 				 	$maptype 	= get_post_meta( $post->ID, '_kad_contact_maptype', true ); 
 					$height 	= get_post_meta( $post->ID, '_kad_contact_mapheight', true );
-					$mapzoom 	= get_post_meta( $post->ID, '_kad_contact_zoom', true );  
+					$mapzoom 	= get_post_meta( $post->ID, '_kad_contact_zoom', true ); 
+					if(isset($pinnacle['google_map_api']) && !empty($pinnacle['google_map_api'])) {
+				    	$gmap_api = $pinnacle['google_map_api'];
+				    } else {
+				    	$gmap_api = 'AIzaSyBt7JOCM4XQTEi9jzdqB8alFc1Vm_3mbfQ';
+				    }
 					if(!empty($height)) {
 						$mapheight = $height;
 					} else {
@@ -33,61 +37,62 @@ global $post;
 					} else {
 						$zoom = 15;
 					} ?>
-<script type="text/javascript">
-			jQuery(window).load(function() {
-				jQuery('#map_address').gmap3({
-					map: {
-					    address:"<?php echo $address;?>",
-						options: {
-		              		zoom:<?php echo $zoom;?>,
-							draggable: true,
-							mapTypeControl: true,
-							mapTypeId: google.maps.MapTypeId.<?php echo $maptype;?>,
-							scrollwheel: false,
-							panControl: true,
-							rotateControl: false,
-							scaleControl: true,
-							streetViewControl: true,
-							zoomControl: true
-						}
-					},
-					marker:{
-			        	values:[
-			            	{
-			            	address: "<?php echo $address;?>",
-						 	data:"<div class='mapinfo'>'<?php echo $address;?>'</div>",
-						 	},
-		            	],
-		            	options:{
-		              		draggable: false,
-		            	},
-						events:{
-		              		click: function(marker, event, context){
-		                		var map = jQuery(this).gmap3("get"),
-		                  		infowindow = jQuery(this).gmap3({get:{name:"infowindow"}});
-				                if (infowindow){
-				                  infowindow.open(map, marker);
-				                  infowindow.setContent(context.data);
-				                } else {
-				                  jQuery(this).gmap3({
-				                    infowindow:{
-				                      anchor:marker, 
-				                      options:{content: context.data}
-				                    }
-				                  });
-				                }
-		              	},
-			            closeclick: function(){
-			                var infowindow = jQuery(this).gmap3({get:{name:"infowindow"}});
-			                if (infowindow){
-			                  infowindow.close();
-			                }
-						}
-					}
-          		}
-        	});
-        });
-</script>
+					<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo esc_attr($gmap_api);?>"></script>
+					<script type="text/javascript">
+								jQuery(window).load(function() {
+									jQuery('#map_address').gmap3({
+										map: {
+										    address:"<?php echo $address;?>",
+											options: {
+							              		zoom:<?php echo $zoom;?>,
+												draggable: true,
+												mapTypeControl: true,
+												mapTypeId: google.maps.MapTypeId.<?php echo $maptype;?>,
+												scrollwheel: false,
+												panControl: true,
+												rotateControl: false,
+												scaleControl: true,
+												streetViewControl: true,
+												zoomControl: true
+											}
+										},
+										marker:{
+								        	values:[
+								            	{
+								            	address: "<?php echo $address;?>",
+											 	data:"<div class='mapinfo'>'<?php echo $address;?>'</div>",
+											 	},
+							            	],
+							            	options:{
+							              		draggable: false,
+							            	},
+											events:{
+							              		click: function(marker, event, context){
+							                		var map = jQuery(this).gmap3("get"),
+							                  		infowindow = jQuery(this).gmap3({get:{name:"infowindow"}});
+									                if (infowindow){
+									                  infowindow.open(map, marker);
+									                  infowindow.setContent(context.data);
+									                } else {
+									                  jQuery(this).gmap3({
+									                    infowindow:{
+									                      anchor:marker, 
+									                      options:{content: context.data}
+									                    }
+									                  });
+									                }
+							              	},
+								            closeclick: function(){
+								                var infowindow = jQuery(this).gmap3({get:{name:"infowindow"}});
+								                if (infowindow){
+								                  infowindow.close();
+								                }
+											}
+										}
+					          		}
+					        	});
+					        });
+					</script>
 
 <?php 
 		echo '<style type="text/css" media="screen">#map_address {height:'.$mapheight.'px;}</style>';

@@ -17,13 +17,16 @@ Template Name: Contact
 			});</script>
 			<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.validate.js"></script>
 		<?php } 
-		if ($map == 'yes') { ?>
-		    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
-		    	<?php 	$address 	= get_post_meta( $post->ID, '_kad_contact_address', true ); 
+		if ($map == 'yes') { 
+		    		 	$address 	= get_post_meta( $post->ID, '_kad_contact_address', true ); 
 						$maptype 	= get_post_meta( $post->ID, '_kad_contact_maptype', true ); 
 						$height 	= get_post_meta( $post->ID, '_kad_contact_mapheight', true );
 						$mapzoom 	= get_post_meta( $post->ID, '_kad_contact_zoom', true );
-							
+						if(isset($virtue['google_map_api']) && !empty($virtue['google_map_api'])) {
+				    		$gmap_api = $virtue['google_map_api'];
+					    } else {
+					    	$gmap_api = 'AIzaSyBt7JOCM4XQTEi9jzdqB8alFc1Vm_3mbfQ';
+					    }
 							if(!empty($height)) {
 								$mapheight = $height;
 							} else {
@@ -34,6 +37,7 @@ Template Name: Contact
 							} else {
 								$zoom = 15;
 							} ?>
+				<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo esc_attr($gmap_api);?>"></script>
 		    	<script type="text/javascript">
 					jQuery(window).load(function() {
 					jQuery('#map_address').gmap3({
