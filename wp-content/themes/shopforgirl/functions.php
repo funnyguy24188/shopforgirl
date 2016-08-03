@@ -32,7 +32,7 @@ add_action('wp_enqueue_scripts', function () {
 add_action('delete_post',function ($post_id){
     global $as3cf;
     $post = get_post($post_id);
-    if(!empty($post)) {
+    if(!empty($post) && !empty($as3cf)) {
         if($post->post_type == 'attachment') {
             $as3cf->delete_attachment($post_id);
         }
