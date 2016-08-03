@@ -19,6 +19,16 @@ class WC_Dynamic_Gallery_Functions
 		$wpdb->query( "DELETE FROM ".$wpdb->postmeta." WHERE meta_key='_actived_d_gallery' " );
 	}
 
+	public static function reset_auto_feature_image_activate() {
+		global $wpdb;
+		$wpdb->query( "DELETE FROM ".$wpdb->postmeta." WHERE meta_key='_wc_dgallery_auto_feature_image' " );
+	}
+
+	public static function reset_thumbnails_activate() {
+		global $wpdb;
+		$wpdb->query( "DELETE FROM ".$wpdb->postmeta." WHERE meta_key='_wc_dgallery_enable_gallery_thumb' " );
+	}
+
 	public static function add_google_fonts() {
 		global $wc_dgallery_fonts_face;
 
@@ -54,6 +64,15 @@ class WC_Dynamic_Gallery_Functions
 			return self::get_gallery_ids_back_compatibility( $post_id );
 		}
 
+		$default_auto_feature_image = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'auto_feature_image', 'yes' );
+		$auto_feature_image = get_post_meta( $post_id, '_wc_dgallery_auto_feature_image', true );
+		if ( $auto_feature_image == '' ) {
+			$auto_feature_image = $default_auto_feature_image;
+		}
+		if ( $auto_feature_image == 1 || $auto_feature_image == 'yes' ) {
+			$auto_feature_image = 'yes';
+		}
+
 		$have_gallery_ids    = false;
 		$have_featured_image = false;
 
@@ -82,7 +101,7 @@ class WC_Dynamic_Gallery_Functions
 				}
 			}
 
-			if ( $have_featured_image && ! in_array( $featured_img_id, $dgallery_ids ) ) {
+			if ( 'yes' == $auto_feature_image && $have_featured_image && ! in_array( $featured_img_id, $dgallery_ids ) ) {
 				$dgallery_ids = array_merge( array( $featured_img_id ), $dgallery_ids );
 			}
 

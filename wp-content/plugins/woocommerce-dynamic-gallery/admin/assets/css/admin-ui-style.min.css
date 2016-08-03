@@ -35,6 +35,7 @@
 .a3_subsubsub_section{float:left;width:100%}
 .a3rev_panel_container input[type="text"],.a3rev_panel_container input[type="email"],.a3rev_panel_container input[type="number"],.a3rev_panel_container input[type="password"]{height:24px}
 .a3rev_panel_container .a3rev-ui-typography-size{width:80px}
+.a3rev_panel_container .a3rev-ui-typography-line_height{width:80px}
 .a3rev_panel_container .a3rev-ui-typography-face{width:160px}
 .a3rev_panel_container .a3rev-ui-typography-style{width:100px}
 .a3rev_panel_container .a3rev-ui-typography-preview{display:inline-block}

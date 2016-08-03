@@ -96,6 +96,7 @@ class WC_Admin_Dynamic_Gallery_Page extends WC_Dynamic_Gallery_Admin_UI
 		
 		include_once( $this->admin_plugin_dir() . '/tabs/global-settings-tab.php' );
 		include_once( $this->admin_plugin_dir() . '/tabs/gallery-style-tab.php' );
+		include_once( $this->admin_plugin_dir() . '/tabs/gallery-icon-styles-tab.php' );
 	}
 	
 	/*-----------------------------------------------------------------------------------*/

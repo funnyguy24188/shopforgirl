@@ -103,6 +103,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 		wp_register_script( 'a3rev-settings-preview', $this->admin_plugin_url() . '/assets/js/a3rev-settings-preview.js',  array('jquery'), false, true );
 		wp_register_script( 'jquery-tiptip', $this->admin_plugin_url() . '/assets/js/tipTip/jquery.tipTip' . $suffix . '.js', array( 'jquery' ), true, true );
 		wp_register_script( 'a3rev-metabox-ui', $this->admin_plugin_url() . '/assets/js/data-meta-boxes.js', array( 'jquery' ), true, true );
+		wp_register_script( 'jquery-rwd-image-maps', $this->admin_plugin_url() . '/assets/js/rwdImageMaps/jquery.rwdImageMaps.min.js', array( 'jquery' ), true, true );
 		
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'wp-color-picker' );
@@ -367,7 +368,12 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 					} else {
 						$id_attribute		= esc_attr( $value['id'] );
 					}
-					
+
+					// Backward compatibility to old settings don't have line_height option for typography
+					if ( 'typography' == $value['type'] && ! isset( $value['default']['line_height'] ) ) {
+						$value['default']['line_height'] = '1.4em';
+					}
+
 					$default_settings[$id_attribute] = $value['default'];
 				
 				break;
@@ -452,6 +458,12 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 							$current_setting = array_map( array( $this, 'admin_stripslashes' ), $current_setting );
 						elseif ( ! is_null( $current_setting ) )
 							$current_setting = esc_attr( stripslashes( $current_setting ) );
+
+						// Backward compatibility to old settings don't have line_height option for typography
+						if ( 'typography' == $value['type'] && ! isset( $current_setting['line_height'] ) ) {
+							$current_setting['line_height'] = '1.4em';
+						}
+
 					break;
 				}
 				
@@ -1103,7 +1115,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 	 * default				=> text : apply for other types
 	 * 						   array( 'enable' => 1, 'color' => '#515151' ) : apply bg_color only
 	 *						   array( 'width' => '125', 'height' => '125', 'crop' => 1 ) : apply image_size only
-	 *						   array( 'size' => '9px', 'face' => 'Arial', 'style' => 'normal', 'color' => '#515151' ) : apply for typography only 
+	 *						   array( 'size' => '9px', line_height => '1.4em', 'face' => 'Arial', 'style' => 'normal', 'color' => '#515151' ) : apply for typography only 
 	 *						   array( 'width' => '1px', 'style' => 'normal', 'color' => '#515151', 'corner' => 'rounded' | 'square' , 'top_left_corner' => 3, 
 	 *									'top_right_corner' => 3, 'bottom_left_corner' => 3, 'bottom_right_corner' => 3 ) : apply for border only
 	  *						   array( 'width' => '1px', 'style' => 'normal', 'color' => '#515151' ) : apply for border_styles only
@@ -1283,6 +1295,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 			 * [default_value_height] 		: apply for image_size type
 			 *
 			 * [default_value_size]			: apply for typography type
+			 * [default_value_line_height]	: apply for typography type
 			 * [default_value_face]			: apply for typography type
 			 * [default_value_style]		: apply for typography, border, border_styles types
 			 * [default_value_color]		: apply for typography, border, border_styles types
@@ -1305,6 +1318,7 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 			} elseif ( $value['type'] == 'typography' ) {
 				if ( ! is_array( $value['default'] ) ) $value['default'] = array();
 				if ( ! isset( $value['default']['size'] ) ) $value['default']['size'] = '';
+				if ( ! isset( $value['default']['line_height'] ) ) $value['default']['line_height'] = '';
 				if ( ! isset( $value['default']['face'] ) ) $value['default']['face'] = '';
 				if ( ! isset( $value['default']['style'] ) ) $value['default']['style'] = '';
 				if ( ! isset( $value['default']['color'] ) || trim( $value['default']['color'] ) == '' ) $value['default']['color'] = '#515151';
@@ -2103,17 +2117,22 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 						</td>
 					</tr><?php
 				break;
-				
+
 				// Font Control
 				case 'typography':
-				
+
 					$default_color = ' data-default-color="' . esc_attr( $value['default']['color'] ) . '"';
-					
-					$size	= $option_value['size'];
-					$face	= $option_value['face'];
-					$style	= $option_value['style'];
-					$color	= $option_value['color'];
-				
+
+					if ( ! isset( $option_value['line_height'] ) ) {
+						$option_value['line_height'] = '1.4em';
+					}
+
+					$size        = $option_value['size'];
+					$line_height = $option_value['line_height'];
+					$face        = $option_value['face'];
+					$style       = $option_value['style'];
+					$color       = $option_value['color'];
+
 					?><tr valign="top">
 						<th scope="row" class="titledesc"><?php echo $tip; ?><?php echo esc_html( $value['name'] ) ?></th>
 						<td class="forminp">
@@ -2134,8 +2153,23 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
 										<?php
 									}
 								?>
-						   </select> 
-                           
+						   </select>
+						   <!-- Line Height -->
+							<select
+								name="<?php echo $name_attribute; ?>[line_height]"
+                                id="<?php echo $id_attribute; ?>-line_height"
+								class="a3rev-ui-<?php echo sanitize_title( $value['type'] ) ?>-line_height chzn-select <?php if ( is_rtl() ) { echo 'chzn-rtl'; } ?>"
+								>
+								<?php
+									for ( $i = 0.6; $i <= 3.1; $i = $i + 0.1 ) {
+										?>
+										<option value="<?php echo esc_attr( $i ); ?>em" <?php
+												selected( $line_height, $i.'em' );
+										?>><?php echo esc_attr( $i ); ?>em</option>
+										<?php
+									}
+								?>
+						   </select>
                            <!-- Font Face -->
 							<select
 								name="<?php echo $name_attribute; ?>[face]"
@@ -2653,8 +2687,8 @@ class WC_Dynamic_Gallery_Admin_Interface extends WC_Dynamic_Gallery_Admin_UI
                                     name="<?php echo $name_attribute; ?>[enable]"
                                     id="<?php echo $id_attribute; ?>"
                                     class="a3rev-ui-box_shadow-enable a3rev-ui-onoff_checkbox <?php echo esc_attr( $value['class'] ); ?>"
-                                    checked_label="<?php _e( 'YES', 'woo_dgallery' ); ?>"
-                                    unchecked_label="<?php _e( 'NO', 'woo_dgallery' ); ?>"
+                                    checked_label="<?php _e( 'ON', 'woo_dgallery' ); ?>"
+                                    unchecked_label="<?php _e( 'OFF', 'woo_dgallery' ); ?>"
                                     type="checkbox"
                                     value="1"
                                     <?php checked( 1, $enable ); ?>

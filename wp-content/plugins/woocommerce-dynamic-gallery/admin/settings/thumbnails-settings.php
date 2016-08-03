@@ -34,23 +34,35 @@ class WC_Dynamic_Gallery_Thumbnails_Settings
      	$this->form_fields = array(
 		
 			array(
-            	'name' 		=> __('Image Thumbnails', 'woothemes'),
+            	'name' 		=> __('Image Thumbnails', 'woo_dgallery'),
                 'type' 		=> 'heading',
                 'id'     => 'wc_dgallery_thumbnails_box',
 				'is_box' => true,
            	),
-
 			array(  
 				'name' 		=> __( 'Gallery Thumbnails', 'woo_dgallery' ),
+				'desc'		=> __( 'Note! Gallery thumbnails can be turned ON or OFF for each product from the WooCommerce Product data Dynamic Gallery menu', 'woo_dgallery' ),
 				'class'		=> 'enable_gallery_thumb',
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'enable_gallery_thumb',
 				'default'			=> 'yes',
 				'type' 				=> 'onoff_checkbox',
+				'free_version'		=> true,
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
 				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
 				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
+			),
+			array(  
+				'name' 		=> __( 'Reset Activation To Default', 'woo_dgallery' ),
+				'desc' 		=> __( "Switch ON and Save Changes will reset ALL existing and future products to the 'Gallery Thumbnail' Default that you have set above.", 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'reset_thumbnails_activate',
+				'default'	=> 'no',
+				'type' 		=> 'onoff_checkbox',
 				'free_version'		=> true,
+				'checked_value'		=> 'yes',
+				'unchecked_value'	=> 'no',
+				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
+				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
 			),
 			
 			array(
@@ -69,30 +81,22 @@ class WC_Dynamic_Gallery_Thumbnails_Settings
 				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
 				'free_version'		=> true,
 			),
-
-			array(
-            	'name' 		=> __('Premium', 'woo_dgallery'),
-                'type' 		=> 'heading',
-                'class'=> 'pro_feature_fields gallery_thumb_container pro_feature_hidden',
-                'id'     => 'wc_dgallery_thumbnails_box',
-				'is_box' => true,
-				'is_sub' => true,
-           	),
 			array(
 				'name' 		=> __( 'Thumbnail Display', 'woo_dgallery' ),
 				'desc'		=> __( 'Static displays all Gallery thumbnails in columns', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'thumb_show_type',
+				'class'		=> 'wc_dgallery_thumb_show_type',
 				'default'			=> 'slider',
 				'type' 				=> 'switcher_checkbox',
 				'checked_value'		=> 'slider',
 				'unchecked_value'	=> 'static',
 				'checked_label'		=> __( 'Slider', 'woo_dgallery' ),
 				'unchecked_label' 	=> __( 'Static', 'woo_dgallery' ),
+				'free_version'		=> true,
 			),
-
 			array(
+				'class'		=> 'gallery_thumb_container',
                 'type' 		=> 'heading',
-                'class'		=> 'gallery_thumb_container',
 				'desc'		=> '<table class="form-table"><tbody>
 				<tr valign="top">
 				<th class="titledesc" scope="row"><label>' . __( 'Thumbnail Dimensions', 'woo_dgallery' ) . '</label></th>
@@ -136,6 +140,35 @@ class WC_Dynamic_Gallery_Thumbnails_Settings
 				'type' 		=> 'color',
 				'default'	=> '#96588a',
 				'free_version'		=> true,
+			),
+
+			array(
+            	'name' 		=> __('Thumbnail Slider Container', 'woo_dgallery'),
+                'type' 		=> 'heading',
+                'id'     => 'wc_dgallery_thumbnail_slider_box',
+                'class'  => 'wc_dgallery_thumbnail_slider_container',
+				'is_box' => true,
+           	),
+           	array(
+				'name' 		=> __( 'Background Colour', 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'thumb_slider_background',
+				'type' 		=> 'bg_color',
+				'free_version'		=> true,
+				'default'	=> array( 'enable' => 0, 'color' => '#FFF' )
+			),
+			array(
+				'name' 		=> __( 'Border', 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'thumb_slider_border',
+				'type' 		=> 'border',
+				'free_version'		=> true,
+				'default'	=> array( 'width' => '0px', 'style' => 'solid', 'color' => '#ddd', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ),
+			),
+			array(
+				'name' => __( 'Border Shadow Effect', 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'thumb_slider_shadow',
+				'type' 		=> 'box_shadow',
+				'free_version'		=> true,
+				'default'	=> array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' )
 			),
         );
 	}

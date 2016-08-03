@@ -308,5 +308,11 @@
 				});
 			}
 		});
+
+		/* Apply Image Maps script */
+		$('.a3rev_panel_container img.rwd_image_maps').each(function(i){
+			$(this).rwdImageMaps();
+		});
+
 	});
 })(jQuery);

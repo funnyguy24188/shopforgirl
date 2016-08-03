@@ -13,7 +13,12 @@ class WC_Gallery_Display_Class
 	public static function frontend_register_scripts() {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_register_style( 'a3-dgallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.a3-dgallery.css', array(), WOO_DYNAMIC_GALLERY_VERSION );
+		// If don't have any plugin or theme register font awesome style then register it from plugin framework
+		if ( ! wp_style_is( 'font-awesome-styles', 'registered' ) ) {
+			global $wc_dgallery_admin_interface;
+			$wc_dgallery_admin_interface->register_fontawesome_style();
+		}
+		wp_register_style( 'a3-dgallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.a3-dgallery.css', array( 'font-awesome-styles' ), WOO_DYNAMIC_GALLERY_VERSION );
 
 		wp_register_script( 'a3-dgallery-script', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.a3-dgallery.js', array( 'jquery' ), WOO_DYNAMIC_GALLERY_VERSION, true );
 		wp_register_script( 'a3-dgallery-variations-script', WOO_DYNAMIC_GALLERY_JS_URL . '/select_variations.js', array( 'jquery', 'wc-add-to-cart-variation' ), WOO_DYNAMIC_GALLERY_VERSION, true );
@@ -31,7 +36,10 @@ class WC_Gallery_Display_Class
 	public static function backend_register_scripts() {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_register_style( 'a3-dgallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.a3-dgallery.css', array( 'thickbox' ), WOO_DYNAMIC_GALLERY_VERSION );
+		global $wc_dgallery_admin_interface;
+		$wc_dgallery_admin_interface->register_fontawesome_style();
+
+		wp_register_style( 'a3-dgallery-style', WOO_DYNAMIC_GALLERY_JS_URL . '/mygallery/jquery.a3-dgallery.css', array( 'thickbox', 'font-awesome-styles' ), WOO_DYNAMIC_GALLERY_VERSION );
 		wp_register_style( 'woocommerce_fancybox_styles', WOO_DYNAMIC_GALLERY_JS_URL . '/fancybox/fancybox.css', array(), '1.3.4' );
 		wp_register_style( 'a3_colorbox_style', WOO_DYNAMIC_GALLERY_JS_URL . '/colorbox/colorbox.css', array(), '1.4.4' );
 		wp_register_style( 'a3-dynamic-metabox-admin-style', WOO_DYNAMIC_GALLERY_CSS_URL . '/a3.dynamic.metabox.admin.css', array(), WOO_DYNAMIC_GALLERY_VERSION );
@@ -52,7 +60,7 @@ class WC_Gallery_Display_Class
 		 */
 		global $post, $wc_dgallery_fonts_face;
 
-		$global_stop_scroll_1image = 'no';
+		$global_stop_scroll_1image = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'stop_scroll_1image' );
 		$enable_scroll             = 'true';
 		$display_back_and_forward  = 'true';
 		$no_image_uri              = WC_Dynamic_Gallery_Functions::get_no_image_uri();
@@ -194,14 +202,14 @@ class WC_Gallery_Display_Class
 			$shop_thumbnail  = wc_get_image_size( 'shop_thumbnail' );
 			$g_thumb_width   = $shop_thumbnail['width'];
 			$g_thumb_height  = $shop_thumbnail['height'];
-			$thumb_show_type = 'slider';
+			$thumb_show_type = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_show_type', 'slider' );
 			$thumb_columns   = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_columns', 3 );
 			$thumb_spacing   = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_spacing', 10 );
 			if ( 'static' == $thumb_show_type ) {
 				$thumbs_list_class = 'a3dg-thumbs-static';
 			}
 
-			$g_auto               = 'true';
+			$g_auto               = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_auto_start' );
 			$g_speed              = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_speed' );
 			$g_effect             = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_effect' );
 			$g_animation_speed    = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'product_gallery_animation_speed' );
@@ -211,7 +219,17 @@ class WC_Gallery_Display_Class
 			$navbar_margin_left   = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_margin_left' );
 			$navbar_margin_right  = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'navbar_margin_right' );
 			$lazy_load_scroll     = 'yes';
-			$enable_gallery_thumb = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'enable_gallery_thumb', 'yes' );
+
+			$default_enable_gallery_thumb = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'enable_gallery_thumb', 'yes' );
+			$enable_gallery_thumb         = get_post_meta( $ogrinal_product_id, '_wc_dgallery_enable_gallery_thumb', true );
+			if ( $enable_gallery_thumb == '' ) {
+				$enable_gallery_thumb = $default_enable_gallery_thumb;
+			}
+			if ( $enable_gallery_thumb == 1 || $enable_gallery_thumb == 'yes' ) {
+				$enable_gallery_thumb = 'yes';
+			} else {
+				$enable_gallery_thumb = 'no';
+			}
 
 			$display_ctrl = '';
 			if ( 'no' == $product_gallery_nav ) {
@@ -264,12 +282,6 @@ class WC_Gallery_Display_Class
 					width: calc( 100% - '.( $navbar_margin_left + $navbar_margin_right ).'px );
 				}';
 
-				if ( 'yes' == $product_gallery_nav ) {
-					echo '.a3dg-image-wrapper .slide-ctrl {
-						display: none !important;
-					}';
-				}
-
 				if ( 'no' == $lazy_load_scroll ) {
 					echo '.a3-dgallery .lazy-load {
 						display: none !important;
@@ -294,7 +306,7 @@ class WC_Gallery_Display_Class
 					}
 					#gallery_'.$product_id.' .a3dg-navbar-separator,
 					#gallery_'.$product_id.' .slide-ctrl {
-						display: none;
+						display: none !important;
 					}';
 				}
 				if ( 'deactivate' == $popup_gallery ) {
@@ -389,6 +401,8 @@ class WC_Gallery_Display_Class
 				<div class="a3dg-navbar-control"><div class="a3dg-navbar-separator"></div></div>
 				<div style="clear: both"></div>
 				<div class="a3dg-nav">
+					<div class="fa fa-angle-left a3dg-back"></div>
+					<div class="fa fa-angle-right a3dg-forward"></div>
 					<div class="a3dg-thumbs '.$thumbs_list_class.'">
 						<ul class="a3dg-thumb-list">';
 

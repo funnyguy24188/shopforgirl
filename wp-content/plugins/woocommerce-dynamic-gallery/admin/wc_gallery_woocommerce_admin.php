@@ -4,7 +4,7 @@ function wc_dynamic_gallery_show() {
 }
 
 function wc_dynamic_gallery_install(){
-	update_option('a3rev_woo_dgallery_lite_version', '2.2.7');
+	update_option('a3rev_woo_dgallery_lite_version', '2.3.0');
 	update_option('a3_dynamic_gallery_db_version', WOO_DYNAMIC_GALLERY_DB_VERSION);
 
 	// Set Settings Default from Admin Init
@@ -52,7 +52,6 @@ add_filter( $wc_dgallery_admin_init->plugin_name . '_plugin_extension_boxes', ar
 add_action('plugin_action_links_' . WOO_DYNAMIC_GALLERY_NAME, array( 'WC_Dynamic_Gallery_Functions', 'settings_plugin_links' ) );
 
 add_action( 'wp', array( 'WC_Gallery_Display_Class', 'frontend_register_scripts' ) );
-add_action( 'admin_enqueue_scripts', array( 'WC_Gallery_Display_Class', 'backend_register_scripts' ) );
 
 $woocommerce_db_version = get_option( 'woocommerce_db_version', null );
 
@@ -89,13 +88,6 @@ function setup_dynamic_gallery() {
 			wp_enqueue_style( 'a3-dgallery-style' );
 			wp_enqueue_script( 'a3-dgallery-script' );
 
-			$gallery_height_type = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'gallery_height_type', 'fixed' );
-			$show_navbar_control = 'yes';
-			$show_thumb          = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'enable_gallery_thumb', 'yes' );
-			$hide_one_thumb      = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'hide_thumb_1image', 'yes' );
-			$thumb_show_type     = 'slider';
-			$thumb_columns       = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_columns', 3 );
-			$thumb_spacing       = get_option( WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_spacing', 10 );
 
 			$popup_gallery = get_option( WOO_DYNAMIC_GALLERY_PREFIX.'popup_gallery' );
 			if ($popup_gallery == 'fb') {
@@ -114,7 +106,7 @@ function setup_dynamic_gallery() {
 }
 
 // Check upgrade functions
-add_action('plugins_loaded', 'woo_dgallery_lite_upgrade_plugin');
+add_action('init', 'woo_dgallery_lite_upgrade_plugin');
 function woo_dgallery_lite_upgrade_plugin () {
 
 	// Upgrade to 1.5.0
@@ -157,7 +149,16 @@ function woo_dgallery_lite_upgrade_plugin () {
 		update_option('woo_dynamic_gallery_style_version', time() );
 	}
 
-	update_option('a3rev_woo_dgallery_lite_version', '2.2.7');
+	// Upgrade to 2.3.0
+	if( version_compare(get_option('a3rev_woo_dgallery_lite_version'), '2.3.0') === -1 ){
+		update_option('a3rev_woo_dgallery_lite_version', '2.3.0');
+
+		// Build sass
+		global $wc_wc_dynamic_gallery_less;
+		$wc_wc_dynamic_gallery_less->plugin_build_sass();
+	}
+
+	update_option('a3rev_woo_dgallery_lite_version', '2.3.0');
 }
 
 ?>

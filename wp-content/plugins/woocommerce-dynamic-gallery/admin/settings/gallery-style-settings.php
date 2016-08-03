@@ -88,7 +88,8 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 		add_action( $this->plugin_name . '_set_default_settings' , array( $this, 'set_default_settings' ) );
 		
 		add_action( $this->plugin_name . '-' . $this->form_key . '_after_settings_save' , array( $this, 'reset_default_settings' ) );
-		
+
+		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_init' , array( $this, 'after_save_settings' ) );
 		//add_action( $this->plugin_name . '_get_all_settings' , array( $this, 'get_settings' ) );
 		
 		add_action('wp_ajax_woo_dynamic_gallery', array('WC_Gallery_Preview_Display','wc_dynamic_gallery_preview'));
@@ -114,7 +115,18 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 		
 		$wc_dgallery_admin_interface->reset_settings( $this->form_fields, $this->option_name, false );
 	}
-	
+
+	/*-----------------------------------------------------------------------------------*/
+	/* after_save_settings()
+	/* Process when clean on deletion option is un selected */
+	/*-----------------------------------------------------------------------------------*/
+	public function after_save_settings() {
+		if ( isset( $_POST['bt_save_settings'] ) && isset( $_POST[WOO_DYNAMIC_GALLERY_PREFIX.'reset_thumbnails_activate'] ) ) {
+			delete_option( WOO_DYNAMIC_GALLERY_PREFIX.'reset_thumbnails_activate' );
+			WC_Dynamic_Gallery_Functions::reset_thumbnails_activate();			
+		}
+	}
+
 	/*-----------------------------------------------------------------------------------*/
 	/* reset_default_settings()
 	/* Reset default settings with function called from Admin Interface */
@@ -194,7 +206,8 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 	/* Init all fields of this form */
 	/*-----------------------------------------------------------------------------------*/
 	public function init_form_fields() {
-		
+		add_action( 'admin_enqueue_scripts', array( 'WC_Gallery_Display_Class', 'backend_register_scripts' ) );
+
   		// Define settings			
      	$this->form_fields = array(
 		
@@ -286,9 +299,9 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 			),
 			
 			array(	
-				'name' => __('Gallery Special Effects', 'woo_dgallery'),
+				'name' => __('Gallery Image Transition Effects', 'woo_dgallery'),
+				'desc' => __( 'Note! These settings DO NOT apply to mobile and tablet when the + Mobile and Tablet Touch Swipe feature is switched on.', 'woo_dgallery' ),
 				'type' => 'heading',
-				'class'=> 'pro_feature_fields pro_feature_hidden',
 				'id'     => 'wc_dgallery_effects_box',
 				'is_box' => true,
 			),
@@ -302,6 +315,7 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'unchecked_value'	=> 'false',
 				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
 				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
+				'free_version'		=> true,
 			),
 			array(  
 				'name' => __( 'Slide Transition Effect', 'woo_dgallery' ),
@@ -317,6 +331,7 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 					'slide-vert'		=> __( 'Slide Vert', 'woo_dgallery' ),
 					'resize'			=> __( 'Resize', 'woo_dgallery' ),
 				),
+				'free_version'		=> true,
 			),
 			array(  
 				'name' => __( 'Time Between Transitions', 'woo_dgallery' ),
@@ -327,6 +342,7 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'min'		=> 1,
 				'max'		=> 10,
 				'increment'	=> 1,
+				'free_version'		=> true,
 			),
 			array(  
 				'name' => __( 'Transition Effect Speed', 'woo_dgallery' ),
@@ -337,6 +353,7 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'min'		=> 1,
 				'max'		=> 10,
 				'increment'	=> 1,
+				'free_version'		=> true,
 			),
 			
 			array(  
@@ -349,32 +366,34 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'unchecked_value'	=> 'no',
 				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
 				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
+				'free_version'		=> true,
 			),
 
 			array(
 				'name'   => __('Gallery Container', 'woo_dgallery'),
 				'type'   => 'heading',
-				'class'  => 'pro_feature_fields pro_feature_hidden',
 				'id'     => 'wc_dgallery_container_box',
 				'is_box' => true,
 			),
 			array(
 				'name' => __( 'Background Colour', 'woo_dgallery' ),
-				'desc' 		=> __( 'Type in the word <code>transparent</code> for no colour', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_bg_color',
 				'type' 		=> 'bg_color',
+				'free_version'		=> true,
 				'default'	=> array( 'enable' => 1, 'color' => '#FFFFFF' )
 			),
 			array(
 				'name' => __( 'Border', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_border',
 				'type' 		=> 'border',
+				'free_version'		=> true,
 				'default'	=> array( 'width' => '1px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ),
 			),
 			array(
 				'name' => __( 'Border Shadow', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_shadow',
 				'type' 		=> 'box_shadow',
+				'free_version'		=> true,
 				'default'	=> array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '0px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#DBDBDB', 'inset' => '' )
 			),
 			array(
@@ -382,29 +401,34 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'desc' 		=> __( 'Margin around the Container border.', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_margin',
 				'type' 		=> 'array_textfields',
+				'free_version'		=> true,
 				'ids'		=> array(
 	 								array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_margin_top',
 	 										'name' 		=> __( 'Top', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 
 	 								array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_margin_bottom',
 	 										'name' 		=> __( 'Bottom', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 
 									array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_margin_left',
 	 										'name' 		=> __( 'Left', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 
 									array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_margin_right',
 	 										'name' 		=> __( 'Right', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 	 							)
 			),
@@ -413,31 +437,47 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'desc' 		=> __( 'Padding between the main image and Container border.', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_padding',
 				'type' 		=> 'array_textfields',
+				'free_version'		=> true,
 				'ids'		=> array(
 	 								array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_padding_top',
 	 										'name' 		=> __( 'Top', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 
 	 								array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_padding_bottom',
 	 										'name' 		=> __( 'Bottom', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 
 									array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_padding_left',
 	 										'name' 		=> __( 'Left', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 
 									array(  'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'main_padding_right',
 	 										'name' 		=> __( 'Right', 'woo_dgallery' ),
 	 										'class' 	=> '',
 	 										'css'		=> 'width:40px;',
+											'free_version'		=> true,
 	 										'default'	=> '0' ),
 	 							)
+			),
+			array(  
+				'name' => __( 'Gallery Icon Display Type', 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'icons_display_type',
+				'default'	=> 'hover',
+				'type' 		=> 'switcher_checkbox',
+				'free_version'		=> true,
+				'checked_value'		=> 'show',
+				'unchecked_value'	=> 'hover',
+				'checked_label'		=> __( 'SHOW', 'woo_dgallery' ),
+				'unchecked_label' 	=> __( 'ON HOVER', 'woo_dgallery' ),
 			),
 
 			array(
@@ -468,11 +508,10 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'name' 		=> __( 'Font', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'navbar_font',
 				'type' 		=> 'typography',
-				'default'	=> array( 'size' => '12px', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
+				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#000000' )
 			),
 			array(
 				'name' => __( 'Background Colour', 'woo_dgallery' ),
-				'desc' 		=> __( 'Type in the word <code>transparent</code> for no colour', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'navbar_bg_color',
 				'type' 		=> 'bg_color',
 				'default'	=> array( 'enable' => 1, 'color' => '#FFFFFF' )
@@ -569,14 +608,20 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'name' 		=> __( 'Font', 'woo_dgallery' ),
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'caption_font',
 				'type' 		=> 'typography',
-				'default'	=> array( 'size' => '12px', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#FFFFFF' )
+				'default'	=> array( 'size' => '12px', 'line_height' => '1.4em', 'face' => 'Arial, sans-serif', 'style' => 'normal', 'color' => '#FFFFFF' )
 			),
 			array(
 				'name' => __( 'Background Colour', 'woo_dgallery' ),
-				'desc' 		=> __( 'Caption text background colour. Default [default_value]', 'woo_dgallery' ),
+				'desc' 		=> __( 'Caption text background colour.', 'woo_dgallery' ),
+				'class'		=> 'wc_dgallery_caption_bg_color',
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'caption_bg_color',
 				'type' 		=> 'bg_color',
 				'default'	=> array( 'enable' => 1, 'color' => '#000000' )
+			),
+
+			array(
+				'type'   => 'heading',
+				'class'     => 'wc_dgallery_caption_bg_color_container',
 			),
 			array(
 				'name'      => __( 'Background Transparency', 'woo_dgallery' ),
@@ -659,11 +704,26 @@ class WC_Dynamic_Gallery_Style_Settings extends WC_Dynamic_Gallery_Admin_UI
 		global $wc_dgallery_thumbnails_settings;
 		$this->form_fields = array_merge( $this->form_fields, $wc_dgallery_thumbnails_settings->form_fields );
 
+		$this->form_fields = array_merge( $this->form_fields, array(
+			array(
+            	'name' 		=> __( "GALLERY STYLES SUPER POWERS", 'woo_dgallery' ),
+                'type' 		=> 'heading',
+                'desc'		=> '<img class="rwd_image_maps" src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/gallery_styles_tab.png" usemap="#productCardsMap" style="width: auto; max-width: 100%;" border="0" />
+<map name="productCardsMap" id="productCardsMap">
+	<area shape="rect" coords="325,270,925,205" href="'.$this->pro_plugin_page_url.'" target="_blank" />
+</map>',
+				'alway_open'=> true,
+                'id'		=> 'dgallery_styles_premium_box',
+                'is_box'	=> true,
+           	),
+		) );
+
 		$this->form_fields = apply_filters( $this->form_key . '_settings_fields', $this->form_fields );
 
 	}
 	
 	public function include_script() {
+		wp_enqueue_script( 'jquery-rwd-image-maps' );
 		add_action( 'admin_footer', array($this, 'wc_dynamic_gallery_add_script'), 10 );
 	?>
 <script>
@@ -685,6 +745,11 @@ $(document).ready(function() {
 	if ( $("input.variation_gallery_effect:checked").val() != 'fade') {
 		$(".variation_load_effect_timing").hide();
 	}
+
+	if ( $("input.wc_dgallery_thumb_show_type:checked").val() != 'slider') {
+		$('.wc_dgallery_thumbnail_slider_container').css( {'visibility': 'hidden', 'height' : '0px', 'overflow' : 'hidden', 'margin-bottom' : '0px' } );
+	}
+
 	
 	$(document).on( "a3rev-ui-onoff_checkbox-switch", '.gallery_width_type', function( event, value, status ) {
 		if ( status == 'true' ) {
@@ -759,6 +824,17 @@ $(document).ready(function() {
 			$(".gallery_height_type_fixed").slideUp();
 		}
 	});
+
+
+	$(document).on( "a3rev-ui-onoff_checkbox-switch", '.wc_dgallery_thumb_show_type', function( event, value, status ) {
+		$('.wc_dgallery_thumbnail_slider_container').attr('style','display:none;');
+		if ( status == 'true' ) {
+			$(".wc_dgallery_thumbnail_slider_container").slideDown();
+		} else {
+			$(".wc_dgallery_thumbnail_slider_container").slideUp();
+		}
+	});
+
 });
 })(jQuery);
 </script>

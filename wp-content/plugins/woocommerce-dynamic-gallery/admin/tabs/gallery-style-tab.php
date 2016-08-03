@@ -114,7 +114,6 @@ class WC_Dynamic_Gallery_Style_Tab extends WC_Dynamic_Gallery_Admin_UI
 	public function tab_manager() {
 		global $wc_dgallery_style_settings;
 
-		$this->plugin_premium_video_box();
 		$this->plugin_extension_start();
 		$wc_dgallery_style_settings->settings_form();
 		$this->plugin_extension_end();

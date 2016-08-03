@@ -30,6 +30,8 @@ if ( get_option('wc_dgallery_lite_clean_on_deletion') == 'yes' ) {
 	delete_option( 'wc_dgallery_product_gallery_animation_speed' );
 	delete_option( 'wc_dgallery_stop_scroll_1image' );
 
+	delete_option( 'wc_dgallery_auto_feature_image' );
+
 	delete_option( 'wc_dgallery_bg_image_wrapper' );
 	delete_option( 'wc_dgallery_border_image_wrapper_color' );
 
@@ -106,4 +108,5 @@ if ( get_option('wc_dgallery_lite_clean_on_deletion') == 'yes' ) {
 	delete_post_meta_by_key('_wc_dgallery_in_variations');
 	delete_post_meta_by_key('_product_image_gallery_bk');
 	delete_post_meta_by_key('_a3_dgallery');
+	delete_post_meta_by_key('_wc_dgallery_enable_gallery_thumb');
 }

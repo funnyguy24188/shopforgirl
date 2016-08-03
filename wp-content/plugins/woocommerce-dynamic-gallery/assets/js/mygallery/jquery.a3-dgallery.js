@@ -170,6 +170,13 @@
       this.wrapper = $(wrapper);
       this.settings = settings;
       this.setupElements();
+      if ( typeof this.wrapper.data('touch_swipe') !== 'undefined' && this.wrapper.data('touch_swipe') == 'yes' && this.isMobileTablet() ) {
+         this.settings.animation_speed = this.settings.touch_animation_speed;
+         this.settings.effect = 'slide-hori';
+         this.settings.slideshow.speed = this.settings.slideshow.touch_speed;
+         this.callTouchSwipeEvent();
+         this.settings.display_next_and_prev = false;
+      }
       this.setupAnimations();
       if(this.settings.width) {
         this.image_wrapper_width = this.settings.width;
@@ -199,14 +206,17 @@
         return context.nextImage(callback);
       };
       this.slideshow = new AdGallerySlideshow(nextimage_callback, this.settings);
-      var slide_ctrl_html = this.slideshow.create();
+      var slide_ctrl_html = '';
       var show_navbar_control = 'yes';
       if ( typeof this.wrapper.data('show_navbar_control') !== 'undefined' ) {
         show_navbar_control = this.wrapper.data('show_navbar_control');
       }
-      if ( show_navbar_control != 'yes' ) {
+      if ( show_navbar_control != 'yes' || ( typeof this.wrapper.data('touch_swipe') !== 'undefined' && this.isMobileTablet() ) ) {
+        slide_ctrl_html = this.slideshow.create( false, this.isMobileTablet() );
         this.image_wrapper.append(slide_ctrl_html);
+        this.nav_control.hide();
       } else {
+        slide_ctrl_html = this.slideshow.create( true, false );
         this.nav_control.append(slide_ctrl_html);
       }
       if(this.settings.slideshow.enable) {
@@ -257,6 +267,8 @@
 
       this.image_wrapper.empty();
       this.nav = this.wrapper.find('.a3dg-nav');
+      this.scroll_back = this.nav.find('.a3dg-back');
+      this.scroll_forward = this.nav.find('.a3dg-forward');
       this.thumbs_wrapper = this.nav.find('.a3dg-thumbs');
       this.thumbs_list = this.thumbs_wrapper.find('.a3dg-thumb-list');
 
@@ -273,16 +285,24 @@
         thumb_show_type = this.wrapper.data('thumb_show_type');
       }
 
-      visible_width = this.thumbs_wrapper.outerWidth() - 1 - ( thumb_spacing * ( thumb_visible - 1 ) );
-      item_width = visible_width / thumb_visible;
-      thumb_slider_width = 0;
-      is_first_item = true;
-
       var thumbs = this.thumbs_list.find('li');
       var thumbs_count = thumbs.length;
       var thumbs_total = 0;
       var current_nav = this.nav;
       var current_thumbs_list = this.thumbs_list;
+
+      if(this.settings.display_back_and_forward && thumb_visible < thumbs_count ) {
+        this.nav.css('padding-left', this.scroll_back.outerWidth() ).css( 'padding-right', this.scroll_forward.outerWidth());
+      } else {
+        this.scroll_back.hide();
+        this.scroll_forward.hide();
+      }
+
+      visible_width = this.thumbs_wrapper.outerWidth() - ( thumb_spacing * ( thumb_visible - 1 ) );
+      item_width = visible_width / thumb_visible;
+      thumb_slider_width = 0;
+      is_first_item = true;
+
       thumbs.each( function() {
         thumbs_total++;
         thumb_slider_width += item_width;
@@ -412,25 +432,13 @@
       );
     },
     initNextAndPrev: function() {
-      this.next_link = $('<div class="a3dg-next"><div class="a3dg-next-image"></div></div>');
-      this.prev_link = $('<div class="a3dg-prev"><div class="a3dg-prev-image"></div></div>');
+      this.next_link = $('<div class="fa fa-caret-right a3dg-next"></div>');
+      this.prev_link = $('<div class="fa fa-caret-left a3dg-prev"></div>');
       this.image_wrapper.append(this.next_link);
       this.image_wrapper.append(this.prev_link);
-	  
-	  
-	  
+
       var context = this;
-      this.prev_link.add(this.next_link).mouseover(
-        function(e) {
-          // IE 6 hides the wrapper div, so we have to set it's width
-          $(this).css('height', context.image_wrapper.height() );
-          $(this).find('div').show();
-        }
-      ).mouseout(
-        function(e) {
-          $(this).find('div').hide();
-        }
-      ).click(
+      this.prev_link.add(this.next_link).click(
         function() {
           if($(this).is('.a3dg-next')) {
             context.nextImage();
@@ -442,12 +450,51 @@
         }
       ).find('div').css('opacity', 0.7);
     },
+    isMobileTablet: function() {
+      var isMobile = {
+          Android: function() {
+              return navigator.userAgent.match(/Android/i);
+          },
+          BlackBerry: function() {
+              return navigator.userAgent.match(/BlackBerry/i);
+          },
+          iOS: function() {
+              return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+          },
+          Opera: function() {
+              return navigator.userAgent.match(/Opera Mini/i);
+          },
+          Windows: function() {
+              return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+          },
+          any: function() {
+              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+          }
+      };
+
+      if( isMobile.any() ) {
+        return true
+      }
+
+      if ( $('html').width() <= 768 ) {
+        return true;
+      }
+
+      return false;
+    },
+    callTouchSwipeEvent: function() {
+      var context = this;
+      this.image_wrapper.on("swipeleft",function(){
+        context.nextImage();
+        context.slideshow.stop();
+      });
+      this.image_wrapper.on("swiperight",function(){
+        context.prevImage();
+        context.slideshow.stop();
+      });
+    },
     initBackAndForward: function() {
       var context = this;
-      this.scroll_forward = $('<div class="a3dg-forward"></div>');
-      this.scroll_back = $('<div class="a3dg-back"></div>');
-      this.nav.append(this.scroll_forward);
-      this.nav.prepend(this.scroll_back);
       var has_scrolled = 0;
       var thumbs_scroll_interval = false;
       $(this.scroll_back).add(this.scroll_forward).click(
@@ -880,12 +927,23 @@
       this.nextimage_callback = nextimage_callback;
       this.settings = settings;
     },
-    create: function() {
+    create: function( show_navbar_control, isMobile ) {
+	  
+    this.countdown = $('<span class="a3dg-slideshow-countdown"></span>');
+	  this.slide_ctrl = $('<div class="slide-ctrl"></div>');
+
+    if ( show_navbar_control ) {
       this.start_link = $('<span class="a3dg-slideshow-start-slide">'+ this.settings.slideshow.start_label +'</span>');
       this.stop_link = $('<span class="a3dg-slideshow-stop-slide">'+ this.settings.slideshow.stop_label +'</span>');
-	  
-      this.countdown = $('<span class="a3dg-slideshow-countdown"></span>');
-	  this.slide_ctrl = $('<div class="slide-ctrl"></div>');
+    } else {
+      this.start_link = $('<span class="fa fa-play a3dg-slideshow-start-slide"></span>');
+      this.stop_link = $('<span class="fa fa-pause a3dg-slideshow-stop-slide"></span>');
+    }
+
+    if ( isMobile ) {
+      this.slide_ctrl.show();
+    }
+
 	  this.slide_ctrl.append(this.start_link).append(this.stop_link);
 	  
 	  var delay_lazy = this.settings.animation_speed;

@@ -132,7 +132,11 @@ class WC_Dynamic_Gallery_Global_Settings extends WC_Dynamic_Gallery_Admin_UI
 			delete_option( WOO_DYNAMIC_GALLERY_PREFIX.'reset_galleries_activate' );
 			WC_Dynamic_Gallery_Functions::reset_products_galleries_activate();			
 		}
-		if ( ( isset( $_POST['bt_save_settings'] ) || isset( $_POST['bt_reset_settings'] ) ) && get_option( 'wc_dgallery_lite_clean_on_deletion' ) == 'no'  )  {
+		if ( isset( $_POST['bt_save_settings'] ) && isset( $_POST[WOO_DYNAMIC_GALLERY_PREFIX.'reset_feature_image_activate'] ) ) {
+			delete_option( WOO_DYNAMIC_GALLERY_PREFIX.'reset_feature_image_activate' );
+			WC_Dynamic_Gallery_Functions::reset_auto_feature_image_activate();			
+		}
+		if ( ( isset( $_POST['bt_save_settings'] ) || isset( $_POST['bt_reset_settings'] ) ) && get_option( 'wc_dgallery_clean_on_deletion' ) == 'no'  )  {
 			$uninstallable_plugins = (array) get_option('uninstall_plugins');
 			unset($uninstallable_plugins[WOO_DYNAMIC_GALLERY_NAME]);
 			update_option('uninstall_plugins', $uninstallable_plugins);
@@ -280,7 +284,18 @@ class WC_Dynamic_Gallery_Global_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
 				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
 			),
-			
+
+			array(
+            	'name' 		=> __( "VARIATION GALLERIES SUPER POWERS", 'woo_dgallery' ),
+                'type' 		=> 'heading',
+                'desc'		=> '<img class="rwd_image_maps" src="'.WOO_DYNAMIC_GALLERY_IMAGES_URL.'/variation_galleries_activation_premium.png" usemap="#productCardsMap" style="width: auto; max-width: 100%;" border="0" />
+<map name="productCardsMap" id="productCardsMap">
+	<area shape="rect" coords="260,395,620,330" href="'.$this->pro_plugin_page_url.'" target="_blank" />
+</map>',
+				'alway_open'=> true,
+                'id'		=> 'dgallery_icon_styles_premium_box',
+                'is_box'	=> true,
+           	),
 			array(
 				'name' => __( 'Variations Galleries Activation', 'woo_dgallery' ),
 				'type' => 'heading',
@@ -306,6 +321,41 @@ class WC_Dynamic_Gallery_Global_Settings extends WC_Dynamic_Gallery_Admin_UI
 				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'reset_variation_activate',
 				'default'	=> 'no',
 				'type' 		=> 'onoff_checkbox',
+				'checked_value'		=> 'yes',
+				'unchecked_value'	=> 'no',
+				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
+				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
+			),
+
+			array(
+				'name' => __( 'Product Feature Image', 'woo_dgallery' ),
+				'type' => 'heading',
+				'desc' => '<ul>
+<li>* '.__( 'ON this option and the Product Image (featured image) will show as the first image in the gallery without having to upload it to the Gallery.', 'woo_dgallery' ).'</li>
+<li>* '.__( 'OFF and the uploaded Product Image (feature image) will show on the product card but not in the Gallery on Product Page.', 'woo_dgallery' ).'</li>
+<li>* '.__( 'Can be turned ON or OFF for each product from the WooCommerce Product data Dynamic Gallery menu.', 'woo_dgallery' ).'</li>
+</ul>',
+				'id'     => 'wc_dgallery_feature_image_box',
+				'is_box' => true,
+			),
+			array(
+				'name' 		=> __( 'Include in Gallery', 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'auto_feature_image',
+				'default'	=> 'yes',
+				'type' 		=> 'onoff_checkbox',
+				'free_version'		=> true,
+				'checked_value'		=> 'yes',
+				'unchecked_value'	=> 'no',
+				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
+				'unchecked_label' 	=> __( 'OFF', 'woo_dgallery' ),
+			),
+			array(  
+				'name' 		=> __( 'Reset Activation To Default', 'woo_dgallery' ),
+				'desc' 		=> __( "Switch ON and Save Changes will reset ALL existing and future products to the 'Include in Gallery' Default that you have set above.", 'woo_dgallery' ),
+				'id' 		=> WOO_DYNAMIC_GALLERY_PREFIX.'reset_feature_image_activate',
+				'default'	=> 'no',
+				'type' 		=> 'onoff_checkbox',
+				'free_version'		=> true,
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
 				'checked_label'		=> __( 'ON', 'woo_dgallery' ),
@@ -369,7 +419,7 @@ class WC_Dynamic_Gallery_Global_Settings extends WC_Dynamic_Gallery_Admin_UI
 	}
 
 	public function include_script() {
-
+		wp_enqueue_script( 'jquery-rwd-image-maps' );
 	}
 }
 

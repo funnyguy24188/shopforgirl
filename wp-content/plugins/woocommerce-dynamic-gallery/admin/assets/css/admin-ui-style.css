@@ -165,6 +165,7 @@
 
 /* Font Control */
 .a3rev_panel_container .a3rev-ui-typography-size { width:80px; }
+.a3rev_panel_container .a3rev-ui-typography-line_height { width:80px; }
 .a3rev_panel_container .a3rev-ui-typography-face { width:160px; }
 .a3rev_panel_container .a3rev-ui-typography-style { width:100px; }
 .a3rev_panel_container .a3rev-ui-typography-preview { display:inline-block; }

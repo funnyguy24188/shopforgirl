@@ -1,9 +1,9 @@
 === WooCommerce Dynamic Gallery  ===
-Contributors: a3rev, A3 Revolution Software Development team, nguyencongtuan
+Contributors: a3rev, nguyencongtuan
 Tags: WooCommerce image gallery, WooCommerce, WooCommerce Product images, WooCommerce Product Gallery, WooCommerce Dynamic Gallery
 Requires at least: 4.1
 Tested up to: 4.5.3
-Stable tag: 2.2.7
+Stable tag: 2.3.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,16 +19,15 @@ As soon as you install WooCommerce Dynamic Gallery your Product pages image gall
 = Key Features =
 
 * The #1 Product Page image gallery for WooCommerce Products page.
-* First released July 2012 with 57 maintenance updates and feature upgrade versions released in 43 months (as at Feb 29th 2016)
+* First released July 2012 with 63 maintenance updates and feature upgrade versions released in 48 months (as at August 2nd 2016)
 * Full support for WordPress version 4.4 responsive images - srcset and size
 * Fully integrated with WooCommerce Product Gallery
-* Full compatibility with WooCommerce version 2.5+ with backward compatibility to version 2.1
-* More features and functionality available in a Premium version if required
+* Full compatibility with WooCommerce version 2.6+ with backward compatibility to version 2.1
 
 = Product Gallery =
 
 * Instantly applies Dynamic Gallery features to all WooCommerce Product Gallery images on install
-* Auto Converts your static product image galleries into a dynamic vertical scrolling gallery (more scroll options in Premium Version)
+* Auto Converts your static product image galleries into a dynamic scrolling gallery
 * Auto converts you static Product image thumbnails into a dynamic single row thumbnail slider
 * Displays all of your product images beautifully in all PC, Tablet and mobile phone browsers
 * Simple to use - just install and continue to use the WooCommerce Product gallery to add, move and delete product images
@@ -56,36 +55,6 @@ As soon as you install WooCommerce Dynamic Gallery your Product pages image gall
 * Dynamic Gallery is found on the WooCommerce Product Data meta on each products edit page
 * Thumbnails dimensions are set from the WooCommerce > Settings > Products > Display - Product Images - Product Thumbnail settings
 * Translation ready and fully compatible with WPMU
-* Free Version Support - We do basic support on the [wordpress.org forum](https://wordpress.org/support/plugin/woocommerce-dynamic-gallery) only when time permits.
-* Priority Support - If you want [priority (same day) support](https://a3rev.com/forums/forum/woocommerce-plugins/dynamic-gallery/) it is available by upgrading to the Premium version.
-
-= Dynamic Gallery Demo =
-
-View this [product page demo](http://responsi.a3de.info/shop/dynamic-gallery-free-version-demo/) - it will show you how Dynamic Gallery Free version will dramatically improve the default WooCommerce Product image display and engage your customers.
-
-
-= Premium Version Gallery Style Features =
-
-Once you see what the Free version does for your site and if you buy into the science that a great image display will increase your site sales conversion rate you will want the Premium version. Below are the advanced features of the Premium version.
-
-* Option to use manual scrolling instead of Auto on first page load
-* Option to change image transition from Vertical to Horizontal, Fade, Resize or none
-* Option to set time in seconds between image transitions
-* Option to set time in seconds that the transition effect takes
-* Option to set so that single images don't transition
-* Options for styling the Gallery container include, Background Colour, Border, Border Shadow, margin and padding
-* Option to turn OFF the ZOOM and START SLIDESHOW / STOP SLIDESHOW nav bar
-* Options for styling the nav bar including Font, Background colour, border, border shadow, margin, padding and Vertical separator
-* Options for styling the Caption text Container including Font, Background colour and transparency
-* Option to turn OFF the lazy Load Scroll Bar
-* Option to change the colour of the Lazy Load Scroll Bar
-
-= Premium Version Variation Galleries =
-
-* Fully integrated with WooCommerce Variations
-* Converts WooCommerce Variations from single image to multi image variation dynamic galleries
-* Add, move delete variation images right from the WooCommerce variation interface
-* Show 1 or multiple images of the variation that has been selected by the user
 
  
 = Localization =
@@ -149,6 +118,24 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Changelog ==
+
+= 2.3.0 - 2016/08/02 =
+* Feature - Upgrade all Gallery and thumbnail slider images to fontawesome icons
+* Feature - Added global ON | OFF to include an image set as the Product Image (featured image) into the Gallery Images
+* Feature - Added the option the set Product Image (feature image) display in gallery to each individual product
+* Feature - Added Global rest option for Product Image (feature image) display in the gallery
+* Feature - Added the option to Activate / Deactivate Gallery Thumbnails for individual product
+* Feature - Added new 'Gallery Image Transition Effects' setting box with options to change transition effects for gallery
+* Feature - Added new 'Gallery Container' setting box with style options for gallery container
+* Feature - Added new ' Thumbnail Display' option into 'Image Thumbnails' setting box. Choose display Thumbnails as Slider or as a Static Display (all thumbnails are visible under gallery)
+* Feature - Added new 'Thumbnail Slider Container' setting box support change style for slider container
+* Feature - Added Font editor 'Line Height' option
+* Tweak - Update Typography Preview script for apply 'Line Height' value to Preview box
+* Tweak - Update the generate_font_css() function with new 'Line Height' option
+* Tweak - Replace all hard code for line-height inside custom style by new dynamic 'Line Height' value
+* Tweak - Update a3 Dynamic Gallery script and style to support new features
+* Tweak - Update dynamic style for new features
+* Tweak - Tested for full compatibility with WooCommerce version 2.6.4
 
 = 2.2.7 - 2016/07/08 =
 * Tweak - Update select type of plugin framework for support group options
@@ -572,6 +559,9 @@ You can use this plugin only when you have installed the WooCommerce plugin.
 
 
 == Upgrade Notice ==
+
+= 2.3.0 =
+Major Feature Upgrade. 10 new features and 5 code tweaks. Please encourage us to keep improving this plugin for you by giving it a 5 star review and or support ongoing development of it by upgrading to the Premium Version 
 
 = 2.2.7 =
 Maintenance Update. 1 Teak and 1 bug fix for full compatibility with WooCommerce 2.6.2 and WordPress 4.5.3

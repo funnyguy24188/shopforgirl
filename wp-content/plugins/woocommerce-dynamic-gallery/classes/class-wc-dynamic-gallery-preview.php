@@ -235,12 +235,6 @@ class WC_Gallery_Preview_Display
 					'.$wc_dgallery_admin_interface->generate_background_color_css( $caption_bg_color, $caption_bg_transparent ).'
 				}';
 
-				if ( 'yes' == $product_gallery_nav ) {
-					echo '.a3dg-image-wrapper .slide-ctrl {
-						display: none !important;
-					}';
-				}
-
 				if ( 'no' == $lazy_load_scroll ) {
 					echo '.a3-dgallery .lazy-load {
 						display: none !important;
@@ -267,8 +261,9 @@ class WC_Gallery_Preview_Display
 				.product_gallery .a3dg-navbar-control .slide-ctrl,
 				.product_gallery .a3dg-navbar-control .icon_zoom {
 				    padding: '.$navbar_padding_top.'px '.$navbar_padding_right.'px '.$navbar_padding_bottom.'px '.$navbar_padding_left.'px !important;
-				}
+				}';
 
+				echo '
 				/* Lazy Load Scroll */
 				.a3-dgallery .lazy-load {
 				    background-color: '.$transition_scroll_bar.' !important;
@@ -305,6 +300,181 @@ class WC_Gallery_Preview_Display
 				}
 				.woocommerce .images {
 					margin-bottom: 15px;
+				}';
+			}
+
+			$icons_display_type                 = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX . 'icons_display_type'];
+
+			$nextpre_icons_size                 = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_size', 30 );
+			$nextpre_icons_color                = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_color', '#000');
+			$nextpre_icons_background           = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_background', array( 'enable' => 1, 'color' => '#FFF' ) );
+			$nextpre_icons_opacity              = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_opacity', 70 );
+			$nextpre_icons_border               = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_border', array( 'width' => '0px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ) );
+			$nextpre_icons_shadow               = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_shadow', array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' ) );
+			$nextpre_icons_padding_top          = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_padding_top', 5 );
+			$nextpre_icons_padding_bottom       = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_padding_bottom', 5 );
+			$nextpre_icons_padding_left         = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_padding_left', 5 );
+			$nextpre_icons_padding_right        = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_padding_right', 5 );
+			$nextpre_icons_margin_left          = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_margin_left', 10 );
+			$nextpre_icons_margin_right         = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'nextpre_icons_margin_right', 10 );
+
+			$pauseplay_icon_size                = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_size', 25 );
+			$pauseplay_icon_color               = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_color', '#000');
+			$pauseplay_icon_background          = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_background', array( 'enable' => 1, 'color' => '#FFF' ) );
+			$pauseplay_icon_opacity             = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_opacity', 70 );
+			$pauseplay_icon_border              = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_border', array( 'width' => '0px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ) );
+			$pauseplay_icon_shadow              = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_shadow', array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' ) );
+			$pauseplay_icon_padding_top         = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_padding_top', 10 );
+			$pauseplay_icon_padding_bottom      = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_padding_bottom', 10 );
+			$pauseplay_icon_padding_left        = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_padding_left', 10 );
+			$pauseplay_icon_padding_right       = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_padding_right', 10 );
+			$pauseplay_icon_margin_top          = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_margin_top', 10 );
+			$pauseplay_icon_margin_bottom       = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_margin_bottom', 10 );
+			$pauseplay_icon_margin_left         = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_margin_left', 10 );
+			$pauseplay_icon_margin_right        = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_margin_right', 10 );
+			$pauseplay_icon_vertical_position   = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_vertical_position', 'center' );
+			$pauseplay_icon_horizontal_position = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'pauseplay_icon_horizontal_position', 'center' );
+
+			$thumb_nextpre_icons_size           = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_size', 20 );
+			$thumb_nextpre_icons_color          = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_color', '#000');
+			$thumb_nextpre_icons_background     = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_background', array( 'enable' => 1, 'color' => '#FFF' ) );
+			$thumb_nextpre_icons_border         = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_border', array( 'width' => '1px', 'style' => 'solid', 'color' => '#666', 'corner' => 'square' , 'top_left_corner' => 3 , 'top_right_corner' => 3 , 'bottom_left_corner' => 3 , 'bottom_right_corner' => 3 ) );
+			$thumb_nextpre_icons_shadow         = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_shadow', array( 'enable' => 0, 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#555555', 'inset' => 'inset' ) );
+			$thumb_nextpre_icons_padding_left   = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_padding_left', 5 );
+			$thumb_nextpre_icons_padding_right  = get_option(WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_nextpre_icons_padding_right', 5 );
+
+			$thumb_slider_background            = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_slider_background'];
+			$thumb_slider_border                = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_slider_border'];
+			$thumb_slider_shadow                = $woo_a3_gallery_settings[WOO_DYNAMIC_GALLERY_PREFIX . 'thumb_slider_shadow'];
+
+			if ( 'show' == $icons_display_type ) {
+				echo '
+				.a3dg-image-wrapper .slide-ctrl,
+				.a3-dgallery .a3dg-image-wrapper .a3dg-next,
+				.a3-dgallery .a3dg-image-wrapper .a3dg-prev {
+				    display: block !important;
+				}';
+			}
+
+			echo '
+				/* Next / Previous Icons */
+				.a3-dgallery .fa-caret-left:before,
+				.a3-dgallery .fa-caret-right:before  {
+				    font-size: ' . $nextpre_icons_size . 'px !important;
+				    color: ' . $nextpre_icons_color . ' !important;
+				}
+				.a3-dgallery .a3dg-image-wrapper .a3dg-next,
+				.a3-dgallery .a3dg-image-wrapper .a3dg-prev {
+				    ' . $wc_dgallery_admin_interface->generate_background_color_css( $nextpre_icons_background ) . '
+				    ' . $wc_dgallery_admin_interface->generate_border_css( $nextpre_icons_border ) . '
+				    ' . $wc_dgallery_admin_interface->generate_shadow_css( $nextpre_icons_shadow ) . '
+				    padding: ' . $nextpre_icons_padding_top . 'px ' . $nextpre_icons_padding_right . 'px ' . $nextpre_icons_padding_bottom . 'px ' . $nextpre_icons_padding_left . 'px !important;
+				}';
+
+			if ( isset( $nextpre_icons_background['enable'] ) && 0 == $nextpre_icons_background['enable'] ) {
+				echo '
+				.a3-dgallery .a3dg-image-wrapper .a3dg-next,
+				.a3-dgallery .a3dg-image-wrapper .a3dg-prev {
+					opacity: 1 !important;
+				}';
+			} else {
+				echo '
+				.a3-dgallery .a3dg-image-wrapper .a3dg-next,
+				.a3-dgallery .a3dg-image-wrapper .a3dg-prev {
+					opacity: ' . ( $nextpre_icons_opacity / 100 ) . ' !important;
+				}';
+			}
+
+			echo '
+				.a3-dgallery .a3dg-image-wrapper .a3dg-prev {
+				    left: ' . $nextpre_icons_margin_left . 'px !important;
+				}
+				.a3-dgallery .a3dg-image-wrapper .a3dg-next {
+				    right: ' . $nextpre_icons_margin_right . 'px !important;
+				}
+			';
+
+			echo '
+				/* Pause | Play icon */
+				.a3-dgallery .fa-pause:before,
+				.a3-dgallery .fa-play:before  {
+				    font-size: ' . $pauseplay_icon_size . 'px !important;
+				    color: ' . $pauseplay_icon_color . ' !important;
+				}
+
+				.a3dg-image-wrapper .slide-ctrl .a3dg-slideshow-start-slide,
+				.a3dg-image-wrapper .slide-ctrl .a3dg-slideshow-stop-slide {
+				    ' . $wc_dgallery_admin_interface->generate_background_color_css( $pauseplay_icon_background ) . '
+				    ' . $wc_dgallery_admin_interface->generate_border_css( $pauseplay_icon_border ) . '
+				    ' . $wc_dgallery_admin_interface->generate_shadow_css( $pauseplay_icon_shadow ) . '
+				    padding: ' . $pauseplay_icon_padding_top . 'px ' . $pauseplay_icon_padding_right . 'px ' . $pauseplay_icon_padding_bottom . 'px ' . $pauseplay_icon_padding_left . 'px !important;
+				}';
+
+			if ( isset( $pauseplay_icon_background['enable'] ) && 0 == $pauseplay_icon_background['enable'] ) {
+				echo '
+				.a3dg-image-wrapper .slide-ctrl .a3dg-slideshow-start-slide,
+				.a3dg-image-wrapper .slide-ctrl .a3dg-slideshow-stop-slide {
+					opacity: 1 !important;
+				}';
+			} else {
+				echo '
+				.a3dg-image-wrapper .slide-ctrl .a3dg-slideshow-start-slide,
+				.a3dg-image-wrapper .slide-ctrl .a3dg-slideshow-stop-slide {
+					opacity: ' . ( $pauseplay_icon_opacity / 100 ) . ' !important;
+				}';
+			}
+
+			echo '
+				.a3dg-image-wrapper .slide-ctrl {';
+
+			if ( 'top' == $pauseplay_icon_vertical_position ) {
+				echo '
+				top: 0 !important;
+				margin-top: ' . $pauseplay_icon_margin_top . 'px !important;';
+			} elseif ( 'bottom' == $pauseplay_icon_vertical_position ) {
+				echo '
+				top: auto !important;
+				bottom: 0 !important;
+				margin-bottom: ' . $pauseplay_icon_margin_bottom . 'px !important;';
+			}
+
+			if ( 'left' == $pauseplay_icon_horizontal_position ) {
+				echo '
+				left: 0 !important;
+				margin-left: ' . $pauseplay_icon_margin_left . 'px !important;';
+			} elseif ( 'right' == $pauseplay_icon_horizontal_position ) {
+				echo '
+				left: auto !important;
+				right: 0 !important;
+				margin-right: ' . $pauseplay_icon_margin_right . 'px !important;';
+			}
+
+			echo '}';
+
+			echo '
+				/* Thumbnail Slider Next / Previous icons */
+				.a3-dgallery .fa-angle-left:before,
+				.a3-dgallery .fa-angle-right:before  {
+				    font-size: ' . $thumb_nextpre_icons_size . 'px !important;
+				    color: ' . $thumb_nextpre_icons_color . ' !important;
+				}
+
+				.a3-dgallery .a3dg-forward,
+				.a3-dgallery .a3dg-back {
+				    ' . $wc_dgallery_admin_interface->generate_background_color_css( $thumb_nextpre_icons_background ) . '
+				    ' . $wc_dgallery_admin_interface->generate_border_css( $thumb_nextpre_icons_border ) . '
+				    ' . $wc_dgallery_admin_interface->generate_shadow_css( $thumb_nextpre_icons_shadow ) . '
+				    padding-left: ' . $thumb_nextpre_icons_padding_left . 'px !important;
+				    padding-right: ' . $thumb_nextpre_icons_padding_right . 'px !important;
+				}';
+
+			if ( 'slider' == $thumb_show_type ) {
+				echo '
+				/* Thumbnail Slider Container */
+				.a3-dgallery .a3dg-nav {
+				    ' . $wc_dgallery_admin_interface->generate_background_color_css( $thumb_slider_background ) . '
+				    ' . $wc_dgallery_admin_interface->generate_border_css( $thumb_slider_border ) . '
+				    ' . $wc_dgallery_admin_interface->generate_shadow_css( $thumb_slider_shadow ) . '
 				}';
 			}
 
@@ -369,6 +539,8 @@ class WC_Gallery_Preview_Display
                 <div class="a3dg-navbar-control"><div class="a3dg-navbar-separator"></div></div>
                 <div style="clear: both"></div>
                   <div class="a3dg-nav">
+                  	<div class="fa fa-angle-left a3dg-back"></div>
+					<div class="fa fa-angle-right a3dg-forward"></div>
                     <div class="a3dg-thumbs '.$thumbs_list_class.'">
                       <ul class="a3dg-thumb-list">';
 						
