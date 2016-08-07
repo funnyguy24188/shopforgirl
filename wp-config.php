@@ -33,7 +33,7 @@ define('DB_NAME', 'shopforgirl_db');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '2601');
+define('DB_PASSWORD', '123');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -62,6 +62,10 @@ define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 
+define( 'DBI_AWS_ACCESS_KEY_ID', 'AKIAI7LTHSGXNA365SZQ' );
+define( 'DBI_AWS_SECRET_ACCESS_KEY', 'zi84hUkl4HN/HjmUgFiYBauKB4vq/U7ZNaXVizQf' );
+
+
 /**#@-*/
 
 /**
@@ -86,8 +90,8 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
-//define('WP_SITEURL','http://shopforgirl.local');
-//define('WP_HOME','http://shopforgirl.local');
+define('WP_SITEURL','http://shopforgirl.local');
+define('WP_HOME','http://shopforgirl.local');
 
 /* That's all, stop editing! Happy blogging. */
 
