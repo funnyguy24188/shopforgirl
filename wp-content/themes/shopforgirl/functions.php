@@ -38,3 +38,12 @@ add_action('delete_post',function ($post_id){
         }
     }
 });
+
+
+add_filter( 'woocommerce_product_tabs', 'sb_woo_remove_reviews_tab', 98);
+function sb_woo_remove_reviews_tab($tabs) {
+
+    unset($tabs['reviews']);
+
+    return $tabs;
+}
