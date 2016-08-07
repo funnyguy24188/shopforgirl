@@ -1,0 +1,271 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Profit of Sales Report\n"
+"POT-Creation-Date: 2016-03-27 12:54+0700\n"
+"PO-Revision-Date: 2016-03-27 12:55+0700\n"
+"Last-Translator: \n"
+"Language-Team: IndoWebKreasi\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Basepath: ./\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: class-posr-admin.php:65
+msgid "Calculate Cost of Goods of Orders"
+msgstr ""
+
+#: class-posr-admin.php:66 views/html-calculate-cog.php:24
+msgid "Calculate COG"
+msgstr ""
+
+#: class-posr-admin.php:201 class-posr-admin.php:220 class-posr-admin.php:227
+#: views/html-quick-edit-cog.php:4
+msgid "Cost of Good"
+msgstr ""
+
+#: class-posr-admin.php:201
+msgid "Cost of this product when bought or produced."
+msgstr ""
+
+#: class-posr-admin.php:387 views/html-order-profit.php:2
+msgid "Profit"
+msgstr ""
+
+#: class-posr-admin.php:390
+msgid "Profit by date"
+msgstr ""
+
+#: class-posr-admin.php:396
+msgid "Profit by product"
+msgstr ""
+
+#: class-posr-admin.php:402
+msgid "Profit by category"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:80
+#, php-format
+msgid "%s item sales in %s"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:86
+#, php-format
+msgid "%s item profits in %s"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:103
+#: reports/class-posr-report-profit-by-date.php:108
+#: reports/class-posr-report-profit-by-product.php:74
+msgid "Year"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:104
+#: reports/class-posr-report-profit-by-date.php:109
+#: reports/class-posr-report-profit-by-product.php:75
+msgid "Last Month"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:105
+#: reports/class-posr-report-profit-by-date.php:110
+#: reports/class-posr-report-profit-by-product.php:76
+msgid "This Month"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:106
+#: reports/class-posr-report-profit-by-date.php:111
+#: reports/class-posr-report-profit-by-product.php:77
+msgid "Last 7 Days"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:166
+msgid "Categories"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:182
+msgid "Select categories&hellip;"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:198
+msgid "None"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:199
+msgid "All"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:200
+#: reports/class-posr-report-profit-by-product.php:155
+msgid "Show"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:272
+#: reports/class-posr-report-profit-by-date.php:144
+#: reports/class-posr-report-profit-by-product.php:312
+msgid "Date"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:275
+#: reports/class-posr-report-profit-by-date.php:148
+#: reports/class-posr-report-profit-by-product.php:315
+msgid "Export CSV"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-category.php:303
+msgid "&larr; Choose a category to view stats"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:59
+#, php-format
+msgid "%s average daily profits in this period"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:62
+#, php-format
+msgid "%s average monthly profits in this period"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:67
+#, php-format
+msgid "%s item sales in this period"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:72
+#, php-format
+msgid "%s item profits in this period"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:82
+#, php-format
+msgid "%s orders placed"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:87
+#, php-format
+msgid "%s items purchased"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:192
+msgid "Items Refunded"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:200
+msgid "Items Purchased"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:208
+msgid "Orders Placed"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:216
+msgid "Average daily profit"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:226
+msgid "Profit amount"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-date.php:236
+#: reports/class-posr-report-profit-by-product.php:380
+msgid "Sales amount"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:49
+#, php-format
+msgid "%s sales for the selected items"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:54
+#, php-format
+msgid "%s profits in this period"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:59
+#, php-format
+msgid "%s purchases for the selected items"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:106
+msgid "Showing reports for:"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:136
+msgid "Reset"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:145
+msgid "Product Search"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:150
+#: reports/class-posr-report-profit-by-product.php:152
+msgid "Search for a product&hellip;"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:190
+msgid "Top Sellers"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:234
+#: reports/class-posr-report-profit-by-product.php:274
+msgid "No products found in range"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:239
+msgid "Top Earners"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:330
+msgid "&larr; Choose a product to view stats"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:362
+msgid "Number of items sold"
+msgstr ""
+
+#: reports/class-posr-report-profit-by-product.php:370
+msgid "Sales profit"
+msgstr ""
+
+#: views/html-calculate-cog.php:7
+msgid "Calculate Cost of Goods"
+msgstr ""
+
+#: views/html-calculate-cog.php:14
+msgid ""
+"Click the 'Calculate COG' button below to calculate cost of products for ALL "
+"ORDERS based on current cost that you entered in product details form."
+msgstr ""
+
+#: views/html-calculate-cog.php:16
+msgid ""
+"'Clear Cache' can be used for clearing report cache whenever you want the "
+"reports to retrieve newest data."
+msgstr ""
+
+#: views/html-calculate-cog.php:18
+msgid ""
+"<strong>Please be aware the Calculate COG process will overwrite previous "
+"cost calculation if you had run this process before and it cannot be undone."
+"</strong>"
+msgstr ""
+
+#: views/html-calculate-cog.php:25
+msgid "Clear Cache"
+msgstr ""
+
+#: views/html-calculate-cog.php:33
+msgid "Process completed."
+msgstr ""
+
+#: views/html-order-item-headers.php:1 views/html-quick-edit-cog.php:2
+msgid "COG"
+msgstr ""
+
+#: views/html-order-profit.php:2
+msgid "Profit = Total Price of Items - Total COG"
+msgstr ""
