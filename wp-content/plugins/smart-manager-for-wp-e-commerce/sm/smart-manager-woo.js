@@ -1191,15 +1191,28 @@ products_columns = [editorGridSelectionModel,
 						return (record.data.thumbnail != 'false' ? '<img width=16px height=16px src="' + record.data.thumbnail + '"/>' : '');
 					}
 				},
-                {
-                    header: SM.productsCols.id.name,
-                    id: 'id_products',
-                    hidden: false,
-                    sortable: true,
-                    dataIndex: SM.productsCols.id.colName,
-                    tooltip: getText('Product Id'),
-                    width: 70
-                },
+				{
+					header: SM.productsCols._barcode_field.name,
+					id: 'barcode',
+					hidden: false,
+					sortable: true,
+					dataIndex: SM.productsCols._barcode_field.colName,
+					tooltip: getText('Barcode'),
+					width: 100,
+					editor: new fm.TextField({
+						allowBlank: true,
+						width: 100
+					})
+				},
+				{
+					header: SM.productsCols.id.name,
+					id: 'id_products',
+					hidden: false,
+					sortable: true,
+					dataIndex: SM.productsCols.id.colName,
+					tooltip: getText('Product Id'),
+					width: 70
+				},
 				{
 					header: SM.productsCols.name.name,
 					id: 'name_products',
@@ -1446,6 +1459,7 @@ var products_render_fields = new Array();
 
 products_render_fields = [
 							{name: SM.productsCols.id.colName,                type: 'int'},
+							{name: SM.productsCols._barcode_field.colName, 	  type: 'string'},
 							{name: SM.productsCols.name.colName,              type: 'string'},
 							{name: SM.productsCols.regularPrice.colName,      type: 'string'},
 							{name: SM.productsCols.salePrice.colName,         type: 'string'},
