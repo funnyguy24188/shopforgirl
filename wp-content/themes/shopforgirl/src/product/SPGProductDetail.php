@@ -184,7 +184,8 @@ class SPGProductDetail
 
         $ret = array(
             'result' => true,
-            'data' => $ret_pattern
+            'data' => $ret_pattern,
+            'raw_post'=>$post
         );
 
         if ($echo) {

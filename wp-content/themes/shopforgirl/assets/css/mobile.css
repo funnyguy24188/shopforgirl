@@ -101,7 +101,13 @@
         overflow: hidden;
     }
 
+    .product-barcode-finding .product-info-group {
+        margin-top: 24px;
+    }
 
+    .product-barcode-finding .product-info-group  .product-img-case {
+        width: 25%;
+    }
 
 }
 
