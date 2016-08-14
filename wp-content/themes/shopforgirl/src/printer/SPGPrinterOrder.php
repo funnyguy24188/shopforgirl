@@ -29,7 +29,7 @@ if (in_array('spg-barcode/spg-barcode.php', apply_filters('active_plugins', get_
             if (!empty($this->print_data['items'])) {
                 // calculate the height of the document pdf
                 $count = count($this->print_data['items']);
-                $height = 106 + ($count * 11);
+                $height = 150 + ($count * 11);
                 $pdf_size['height'] = $height;
                 ob_start();
                 OrderTemplate::render($this->print_data);

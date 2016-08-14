@@ -5,6 +5,7 @@ require_once 'src/bill/SPGCartGlobalManager.php';
 require_once 'src/product/SPGProductMod.php';
 require_once 'src/product/SPGProductDetail.php';
 require_once 'src/customer/SPGCustomerDetail.php';
+require_once 'src/role/SPGRoleBackEnd.php';
 
 
 $product_mod = new SPGProductMod();
@@ -20,6 +21,11 @@ $spg_cart->init_hook();
 $customer_finding = new SPGCustomerDetail();
 $customer_finding->init_hook();
 // init_shipping
+
+
+// role
+$role_back_end = new SPGRoleBackEnd();
+$role_back_end->init_hook();
 
 
 add_action('wp_enqueue_scripts', function () {
@@ -48,8 +54,8 @@ function sb_woo_remove_reviews_tab($tabs)
 add_action('wp_head', function () {
     global $post;
     if ($post->post_type == 'page' && $post->post_name == 'product-finding') {
-        remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
-        remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
-        remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+        remove_action('woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30);
+        remove_action('woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30);
+        remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
     }
 });

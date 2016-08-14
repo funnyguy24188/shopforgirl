@@ -11,7 +11,10 @@ class BarCodeWrap
     const CODE_CODABAR = 'codabar';
 
 
-    public function generate_barcode( $filepath="", $text="0", $size="20", $orientation="horizontal", $code_type="code128", $print=false ) {
+    public function generate_barcode( $filepath="", $text="0", $size="20", $orientation="horizontal", $code_type="code128", $print=false, $arg = array()) {
+        $product_name = $arg['name'];
+        $price  = $arg['price'];
+
         $code_string = "";
         // Translate the $text into barcode the correct $code_type
         if ( in_array(strtolower($code_type), array("code128", "code128b")) ) {
@@ -104,11 +107,11 @@ class BarCodeWrap
         }
 
         if ( strtolower($orientation) == "horizontal" ) {
-            $img_width = $code_length;
+            $img_width = $code_length + 45;
             $img_height = $size;
         } else {
             $img_width = $size;
-            $img_height = $code_length;
+            $img_height = $code_length + 45;
         }
 
         $image = imagecreate($img_width, $img_height + $text_height);
@@ -121,14 +124,18 @@ class BarCodeWrap
         }
 
         $location = 10;
+        $textcolor = imagecolorallocate($image, 0, 0, 0);
+        imagestring($image, 3, 10, 5, $product_name, $textcolor);
+        imagestring($image, 3, 10, 20, $price, $textcolor);
         for ( $position = 1 ; $position <= strlen($code_string); $position++ ) {
             $cur_size = $location + ( substr($code_string, ($position-1), 1) );
             if ( strtolower($orientation) == "horizontal" )
-                imagefilledrectangle( $image, $location, 0, $cur_size, $img_height, ($position % 2 == 0 ? $white : $black) );
+                imagefilledrectangle( $image, $location, 40, $cur_size, $img_height, ($position % 2 == 0 ? $white : $black) );
             else
-                imagefilledrectangle( $image, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
+                imagefilledrectangle( $image, 40, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
             $location = $cur_size;
         }
+
 
         // Draw barcode to the screen or save in a file
         if ( $filepath=="" ) {

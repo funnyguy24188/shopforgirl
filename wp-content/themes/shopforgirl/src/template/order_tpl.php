@@ -4,8 +4,11 @@ class OrderTemplate
 {
     public static function render($order_data)
     {
+        $user = wp_get_current_user();
         $total = $order_data['total'];
         $shipping = $order_data['shipping'];
+        $order_id = $order_data['order_id'];
+        $username = $user->display_name;
         ?>
 
         <style type="text/css">
@@ -23,8 +26,13 @@ class OrderTemplate
                 padding-left: 12px
             }
 
-            .order-top .shop-info span {
-                font-style: italic
+            .order-top .shop-info p {
+                font-style: italic;
+                text-align: center;
+            }
+
+            .order-top .order-id {
+                text-align: center;
             }
 
             .order-top .sub-title {
@@ -55,19 +63,17 @@ class OrderTemplate
             <div class="order-top">
                 <h2 class="main-title">SHOPFORGIRL</h2>
                 <div class="shop-info">
-                    <span>
+                    <p class="text-center">
                         220 Bà Hạt-P9-Q.10-TP.HCM
-                    </span><br>
-                    <span>
                         ĐT : 01279916595
-                    </span><br>
-                    <span>
                         FB : shopforgirl.2011
-                    </span>
+                    </p>
                 </div>
                 <h3 class="sub-title">Hóa Đơn</h3>
+                <h4 class="order-id">Order ID: <?php echo $order_id ?></h4>
+                <h5 class="order-id">Ca: <?php echo  $username ?></h5>
             </div>
-            <span>-----------------------------------------</span>
+            <span>==================================</span>
             <!-- End order top -->
             <!-- Display product items in order -->
             <span class="order-content">
@@ -97,15 +103,16 @@ class OrderTemplate
                 <span><strong>Tổng: <?php echo $total ?></strong></span>
             </div>
             <!-- End the order subtotal -->
-            <span>-----------------------------------------</span>
+            <span>==================================</span>
             <!--- Display the Thank you -->
             <div class="order-bottom" style="text-align: center; margin-top: 15px">
-                <span style="font-style: italic; width: 100%; display: inline-block">
+                <p style="font-style: italic; width: 100%; text-align: center ;display: inline-block; ">
                     Xin cảm ơn quý khách
-                </span><br>
-                <span style="font-style: italic;width: 100%; display: inline-block">
                     đã mua hàng tại Shopforgirl
-                </span>
+                </p>
+                <p style="font-style: italic;width: 100%; text-align: center  ;display: inline-block">
+                    Hàng mua rồi miễn trả lại
+                </p>
             </div>
             <!-- End the order bottom -->
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/../customer/SPGCustomerDetail.php');
+require_once(ABSPATH . 'wp-content/plugins/spg-barcode/lib/SPGUtil.php');
 require_once(__DIR__ . '/../product/SPGProductDetail.php');
 require_once(__DIR__ . '/../printer/SPGPrinterOrder.php');
 require_once('SPGCart.php');
@@ -81,18 +82,15 @@ class SPGCartGlobalManager
 
 
             $product_id = $product_object->id;
-            $product_name = $product_object->post->post_title;
             $regular_price = $product_object->get_price();
             $sale_price = $product_object->get_sale_price();
             $stock = $product_object->get_stock_quantity();
-
-
-            if ($product_object->get_type() == 'variation') {
-                // Product is variation
+            
+            if($product_object->is_type('variation')) {
                 $product_id = $product_object->variation_id;
-                $variation_attributes = SPGProductDetail::get_variable_product_attributes($product_object);
-                $product_name .= ' - ( ' . implode(' ', $variation_attributes) . ' ) ';
             }
+
+            $product_name =  SPGUtil::get_product_simple_name($product_object);
 
             $barcode = get_post_meta($product_id, '_barcode_field', true);
 
@@ -173,7 +171,7 @@ class SPGCartGlobalManager
     public function ajax_remove_product_to_cart()
     {
         $product_finding = new SPGProductDetail();
-        $barcode = (!empty($_POST['barcode'])) ? $_POST['barcode'] : null;
+        $barcode = (!empty($_POST['barcode'])) ? trim($_POST['barcode']) : null;
         $ret = $product_finding->get_product_info($barcode, false);
         $result = false;
         $data = array();
@@ -345,12 +343,12 @@ class SPGCartGlobalManager
                 // empty cart after order  saved
                 $this->empty_cart();
                 // print the order
-                if($print_order) {
+                if ($print_order) {
                     $this->call_print_order($order->id);
                 }
 
                 // redirec
-                wp_redirect('order-product',301);
+                wp_redirect('order-product', 301);
 
             } catch (Exception $e) {
                 // There was an error adding order data!
@@ -362,7 +360,6 @@ class SPGCartGlobalManager
 
     }
 
-  
 
     public function call_print_order($order_id)
     {
@@ -386,12 +383,8 @@ class SPGCartGlobalManager
             }
 
             $product_object = wc_get_product($product_id);
-            $product_name = $product_object->post->post_title;
+            $product_name = SPGUtil::get_product_simple_name($product_object);
 
-            if ($product_object->get_type() == 'variation') {
-                $variation_attributes = SPGProductDetail::get_variable_product_attributes($product_object);
-                $product_name .= ' - ( ' . implode(' ', $variation_attributes) . ' ) ';
-            }
 
             if (!empty($product_id)) {
                 $barcode = get_post_meta($product_id, '_barcode_field', true);
@@ -401,15 +394,18 @@ class SPGCartGlobalManager
             $order_data['items'][] = array('name' => $product_name,
                 'quantity' => $item['qty'],
                 'price' => $item['line_total'],
-                'barcode' => $barcode);
+                'barcode' => $barcode,
+            );
+
         }
 
         $order_data['total'] = $order->get_total();
         $order_data['shipping'] = $order->get_total_shipping();
+        $order_data['order_id'] = $order_id;
         $printer = new SPGPrinterOrder($order_data);
         // make the pdf file
         $pdf_file = $printer->print_data();
-        if($pdf_file) {
+        if ($pdf_file) {
             $_SESSION['order_pdf_link'] = wp_upload_dir()['baseurl'] . DIRECTORY_SEPARATOR . 'order_tmp' . DIRECTORY_SEPARATOR . $pdf_file;
         }
 

@@ -94,7 +94,7 @@ class SPGProductDetail
     public function get_product_info($barcode = '', $echo = true)
     {
         if (!$barcode) {
-            $barcode = $_POST['barcode'];
+            $barcode = trim($_POST['barcode']);
         }
 
         $ret_pattern = array(
@@ -108,6 +108,7 @@ class SPGProductDetail
             'sale_price' => ''
         );
         $ret = array();
+        
 
         if (empty($barcode)) {
 

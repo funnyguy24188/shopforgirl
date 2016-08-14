@@ -109,5 +109,8 @@
         width: 25%;
     }
 
+    #order-page .product-price, #order-page .product-amount  {
+        width:100%;
+    }
 }
 
