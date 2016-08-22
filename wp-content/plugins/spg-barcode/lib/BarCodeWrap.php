@@ -11,7 +11,8 @@ class BarCodeWrap
     const CODE_CODABAR = 'codabar';
 
 
-    public function generate_barcode( $filepath="", $text="0", $size="20", $orientation="horizontal", $code_type="code128", $print=false, $arg = array()) {
+    public function generate_barcode( $filepath="", $text="0", $size="20", $orientation="horizontal", $code_type="code128", $print=false, $arg = array(), $thickness = 1) {
+
         $product_name = $arg['name'];
         $price  = $arg['price'];
 
@@ -107,11 +108,11 @@ class BarCodeWrap
         }
 
         if ( strtolower($orientation) == "horizontal" ) {
-            $img_width = $code_length + 45;
+            $img_width = $code_length * $thickness;
             $img_height = $size;
         } else {
             $img_width = $size;
-            $img_height = $code_length + 45;
+            $img_height = $code_length * $thickness;
         }
 
         $image = imagecreate($img_width, $img_height + $text_height);
@@ -123,12 +124,12 @@ class BarCodeWrap
             imagestring($image, 5, 31, $img_height, $text, $black );
         }
 
-        $location = 10;
+        $location = 10 * $thickness;
         $textcolor = imagecolorallocate($image, 0, 0, 0);
-        imagestring($image, 3, 10, 5, $product_name, $textcolor);
-        imagestring($image, 3, 10, 20, $price, $textcolor);
+        imagestring($image, 5, 10, 5, $product_name, $textcolor);
+        imagestring($image, 5, 10, 20, $price, $textcolor);
         for ( $position = 1 ; $position <= strlen($code_string); $position++ ) {
-            $cur_size = $location + ( substr($code_string, ($position-1), 1) );
+            $cur_size = ($location + ( substr($code_string, ($position-1), 1) )* $thickness);
             if ( strtolower($orientation) == "horizontal" )
                 imagefilledrectangle( $image, $location, 40, $cur_size, $img_height, ($position % 2 == 0 ? $white : $black) );
             else
