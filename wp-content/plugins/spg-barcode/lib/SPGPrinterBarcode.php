@@ -30,7 +30,7 @@ class SPGPrinterBarcode extends AbstractSPGPrinter
             ob_start();
             SPGBarcodePrintTemplate::render($this->print_data);
             $html = ob_get_clean();
-            $this->pdf_engine = new TCPDF('L', 'pt', array(130,200), true, 'UTF-8', false);
+            $this->pdf_engine = new TCPDF('L', 'pt', array(120,200), true, 'UTF-8', false);
             $this->init_pdf_engine();
 
             $pdf_file_name = substr(uniqid(), 7) . '.pdf';
