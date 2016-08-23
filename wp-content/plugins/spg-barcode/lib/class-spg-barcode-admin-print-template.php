@@ -5,12 +5,6 @@ class SPGBarcodePrintTemplate
     public static function render($barcode_print)
     {
         ?>
-        <style type="text/css">
-            #if-inside-wrap {
-                width: 240px;
-            }
-        </style>
-
         <div id="if-inside-wrap">
         <?php if (!empty($barcode_print)): ?>
         <?php foreach ($barcode_print['items'] as $product_id => $barcodes): ?>
@@ -18,9 +12,13 @@ class SPGBarcodePrintTemplate
             $url = $barcodes[0];
             ?>
             <?php for ($i = 0; $i < $num; $i++): ?>
-                <div>
-                    <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
-                </div>
+                <table style="padding-top: 50px">
+                    <tr>
+                        <td>
+                            <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
+                        </td>
+                    </tr>
+                </table>
             <?php endfor; ?>
         <?php endforeach; ?>
         </div>
