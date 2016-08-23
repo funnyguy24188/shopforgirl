@@ -12,7 +12,7 @@ class SPGBarcodePrintTemplate
             $url = $barcodes[0];
             ?>
             <?php for ($i = 0; $i < $num; $i++): ?>
-                <table style="padding-top: 50px">
+                <table>
                     <tr>
                         <td>
                             <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
