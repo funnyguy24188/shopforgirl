@@ -135,7 +135,7 @@ class Spg_Barcode_Admin
                     $price = $product->get_price();
                     $arg = array('name'=>$name, 'price'=> $price);
 
-                    $barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 80, 'horizontal', SPG_DEFAULT_BARCODE_TYPE, true,$arg, 1);
+                    $barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 80, 'horizontal', SPG_DEFAULT_BARCODE_TYPE, true,$arg, 1.2);
                     $url = SPG_UPLOAD_URL . $barcode_file_name;
                     if (!empty($product)) {
                         $formatted_name = $product->get_formatted_name();
