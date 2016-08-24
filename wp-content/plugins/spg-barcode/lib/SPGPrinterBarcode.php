@@ -2,6 +2,7 @@
 require_once 'AbstractSPGPrinter.php';
 require_once 'class-spg-barcode-admin-print-template.php';
 
+
 class SPGPrinterBarcode extends AbstractSPGPrinter
 {
 
@@ -16,25 +17,19 @@ class SPGPrinterBarcode extends AbstractSPGPrinter
 
     public function print_data()
     {
-        $pdf_size = array('width' => 57, 'height' => 22);
         $pdf_file_name = '';
         if (!empty($this->print_data['items'])) {
-            // calculate the height of the document pdf
-            /*$count = 0;
-            foreach ($this->print_data['items'] as $product_id => $bc)
-            {
-                $count += (int) $bc[1];
-            }
-            $height = 106 + ($count * 27);
-            $pdf_size['height'] = 45;*/
+
             ob_start();
             SPGBarcodePrintTemplate::render($this->print_data);
             $html = ob_get_clean();
-            $this->pdf_engine = new TCPDF('L', 'pt', array(120,200), true, 'UTF-8', false);
+            $html = utf8_encode($html);
+            $this->pdf_engine = new TCPDF('L', 'pt', array(155,130), true, 'UTF-8', false);
+            $this->pdf_engine->SetAutoPageBreak(TRUE, 0);
             $this->init_pdf_engine();
 
             $pdf_file_name = substr(uniqid(), 7) . '.pdf';
-            $this->pdf_engine->writeHTML($html, true, 0, true, true);
+            $this->pdf_engine->writeHTML($html, true, false, true, false, '');
             $this->pdf_engine->lastPage();
             $this->pdf_engine->Output($this->pdf_convert_path . DIRECTORY_SEPARATOR . $pdf_file_name, 'F');
 

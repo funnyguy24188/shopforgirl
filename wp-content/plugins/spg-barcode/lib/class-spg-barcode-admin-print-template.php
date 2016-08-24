@@ -11,9 +11,9 @@ class SPGBarcodePrintTemplate
             <?php $num = $barcodes[1];
             $url = $barcodes[0];
             ?>
-            <?php for ($i = 0; $i < $num; $i++): ?>
-                <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
-            <?php endfor; ?>
+                <?php for ($i = 0; $i < $num; $i++): ?>
+                        <img class="element" src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
+                <?php endfor; ?>
         <?php endforeach; ?>
         </div>
     <?php else: ?>
