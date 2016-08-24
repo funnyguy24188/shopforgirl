@@ -23,14 +23,12 @@ class SPGPrinterBarcode extends AbstractSPGPrinter
             ob_start();
             SPGBarcodePrintTemplate::render($this->print_data);
             $html = ob_get_clean();
-            $html = utf8_encode($html);
-            $this->pdf_engine = new TCPDF('L', 'pt', array(155,130), true, 'UTF-8', false);
-            $this->pdf_engine->SetAutoPageBreak(TRUE, 0);
-            $this->init_pdf_engine();
+            $this->pdf_engine = new TCPDF('L', 'pt', array(155,100), true, 'UTF-8', false);
 
+            $this->init_pdf_engine();
+            $this->pdf_engine->SetAutoPageBreak(true, 0);
             $pdf_file_name = substr(uniqid(), 7) . '.pdf';
             $this->pdf_engine->writeHTML($html, true, false, true, false, '');
-            $this->pdf_engine->lastPage();
             $this->pdf_engine->Output($this->pdf_convert_path . DIRECTORY_SEPARATOR . $pdf_file_name, 'F');
 
         }
