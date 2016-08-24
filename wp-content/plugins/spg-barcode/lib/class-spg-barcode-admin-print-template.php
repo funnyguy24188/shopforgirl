@@ -11,11 +11,15 @@ class SPGBarcodePrintTemplate
             <?php $num = $barcodes[1];
             $url = $barcodes[0];
             ?>
+            <table>
             <?php for ($i = 0; $i < $num; $i++): ?>
-                <div class="image-item"> 
+                <tr>
+                    <td>
                     <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
-                </div>
+                    </td>
+                </tr>
             <?php endfor; ?>
+            </table>
         <?php endforeach; ?>
         </div>
     <?php else: ?>
