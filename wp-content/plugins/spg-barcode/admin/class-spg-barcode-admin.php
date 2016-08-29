@@ -112,7 +112,7 @@ class Spg_Barcode_Admin
     {
         add_menu_page('SPG Barcode', 'SPG Barcode', 'manage_options', 'spg_barcode', array($this, 'render_barcode_print_queue_page'));
         add_submenu_page('spg_barcode', 'SPG Barcode Print queue', 'SPG Barcode Print queue', 'manage_options', 'spg_barcode_queue_print', array($this, 'render_barcode_print_queue_page'));
-        add_submenu_page('spg_barcode', 'SPG Product Barcode', 'SPG Product Barcode', 'manage_options', 'spg_barcode_product', array($this, 'render_barcode_product_page'));
+        add_submenu_page('spg_barcode', 'SPG Barcode Product Prefix', 'SPG Barcode Product Prefix', 'manage_options', 'spg_barcode_prefix', array($this, 'render_barcode_product_prefix'));
     }
 
     public function render_barcode_print_queue_page()
@@ -133,9 +133,9 @@ class Spg_Barcode_Admin
                     $name = ucfirst(SPGUtil::convert_vi_to_en(SPGUtil::get_product_simple_name($product)));
                     // price for print on barcode
                     $price = $product->get_price();
-                    $arg = array('name'=>$name, 'price'=> $price);
+                    $arg = array('name' => $name, 'price' => $price);
 
-                    $barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 80, 'horizontal', SPG_DEFAULT_BARCODE_TYPE, true,$arg, 1);
+                    $barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 80, 'horizontal', SPG_DEFAULT_BARCODE_TYPE, true, $arg, 1);
                     $url = SPG_UPLOAD_URL . $barcode_file_name;
                     if (!empty($product)) {
                         $formatted_name = $product->get_formatted_name();
@@ -155,8 +155,8 @@ class Spg_Barcode_Admin
                 $full_path = $pdf_engine->get_full_path();
                 // clear all item pdf first
                 $files = glob($full_path . '/*'); // get all file names
-                foreach($files as $file){ // iterate files
-                    if(is_file($file))
+                foreach ($files as $file) { // iterate files
+                    if (is_file($file))
                         unlink($file); // delete file
                 }
 
@@ -179,9 +179,21 @@ class Spg_Barcode_Admin
         }
     }
 
-    public function render_barcode_product_page()
+    public function render_barcode_product_prefix()
     {
-        include 'partials/spg-barcode-product-display.php';
+        $spg_option = get_option('spg_options', array());
+        // save the options
+        if (!empty($_POST['product_prefix_term'])) {
+            $spg_option['product_prefix_term'] = $_POST['product_prefix_term'];
+            update_option('spg_options', $spg_option);
+        }
+
+        if (!empty($_POST['barcode_default_length'])) {
+            $spg_option['barcode_default_length'] = $_POST['barcode_default_length'];
+            update_option('spg_options', $spg_option);
+        }
+
+        include 'partials/spg-barcode-product-prefix.php';
     }
 
 

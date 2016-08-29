@@ -14,7 +14,9 @@ class SPGProductMod
         add_action('woocommerce_product_options_general_product_data', array($this, 'add_simple_product_barcode_field'));
         // save the barcode for simple product
         add_action('woocommerce_process_product_meta', array($this, 'save_simple_product_barcode_field'));
-      
+        // get barcode automatic
+        add_action('wp_ajax_get_barcode_auto', array($this, 'get_barcode_auto'));
+        add_action('wp_ajax_no_priv_get_barcode_auto', array($this, 'get_barcode_auto'));
 
     }
 
@@ -32,6 +34,7 @@ class SPGProductMod
             woocommerce_wp_text_input(
                 array(
                     'id' => '_barcode_field',
+                    'class' => '_barcode_field _barcode-field-simple _barcode-field-' . $post->ID,
                     'label' => __('Barcode', 'woocommerce'),
                     'placeholder' => 'Barcode',
                     'desc_tip' => 'true',
@@ -56,9 +59,11 @@ class SPGProductMod
     public function add_variable_product_barcode_field($loop, $variation_data, $variation)
     {
         // Text Field
+
         woocommerce_wp_text_input(
             array(
                 'id' => '_barcode_field[' . $variation->ID . ']',
+                'class' => '_barcode_field _barcode-field-variation _barcode-field-' . $variation->ID,
                 'label' => __('Barcode', 'woocommerce'),
                 'placeholder' => 'Barcode',
                 'desc_tip' => 'true',
@@ -78,8 +83,78 @@ class SPGProductMod
 
     }
 
+    public function get_barcode_auto()
+    {
+        global $wpdb;
 
-    
+        if (!empty($_POST['product_id']) && !empty($_POST['product_type'])) {
+            $product_type = $_POST['product_type'];
+            $product_id = $_POST['product_id'];
+
+
+            if ($product_type == 'variation') {
+                $product = wc_get_product($product_id);
+                $product_parent_id = $product->parent->id;
+
+            } else {
+                $product_parent_id = $product_id;
+            }
+
+            $first_term = wp_get_post_terms($product_parent_id, 'product_cat');
+            if (!empty($first_term)) {
+                $first_term = $first_term[0];
+                $term_id = $first_term->term_taxonomy_id;
+                $spg_options = get_option('spg_options');
+
+                if (!empty($spg_options['product_prefix_term'][$term_id]) && !empty($spg_options['barcode_default_length'])) {
+                    $prefix = $spg_options['product_prefix_term'][$term_id];
+                    $barcode_length = $spg_options['barcode_default_length'] - strlen($prefix);
+                    $str_barcode = '';
+
+                    // count product
+                    $sql = "select meta_value from {$wpdb->prefix}posts 
+                      inner join  {$wpdb->prefix}postmeta on  {$wpdb->prefix}postmeta.post_id  =  {$wpdb->prefix}posts.ID 
+                      where post_status = 'publish' and ( post_type = 'product' OR post_type = 'product_variation')
+                      and meta_key = '_barcode_field' and meta_value != 'Array' and meta_value REGEXP '^{$prefix}' 
+                      ";
+                    $ret = $wpdb->get_results($sql, ARRAY_N);
+                    $max_barcode_num = 0;
+                    if (empty($ret)) {
+                        $max_barcode_num = 1;
+                    } else {
+                        $tmp = array();
+                        foreach ($ret as $item) {
+                            $tmp[] = (int)substr($item[0], strlen($prefix));
+                        }
+
+                        $max_barcode_num = max($tmp);
+                        $max_barcode_num++;
+                    }
+                    $str_barcode = sprintf("%'.0{$barcode_length}d", $max_barcode_num);
+                    $str_barcode = $prefix . $str_barcode;
+                    update_post_meta($product_id, '_barcode_field', $str_barcode);
+
+                    echo json_encode(array('result' => true,
+                        'data' => array('barcode' => $str_barcode),
+                        'message' => 'Barcode generated successfully'));
+
+                } else {
+                    // SPG setting was set
+                    echo json_encode(array('result' => false,
+                        'data' => array(),
+                        'message' => 'Barcode settings were not set. Please set it up'));
+                }
+            } else {
+                // No category set
+                echo json_encode(array('result' => false,
+                    'data' => array(),
+                    'message' => 'No category was set. Please set it up'));
+            }
+
+        }
+        die;
+
+    }
 
 
 }
