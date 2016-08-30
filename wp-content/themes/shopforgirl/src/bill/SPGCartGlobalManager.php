@@ -85,12 +85,12 @@ class SPGCartGlobalManager
             $regular_price = $product_object->get_price();
             $sale_price = $product_object->get_sale_price();
             $stock = $product_object->get_stock_quantity();
-            
-            if($product_object->is_type('variation')) {
+
+            if ($product_object->is_type('variation')) {
                 $product_id = $product_object->variation_id;
             }
 
-            $product_name =  SPGUtil::get_product_simple_name($product_object);
+            $product_name = SPGUtil::get_product_simple_name($product_object);
 
             $barcode = get_post_meta($product_id, '_barcode_field', true);
 
@@ -402,6 +402,7 @@ class SPGCartGlobalManager
         $order_data['total'] = $order->get_total();
         $order_data['shipping'] = $order->get_total_shipping();
         $order_data['order_id'] = $order_id;
+        $order_data['customer_money'] = !empty($_POST['order']['customer_money']) ? $_POST['order']['customer_money'] : 0;
         $printer = new SPGPrinterOrder($order_data);
         // make the pdf file
         $pdf_file = $printer->print_data();

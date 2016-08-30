@@ -16,6 +16,14 @@
         width: 100%;
     }
 
+    .order-product header {
+        display: none;
+    }
+
+    .order-product footer {
+        display: none;
+    }
+
     .order-product #wplc_hovercard, #wp-live-chat{
         display:none !important;
     }
@@ -60,10 +68,14 @@
 
     #order-page #add-more-product {
         width: 100%;
+        border: 1px solid #0a001f;
+        border-radius: 5px;
     }
 
     #order-page button[type="submit"] {
         width: 100%;
+        height: 60px;
+        font-size: 32px;
     }
 
     #order-page .customer-basic-info .customer-name-group {
@@ -99,6 +111,13 @@
 
     #order-page .customer-save-order-group {
         overflow: hidden;
+        margin-top: 24px;
+
+    }
+
+    #order-page .customer-save-order-group button {
+        border: 1px solid #0a001f;
+        border-radius: 5px;
     }
 
     .product-barcode-finding .product-info-group {
@@ -112,5 +131,12 @@
     #order-page .product-price, #order-page .product-amount  {
         width:100%;
     }
+
+    #order-page #customer-money {
+        height: 60px;
+        font-size: 42px;
+        text-align: right;
+    }
+
 }
 

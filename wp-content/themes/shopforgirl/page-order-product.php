@@ -111,10 +111,20 @@
 
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-12 customer-save-order-group">
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-xs-8 col-sm-8 customer-money-payment-group">
+                                        <label class="form-label">Khách đưa</label>
+                                        <input class="form-control" id="customer-money" type="text" name="order[customer_money]" value="0">
+                                    </div>
+
+
+                                    <div class="col-xs-4 col-sm-4 customer-save-order-group">
                                         <button class="button primary-button" type="submit">Lưu</button>
                                     </div>
                                 </div>
+
+
                             </fieldset>
                         </section>
                     </form>
