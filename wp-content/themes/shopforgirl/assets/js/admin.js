@@ -1,4 +1,20 @@
 jQuery(document).ready(function () {
+    /**
+     * Hide COG by JS
+     */
+    function hide_cog_price(roles) {
+        if (typeof userRoles != 'undefined') {
+            for (var i = 0; i < roles.length; i++) {
+                var r = roles[i];
+                if (userRoles.indexOf(r) != -1) {
+                    jQuery('input[name="_posr_cost_of_good"]').closest('p').css('display', 'none');
+                    jQuery('input[name*="variable_cost_of_good"]').closest('p').css('display', 'none');
+                }
+            }
+
+        }
+    }
+
 
     jQuery(document).on('click', '.barcode-generator', function (e) {
         e.preventDefault();
@@ -16,6 +32,7 @@ jQuery(document).ready(function () {
         jQuery(document).ajaxComplete(function () {
             jQuery('.woocommerce_variations').find('._barcode_field').each(function (k, item) {
                 add_auto_barcode_generator(item);
+                hide_cog_price(['staff']);
             });
             jQuery(this).unbind('ajaxComplete');
         });
@@ -30,7 +47,7 @@ jQuery(document).ready(function () {
                 .attr('href', '#')
                 .text('Barcode Generator');
             var bc_message = jQuery('<p>').addClass('barcode-generator-message')
-                .attr('style','color:#0073aa');
+                .attr('style', 'color:#0073aa');
             // post_id
             jQuery(barcode_field).parent().append(bc_message).append(generate_barcode);
         }
@@ -71,5 +88,8 @@ jQuery(document).ready(function () {
             }
         });
     }
+
+    // hide cog price for user roles
+    hide_cog_price(['staff']);
 
 });
