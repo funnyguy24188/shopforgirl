@@ -1200,7 +1200,7 @@ products_columns = [editorGridSelectionModel,
 					tooltip: getText('Barcode'),
 					width: 100,
 					editor: new fm.TextField({
-						allowBlank: true,
+						allowBlank: false,
 						width: 100
 					})
 				},
