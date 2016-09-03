@@ -80,6 +80,6 @@ function server_attach_script()
 {
     ?>
     <script type="text/javascript">
-        userRoles = <?php echo (wp_get_current_user())?json_encode(wp_get_current_user()->roles):json_encode(array() )?>;
+        userRoles = <?php echo (wp_get_current_user())?json_encode(array_values(wp_get_current_user()->roles)):json_encode(array() )?>;
     </script><?php
 }
