@@ -45,6 +45,8 @@ class SPGRoleBackEnd
             if (in_array('administrator', $roles) || in_array('staff', $roles) || in_array('shop_manager', $roles)) {
                 $ret = $items;
             }
+        } else {
+            $ret = $items;
         }
         return $ret;
 

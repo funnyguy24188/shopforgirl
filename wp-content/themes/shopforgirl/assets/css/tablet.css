@@ -1,6 +1,14 @@
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
     #wp-live-chat {
         height: 75px;
+    }
+
+    #containerfooter .img-ktsi-left {
+        width: 25%;
+    }
+
+    #containerfooter .content-ktsi-left {
+        width: 75%;
     }
 }
 

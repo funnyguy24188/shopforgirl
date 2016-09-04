@@ -1,5 +1,5 @@
-@media screen and (min-width:0) {
-    .ubermenu-main .ubermenu-nav .ubermenu-item-level-0  {
+@media screen and (min-width: 0) {
+    .ubermenu-main .ubermenu-nav .ubermenu-item-level-0 {
         font-size: 14px !important;
     }
 
@@ -10,6 +10,7 @@
     .fa-remove {
         cursor: pointer;
     }
+
     /** Order page **/
     /** Disable the live chat **/
     .order-product .container {
@@ -24,8 +25,8 @@
         display: none;
     }
 
-    .order-product #wplc_hovercard, #wp-live-chat{
-        display:none !important;
+    .order-product #wplc_hovercard, #wp-live-chat {
+        display: none !important;
     }
 
     #order-page .order-form-wrap {
@@ -87,11 +88,11 @@
         padding-right: 0;
     }
 
-    #order-page  .customer-address-group {
+    #order-page .customer-address-group {
         float: right;
     }
 
-    #order-page  .customer-shipping-address-group {
+    #order-page .customer-shipping-address-group {
         overflow: hidden;
     }
 
@@ -103,8 +104,7 @@
         table-layout: fixed;
     }
 
-
-    #product-list-show .product-list-table tbody{
+    #product-list-show .product-list-table tbody {
         height: 350px;
         overflow-y: scroll;
     }
@@ -124,12 +124,12 @@
         margin-top: 24px;
     }
 
-    .product-barcode-finding .product-info-group  .product-img-case {
+    .product-barcode-finding .product-info-group .product-img-case {
         width: 25%;
     }
 
-    #order-page .product-price, #order-page .product-amount  {
-        width:100%;
+    #order-page .product-price, #order-page .product-amount {
+        width: 100%;
     }
 
     #order-page #customer-money {
@@ -137,6 +137,52 @@
         font-size: 42px;
         text-align: right;
     }
+
+    #containerfooter .img-ktsi-left {
+        width: 100%;
+    }
+
+    #containerfooter .img-ktsi-left .kt-si-cell-box {
+        display: block;
+    }
+
+    #containerfooter .content-ktsi-left .kt-si-cell-box {
+        display: block;
+    }
+
+    #containerfooter .content-ktsi-left .kt-si-cell-box h2 {
+        margin-top: 0;
+    }
+
+    #containerfooter .content-ktsi-left {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #containerfooter .content-ktsi-left .kt_imgsplit_title {
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+    }
+
+    #containerfooter .content-ktsi-left .kt_imgsplit_content {
+        color: #333;
+    }
+
+    #containerfooter .footercredits {
+        text-align: center;
+
+    }
+
+    #containerfooter .footercredits p {
+        color: #ffffff;
+    }
+
+    #containerfooter .footerbase {
+        background: rgb(45, 92, 136);
+    }
+
 
 }
 
