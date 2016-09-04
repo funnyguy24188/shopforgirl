@@ -200,7 +200,7 @@ jQuery(document).ready(function () {
                         '<td><input name="order[product][{barcode}]quantity"  readonly class="product-quantity" value="{product_quantity}"></td>' +
                         '<td><input class="product-price" type="text" readonly value="{price}"></td>' +
                         '<td><input class="product-amount" type="text" readonly value="{amount}"></td>' +
-                        '<td><span><i class="fa fa-remove"></i></span></td>' +
+                        '<td style="text-align: center"><span class="remove-btn"><i class="fa fa-remove"></i></span class></td>' +
                         '</tr>';
 
                     // add new

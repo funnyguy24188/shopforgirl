@@ -98,15 +98,32 @@
 
     #product-list-show .product-item input {
         border: none;
+        width: 100%;
     }
 
     #product-list-show .product-list-table {
         table-layout: fixed;
     }
 
+    #product-list-show .product-list-table thead th {
+        text-align: center;
+    }
+
     #product-list-show .product-list-table tbody {
         height: 350px;
         overflow-y: scroll;
+    }
+
+    #product-list-show .product-list-table tbody .product-quantity {
+        text-align: center;
+    }
+
+    #product-list-show .product-list-table tbody .product-price {
+        text-align: right;
+    }
+
+    #product-list-show .product-list-table tbody .product-amount {
+        text-align: right;
     }
 
     #order-page .customer-save-order-group {

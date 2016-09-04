@@ -48,12 +48,12 @@
                                 <table class="table product-list-table">
                                     <thead>
                                     <tr>
-                                        <th>STT</th>
-                                        <th>Tên sản phẩm</th>
-                                        <th>Số lượng</th>
-                                        <th>Giá</th>
-                                        <th>Thành tiền</th>
-                                        <th>Xóa</th>
+                                        <th style="width: 7%">STT</th>
+                                        <th style="width: 38%">Tên sản phẩm</th>
+                                        <th style="width: 10%">S.lượng</th>
+                                        <th style="width: 15%">Giá</th>
+                                        <th style="width: 15%">Thành tiền</th>
+                                        <th style="width: 15%">Xóa</th>
                                     </tr>
                                     </thead>
                                     <tbody></tbody>
