@@ -17,8 +17,18 @@
         width: 100%;
     }
 
-    .order-product header {
+    .order-product header #topbar .container {
+        max-width: 1170px;
+    }
+
+   .product-finding header .container,  .order-product header .container {
         display: none;
+    }
+
+    /** show only topbar **/
+
+    .product-finding header #topbar .container,  .order-product header #topbar .container {
+        display: block;
     }
 
     .order-product footer {

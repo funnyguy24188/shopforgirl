@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 <?php require_once('src/product/SPGProductDetail.php') ?>
 <div id="single-product-page-header" class="titleclass">
     <div class="container">
