@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-
 <?php require_once('src/product/SPGProductDetail.php') ?>
 <div id="single-product-page-header" class="titleclass">
     <div class="container">
@@ -36,7 +34,7 @@ if (isset($_GET['barcode'])) {
         </div>
         <div class="product-info-group">
             <div class="col-sm-12 col-sm-12 col-md-12 col-lg-12">
-                <?php if (!empty($post)): ?>
+                <?php if (!empty($post) && $post->post_type != 'page'): ?>
                     <?php setup_postdata($post) ?>
                     <?php woocommerce_get_template_part('woocommerce/single-product/content', 'single-barcode-product'); ?>
                 <?php else: ?>

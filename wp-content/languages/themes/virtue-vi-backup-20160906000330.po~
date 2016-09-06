@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Virtue\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-08 19:19-0600\n"
-"PO-Revision-Date: Mon Sep 05 2016 19:43:43 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Mon Sep 05 2016 19:43:58 GMT+0700 (ICT)\n"
 "Last-Translator: sys_admin <lebaotriet@gmail.com>\n"
 "Language-Team: \n"
 "Language: Vietnamese\n"
@@ -3475,7 +3475,7 @@ msgstr ""
 #: ../lib/utils.php:89
 #, php-format
 msgid "Search Results for %s"
-msgstr "Kết quả tìm cho từ khóa %s"
+msgstr "Kết quả tìm cho từ khóa \"%s\""
 
 #: ../lib/utils.php:91
 msgid "Not Found"

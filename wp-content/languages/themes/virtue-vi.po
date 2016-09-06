@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Virtue\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-08 19:19-0600\n"
-"PO-Revision-Date: Mon Sep 05 2016 19:43:58 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Tue Sep 06 2016 07:03:29 GMT+0700 (ICT)\n"
 "Last-Translator: sys_admin <lebaotriet@gmail.com>\n"
 "Language-Team: \n"
 "Language: Vietnamese\n"
@@ -294,10 +294,6 @@ msgstr ""
 #: ../lib/breadcrumbs.php:50
 msgid "Home"
 msgstr ""
-
-#: ../lib/breadcrumbs.php:84
-msgid "Search results for"
-msgstr "Kết quả tìm cho "
 
 #: ../lib/breadcrumbs.php:232
 msgid "Error 404"
@@ -882,10 +878,6 @@ msgstr ""
 #: ../lib/custom.php:593
 msgid "Check out the newest demo site"
 msgstr ""
-
-#: ../lib/custom.php:791 ../searchform.php:1 ../templates/mobile-header.php:60
-msgid "Search"
-msgstr "Tìm kiếm"
 
 #: ../lib/custom.php:1303 ../templates/entry-post-links.php:12
 msgid "Previous Post"
@@ -3472,11 +3464,6 @@ msgstr ""
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: ../lib/utils.php:89
-#, php-format
-msgid "Search Results for %s"
-msgstr "Kết quả tìm cho từ khóa \"%s\""
-
 #: ../lib/utils.php:91
 msgid "Not Found"
 msgstr ""
@@ -6036,10 +6023,6 @@ msgstr ""
 msgid "Topbar Cart Total Text"
 msgstr ""
 
-#: ../themeoptions/options.php:3360
-msgid "Standard: Your Cart"
-msgstr "Giỏ hàng"
-
 #: ../themeoptions/options.php:3365
 msgid "Product Sold Text"
 msgstr ""
@@ -6744,21 +6727,38 @@ msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:30
 msgid "This product is currently out of stock and unavailable."
-msgstr ""
+msgstr "Hết hàng"
 
 #: ../woocommerce/single-product/up-sells.php:73
 msgid "You may also like&hellip;"
 msgstr ""
-
-#: ../lib/custom-woocommerce.php:190 ../templates/header-topbar.php:39
-msgid "View your shopping cart"
-msgstr "Xem giỏ hàng"
 
 #: ../lib/custom-woocommerce.php:195 ../lib/custom.php:777
 #: ../templates/header-topbar.php:44 ../templates/mobile-header.php:54
 #, fuzzy
 msgid "Your Cart"
 msgstr "Giỏ hàng"
+
+#: ../lib/breadcrumbs.php:84
+msgid "Search results for"
+msgstr "Kết quả tìm cho "
+
+#: ../lib/custom.php:791 ../searchform.php:1 ../templates/mobile-header.php:60
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: ../lib/utils.php:89
+#, php-format
+msgid "Search Results for %s"
+msgstr "Kết quả tìm cho từ khóa \"%s\""
+
+#: ../themeoptions/options.php:3360
+msgid "Standard: Your Cart"
+msgstr "Giỏ hàng"
+
+#: ../lib/custom-woocommerce.php:190 ../templates/header-topbar.php:39
+msgid "View your shopping cart"
+msgstr "Xem giỏ hàng"
 
 #: ../woocommerce/single-product/related.php:68
 msgid "Related Products"

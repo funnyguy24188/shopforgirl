@@ -27,6 +27,11 @@ $customer_finding->init_hook();
 $role_back_end = new SPGRoleBackEnd();
 $role_back_end->init_hook();
 
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+function my_theme_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+}
 
 add_action('wp_enqueue_scripts', function () {
 
