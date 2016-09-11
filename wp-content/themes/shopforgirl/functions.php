@@ -98,7 +98,7 @@ function exclude_login_link_menu_item($items, $menu, $args)
     // Iterate over the items to search and destroy
     foreach ($items as $key => $item) {
         if (is_user_logged_in()) {
-            if ($item->object_id == 240) unset($items[$key]);
+            if ($item->object_id == 247) unset($items[$key]);
         }
     }
 
