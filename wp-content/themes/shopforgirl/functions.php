@@ -27,9 +27,10 @@ $customer_finding->init_hook();
 $role_back_end = new SPGRoleBackEnd();
 $role_back_end->init_hook();
 
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-function my_theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+function my_theme_enqueue_styles()
+{
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
 }
 
@@ -85,6 +86,77 @@ function server_attach_script()
 {
     ?>
     <script type="text/javascript">
-        userRoles = <?php echo (wp_get_current_user())?json_encode(array_values(wp_get_current_user()->roles)):json_encode(array() )?>;
+        userRoles = <?php echo (wp_get_current_user()) ? json_encode(array_values(wp_get_current_user()->roles)) : json_encode(array())?>;
     </script><?php
 }
+
+/**
+ * Remove login link after user has been login
+ */
+function exclude_login_link_menu_item($items, $menu, $args)
+{
+    // Iterate over the items to search and destroy
+    foreach ($items as $key => $item) {
+        if (is_user_logged_in()) {
+            if ($item->object_id == 240) unset($items[$key]);
+        }
+    }
+
+    return $items;
+}
+
+/**
+ * Add logout item to  main menu
+ * @param $items
+ * @param $menu
+ * @return string
+ */
+function add_logout_link_menu_item($items, $menu)
+{
+    // Iterate over the items to search and destroy
+    if ($menu->menu->slug == 'main-menu') {
+        if (is_user_logged_in()) {
+            $items .= '<li class="menu-linh"><a href="' . wp_logout_url('/') . '"><span>Logout</span></a></li>';
+        }
+    }
+
+    return $items;
+}
+
+/**
+ * Redirect custom login page when user go to wp-admin default login page
+ */
+function redirect_login_page()
+{
+    $login_page = home_url('/login');
+    $page_viewed = basename($_SERVER['REQUEST_URI']);
+
+    if ($page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
+        wp_safe_redirect($login_page);
+        exit;
+    }
+}
+
+/* Kiểm tra lỗi đăng nhập */
+function login_failed()
+{
+    $login_page = home_url('/login');
+    wp_safe_redirect($login_page . '?login=failed');
+    exit;
+}
+
+add_action('wp_login_failed', 'login_failed');
+
+function verify_username_password($user, $username, $password)
+{
+    $login_page = home_url('/login');
+    if ($username == "" || $password == "") {
+        wp_safe_redirect($login_page . "?login=empty");
+        exit;
+    }
+}
+
+add_filter('authenticate', 'verify_username_password', 1, 3);
+add_action('init', 'redirect_login_page');
+add_filter('wp_get_nav_menu_items', 'exclude_login_link_menu_item', 10, 3);
+add_filter('wp_nav_menu_items', 'add_logout_link_menu_item', 10, 2);
