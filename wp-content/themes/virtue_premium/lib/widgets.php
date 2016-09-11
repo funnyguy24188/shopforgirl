@@ -30,7 +30,7 @@ function virtue_register_sidebars(){
 
   }
 }
-function virtue_register_sidebar($name, $id){
+/*function virtue_register_sidebar($name, $id){
   register_sidebar(array('name'=>$name,
     'id' => $id,
          'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
@@ -39,7 +39,7 @@ function virtue_register_sidebar($name, $id){
     'after_title' => '</h3>',
   ));
 }
-add_action('widgets_init', 'virtue_register_sidebars');
+add_action('widgets_init', 'virtue_register_sidebars');*/
 
 function kadence_widgets_init() {
     //Topbar 

@@ -6,6 +6,7 @@ require_once 'src/product/SPGProductMod.php';
 require_once 'src/product/SPGProductDetail.php';
 require_once 'src/customer/SPGCustomerDetail.php';
 require_once 'src/role/SPGRoleBackEnd.php';
+require_once 'src/widget/register-init.php';
 
 
 $product_mod = new SPGProductMod();

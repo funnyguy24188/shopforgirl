@@ -1097,7 +1097,7 @@ $meta_boxes[] = array(
 				'id'      => $prefix . 'sidebar_choice',
 				'type'    => 'imag_select_sidebars',
 				),
-				
+
 			));
 			$meta_boxes[] = array(
 				'id'         => 'bloggrid_metabox',
