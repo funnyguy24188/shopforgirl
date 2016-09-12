@@ -69,4 +69,6 @@ do_action( 'kadence_single_post_begin' );
         endwhile; ?>
     </div>
 <?php
-do_action( 'kadence_single_post_end' );
+do_action( 'kadence_single_post_end' ); ?>
+
+    <div class="fb-comments" data-href="http://shopforgirl.vn" data-numposts="10"></div>

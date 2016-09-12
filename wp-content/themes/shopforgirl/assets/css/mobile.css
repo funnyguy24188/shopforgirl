@@ -1,4 +1,9 @@
 @media screen and (min-width: 0) {
+
+    .current-menu-item a, .current_page_item a, .current-menu-parent a {
+        color: #ff5ea1;
+    }
+
     .ubermenu-main .ubermenu-nav .ubermenu-item-level-0 {
         font-size: 14px !important;
     }
