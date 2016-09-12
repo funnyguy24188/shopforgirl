@@ -161,3 +161,4 @@ add_filter('authenticate', 'verify_username_password', 1, 3);
 add_action('init', 'redirect_login_page');
 add_filter('wp_get_nav_menu_items', 'exclude_login_link_menu_item', 10, 3);
 add_filter('wp_nav_menu_items', 'add_logout_link_menu_item', 10, 2);
+
