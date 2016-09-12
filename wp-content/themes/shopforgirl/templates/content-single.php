@@ -71,4 +71,4 @@ do_action( 'kadence_single_post_begin' );
 <?php
 do_action( 'kadence_single_post_end' ); ?>
 
-    <div class="fb-comments" data-href="http://shopforgirl.vn" data-numposts="10"></div>
+    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="15"  width="100%" data-colorscheme="light"></div>
