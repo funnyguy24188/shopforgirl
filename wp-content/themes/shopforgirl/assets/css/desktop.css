@@ -1,4 +1,9 @@
 @media screen and (min-width: 1024px) {
+
+    #logo img {
+        max-width: 60%;
+    }
+
     .ubermenu-main .ubermenu-nav .ubermenu-item-level-0 {
         font-size: 14px !important;
     }

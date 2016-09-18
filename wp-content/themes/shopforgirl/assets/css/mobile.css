@@ -1,5 +1,9 @@
 @media screen and (min-width: 0) {
     /** start home **/
+    .home #full_imageslider .kt-flex-fullslide {
+        background-position-y: 0;
+    }
+
     .home .kad-info-box i {
         display: none;
     }
