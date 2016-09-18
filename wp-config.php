@@ -27,13 +27,14 @@ ini_set('xdebug.var_display_max_data', 10240);
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
+define( 'WPCACHEHOME', '/var/www/html/shopforgirl/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 define('DB_NAME', 'shopforgirl_db');
 
 /** MySQL database username */
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '2601');
+define('DB_PASSWORD', '123');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -88,10 +89,10 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
-
-//define('WP_SITEURL','http://shopforgirl.local');
-//define('WP_HOME','http://shopforgirl.local');
+define('WP_DEBUG', true);
+define( 'WP_CACHE', true );
+define('WP_SITEURL','http://shopforgirl.local');
+define('WP_HOME','http://shopforgirl.local');
 
 /* That's all, stop editing! Happy blogging. */
 

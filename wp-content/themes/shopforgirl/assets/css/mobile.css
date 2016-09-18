@@ -1,4 +1,38 @@
 @media screen and (min-width: 0) {
+    /** start home **/
+    .home .kad-info-box i {
+        display: none;
+    }
+
+    .home .widget_virtue_infobox_widget .panel-widget-style {
+        height: 300px;
+        display: flex;
+        background-size: cover;
+    }
+    .home .first-showup-block {
+        background: url("/wp-content/uploads/1-block.jpg");
+    }
+
+    .home .second-showup-block {
+        background: url("/wp-content/uploads/2-block.jpg");
+    }
+
+    .home .third-showup-block {
+        background: url("/wp-content/uploads/3-block.jpg");
+    }
+
+    .home .widget_virtue_infobox_widget .panel-widget-style a {
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .home .widget_virtue_infobox_widget .panel-widget-style:hover {
+        -webkit-filter: grayscale(70%); /* Chrome, Safari, Opera */
+        filter: grayscale(70%);
+        transition: 1s;
+    }
+
+    /** end home **/
 
     .current-menu-item a, .current_page_item a, .current-menu-parent a {
         color: #ff5ea1;
@@ -30,9 +64,18 @@
         display: none;
     }
 
+    /** hide the sidebar **/
+    .product-finding #ktsidebar {
+        display: none;
+    }
+
     /** show only topbar **/
     .product-finding header #topbar .container, .order-product header #topbar .container {
         display: block;
+    }
+
+    .order-product #ktsidebar {
+        display: none;
     }
 
     .order-product footer {
@@ -269,11 +312,11 @@
     }
 
     /** End home page **/
-
     .woocommerce #carouselcontainer span.onsale, .woocommerce span.onsale, span.onsale {
         padding: 7px;
         font-size: 14px;
     }
+
     .onsale {
         background: #c72c00;
     }

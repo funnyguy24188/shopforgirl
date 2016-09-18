@@ -157,8 +157,80 @@ function verify_username_password($user, $username, $password)
     }
 }
 
+/**
+ * Join with post meta to query by barcode field on Product list backend
+ * @param string $join
+ * @return string
+ */
+function join_woo_product_list_search_by_barcode($join = '')
+{
+    global $wp_query, $wpdb;
+    // escape if not woocommerce searcg query
+    if (empty($wp_query->query_vars['s'])) {
+        return $join;
+    }
+
+    $join .= " INNER JOIN {$wpdb->prefix}postmeta AS c_postmeta ON (wp_posts.ID = c_postmeta.post_id)";
+    return $join;
+}
+
+function where_woo_product_list_search_by_barcode($where = '')
+{
+
+    global $wp_query, $wpdb;
+    // escape if not woocommerce searcg query
+    if (empty($wp_query->query_vars['s'])) {
+        return $where;
+    }
+
+    // prequery first
+
+    $barcode = $wp_query->query_vars['s'];
+
+    $sql = "SELECT ID, post_parent, post_type
+            FROM {$wpdb->prefix}posts 
+            INNER JOIN  {$wpdb->prefix}postmeta ON {$wpdb->prefix}postmeta.post_id = {$wpdb->prefix}posts.ID             
+            WHERE  {$wpdb->prefix}postmeta.meta_key = '_barcode_field' AND {$wpdb->prefix}postmeta.meta_value = '{$barcode}'";
+
+    $result = $wpdb->get_results($sql, ARRAY_A);
+    $post_parents = array();
+    if (!empty($result)) {
+        foreach ($result as $item) {
+            if ($item['post_type'] == 'product_variation') {
+                if (!in_array($item['post_parent'], $post_parents)) {
+                    $post_parents[] = "'" . $item['post_parent'] . "'";
+                }
+
+            }
+        }
+    }
+    $where .= " OR ( c_postmeta.meta_key = '_barcode_field' AND c_postmeta.meta_value = '{$barcode}')";
+    // incase product is variation product we get the parent product
+    if (!empty($post_parents)) {
+        $post_parents = implode(',', $post_parents);
+        $where .= " OR {$wpdb->prefix}posts.ID IN  ( $post_parents )  ";
+    }
+    return $where;
+}
+
+function distinct_woo_product_list_search_by_barcode($distinct)
+{
+    return 'DISTINCT';
+}
+
 add_filter('authenticate', 'verify_username_password', 1, 3);
 add_action('init', 'redirect_login_page');
 add_filter('wp_get_nav_menu_items', 'exclude_login_link_menu_item', 10, 3);
 add_filter('wp_nav_menu_items', 'add_logout_link_menu_item', 10, 2);
+
+add_action('pre_get_posts', function ($query) {
+    $post_type = !empty(get_query_var('post_type')) ? get_query_var('post_type') : '';
+
+    if (is_search() && is_admin() && $post_type == 'product') {
+        add_filter('posts_join', 'join_woo_product_list_search_by_barcode');
+        add_filter('posts_where', 'where_woo_product_list_search_by_barcode');
+        add_filter('posts_distinct', 'distinct_woo_product_list_search_by_barcode');
+    }
+
+});
 

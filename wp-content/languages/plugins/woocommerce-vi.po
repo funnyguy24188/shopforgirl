@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Tue Sep 13 2016 00:11:04 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Sun Sep 18 2016 18:26:43 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -4863,11 +4863,6 @@ msgstr ""
 msgid "Backordered"
 msgstr ""
 
-#: includes/abstracts/abstract-wc-order.php:1865
-#, c-format
-msgid "via %s"
-msgstr "bằng %s"
-
 #: includes/abstracts/abstract-wc-order.php:1870
 #: includes/abstracts/abstract-wc-product.php:1035
 #: includes/abstracts/abstract-wc-product.php:1041
@@ -4877,43 +4872,20 @@ msgstr "bằng %s"
 msgid "Free!"
 msgstr ""
 
-#: includes/abstracts/abstract-wc-order.php:1934
-msgid "Subtotal:"
-msgstr "Tổng tiền hàng:"
-
 #: includes/abstracts/abstract-wc-order.php:1941
 msgid "Discount:"
 msgstr ""
-
-#: includes/abstracts/abstract-wc-order.php:1948
-msgid "Shipping:"
-msgstr "Phí ship:"
 
 #: includes/abstracts/abstract-wc-order.php:1963
 #: includes/admin/meta-boxes/views/html-order-fee.php:18
 msgid "Fee"
 msgstr ""
 
-#: includes/abstracts/abstract-wc-order.php:2001
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:297
-#: includes/shortcodes/class-wc-shortcode-checkout.php:154
-#: templates/checkout/thankyou.php:55
-msgid "Payment Method:"
-msgstr "Hình thức thanh toán:"
-
 #: includes/abstracts/abstract-wc-order.php:2009
 #: includes/admin/meta-boxes/views/html-order-items.php:229
 #: includes/admin/meta-boxes/views/html-order-refund.php:16
 msgid "Refund"
 msgstr ""
-
-#: includes/abstracts/abstract-wc-order.php:2016
-#: includes/admin/meta-boxes/views/html-order-item.php:106
-#: includes/admin/meta-boxes/views/html-order-item.php:148
-#: includes/shortcodes/class-wc-shortcode-checkout.php:149
-#: templates/checkout/thankyou.php:50
-msgid "Total:"
-msgstr "Tổng hóa đơn:"
 
 #: includes/abstracts/abstract-wc-order.php:2282
 #: templates/emails/plain/email-order-items.php:58
@@ -6723,21 +6695,6 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: includes/admin/class-wc-admin-post-types.php:239
-#: includes/admin/class-wc-admin-post-types.php:279
-#: includes/admin/reports/class-wc-report-coupon-usage.php:349
-#: includes/admin/reports/class-wc-report-customers.php:226
-#: includes/admin/reports/class-wc-report-sales-by-category.php:263
-#: includes/admin/reports/class-wc-report-sales-by-date.php:475
-#: includes/admin/reports/class-wc-report-sales-by-product.php:375
-#: includes/admin/settings/views/html-webhook-logs.php:17
-#: includes/admin/settings/views/html-webhook-logs.php:25
-#: includes/wc-account-functions.php:177
-#: includes/widgets/class-wc-widget-products.php:55
-#: templates/myaccount/my-orders.php:14
-msgid "Date"
-msgstr "Ngày tháng"
-
 #: includes/admin/class-wc-admin-post-types.php:253
 msgid "Code"
 msgstr ""
@@ -6958,11 +6915,6 @@ msgstr[1] ""
 #: includes/admin/class-wc-admin-post-types.php:682
 msgid "Tel:"
 msgstr ""
-
-#: includes/admin/class-wc-admin-post-types.php:695
-#: includes/admin/class-wc-admin-post-types.php:731
-msgid "Via"
-msgstr "bằng"
 
 #: includes/admin/class-wc-admin-post-types.php:717
 #, c-format
@@ -7226,10 +7178,6 @@ msgstr ""
 #: includes/admin/class-wc-admin-profile.php:133
 msgid "State/County or state code"
 msgstr ""
-
-#: includes/admin/class-wc-admin-profile.php:84
-msgid "Telephone"
-msgstr "Điện thoai"
 
 #: includes/admin/class-wc-admin-profile.php:88
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:83
@@ -15468,7 +15416,7 @@ msgstr ""
 
 #: includes/class-wc-ajax.php:290
 msgid "Return to shop"
-msgstr ""
+msgstr "Quay lại shop"
 
 #: includes/class-wc-ajax.php:1370
 #, c-format
@@ -18499,11 +18447,6 @@ msgstr ""
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr ""
 
-#: includes/shortcodes/class-wc-shortcode-checkout.php:141
-#: templates/checkout/thankyou.php:42
-msgid "Order Number:"
-msgstr "Số hóa đơn"
-
 #: includes/shortcodes/class-wc-shortcode-checkout.php:145
 #: templates/checkout/thankyou.php:46
 msgid "Date:"
@@ -19882,7 +19825,7 @@ msgstr ""
 
 #: templates/cart/cart-empty.php:36
 msgid "Return To Shop"
-msgstr ""
+msgstr "Quay lại shop"
 
 #: templates/cart/cart-shipping.php:48
 msgid "Shipping costs will be calculated once you have provided your address."
@@ -20025,10 +19968,6 @@ msgid ""
 "bank/merchant has declined your transaction. Please attempt your purchase "
 "again."
 msgstr ""
-
-#: templates/checkout/thankyou.php:38 templates/checkout/thankyou.php:69
-msgid "Thank you. Your order has been received."
-msgstr "Cám ơn bạn đã bạn đã mua hàng."
 
 #: templates/emails/admin-cancelled-order.php:28
 #: templates/emails/plain/admin-cancelled-order.php:25
@@ -20266,18 +20205,6 @@ msgstr ""
 msgid "Confirm New Password"
 msgstr ""
 
-#: templates/myaccount/form-edit-address.php:23
-#: templates/myaccount/my-address.php:27 templates/myaccount/my-address.php:32
-#: templates/order/order-details-customer.php:58
-msgid "Billing Address"
-msgstr "Địa chỉ người mua"
-
-#: templates/myaccount/form-edit-address.php:23
-#: templates/myaccount/my-address.php:28
-#: templates/order/order-details-customer.php:69
-msgid "Shipping Address"
-msgstr "Địa chỉ ship"
-
 #: templates/myaccount/form-edit-address.php:46
 msgid "Save Address"
 msgstr ""
@@ -20429,15 +20356,6 @@ msgstr ""
 #: templates/order/order-details-customer.php:35
 msgid "Email:"
 msgstr ""
-
-#: templates/order/order-details-customer.php:42
-#, fuzzy
-msgid "Telephone:"
-msgstr "Điện thoai:"
-
-#: templates/order/order-details.php:28
-msgid "Order Details"
-msgstr "Chi tiết hóa đơn"
 
 #: templates/product-searchform.php:27
 msgid "Search for:"
@@ -21174,6 +21092,11 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
+#: templates/order/order-details-customer.php:42
+#, fuzzy
+msgid "Telephone:"
+msgstr "Điện thoai:"
+
 #: includes/admin/reports/class-wc-report-stock.php:165
 #: includes/class-wc-post-types.php:242 templates/cart/cart.php:36
 #: templates/cart/cart.php:79 templates/checkout/form-pay.php:29
@@ -21183,6 +21106,83 @@ msgstr ""
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/abstracts/abstract-wc-order.php:1865
+#, c-format
+msgid "via %s"
+msgstr "bằng %s"
+
+#: includes/abstracts/abstract-wc-order.php:1934
+msgid "Subtotal:"
+msgstr "Tổng tiền hàng:"
+
+#: includes/abstracts/abstract-wc-order.php:1948
+msgid "Shipping:"
+msgstr "Phí ship:"
+
+#: includes/abstracts/abstract-wc-order.php:2001
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:297
+#: includes/shortcodes/class-wc-shortcode-checkout.php:154
+#: templates/checkout/thankyou.php:55
+msgid "Payment Method:"
+msgstr "Hình thức thanh toán:"
+
+#: includes/abstracts/abstract-wc-order.php:2016
+#: includes/admin/meta-boxes/views/html-order-item.php:106
+#: includes/admin/meta-boxes/views/html-order-item.php:148
+#: includes/shortcodes/class-wc-shortcode-checkout.php:149
+#: templates/checkout/thankyou.php:50
+msgid "Total:"
+msgstr "Tổng hóa đơn:"
+
+#: includes/admin/class-wc-admin-post-types.php:239
+#: includes/admin/class-wc-admin-post-types.php:279
+#: includes/admin/reports/class-wc-report-coupon-usage.php:349
+#: includes/admin/reports/class-wc-report-customers.php:226
+#: includes/admin/reports/class-wc-report-sales-by-category.php:263
+#: includes/admin/reports/class-wc-report-sales-by-date.php:475
+#: includes/admin/reports/class-wc-report-sales-by-product.php:375
+#: includes/admin/settings/views/html-webhook-logs.php:17
+#: includes/admin/settings/views/html-webhook-logs.php:25
+#: includes/wc-account-functions.php:177
+#: includes/widgets/class-wc-widget-products.php:55
+#: templates/myaccount/my-orders.php:14
+msgid "Date"
+msgstr "Ngày tháng"
+
+#: includes/admin/class-wc-admin-post-types.php:695
+#: includes/admin/class-wc-admin-post-types.php:731
+msgid "Via"
+msgstr "bằng"
+
+#: includes/admin/class-wc-admin-profile.php:84
+msgid "Telephone"
+msgstr "Điện thoai"
+
+#: includes/shortcodes/class-wc-shortcode-checkout.php:141
+#: templates/checkout/thankyou.php:42
+msgid "Order Number:"
+msgstr "Số hóa đơn"
+
+#: templates/checkout/thankyou.php:38 templates/checkout/thankyou.php:69
+msgid "Thank you. Your order has been received."
+msgstr "Cám ơn bạn đã bạn đã mua hàng."
+
+#: templates/myaccount/form-edit-address.php:23
+#: templates/myaccount/my-address.php:27 templates/myaccount/my-address.php:32
+#: templates/order/order-details-customer.php:58
+msgid "Billing Address"
+msgstr "Địa chỉ người mua"
+
+#: templates/myaccount/form-edit-address.php:23
+#: templates/myaccount/my-address.php:28
+#: templates/order/order-details-customer.php:69
+msgid "Shipping Address"
+msgstr "Địa chỉ ship"
+
+#: templates/order/order-details.php:28
+msgid "Order Details"
+msgstr "Chi tiết hóa đơn"
 
 #: templates/loop/no-products-found.php:24
 msgid "No products were found matching your selection."

@@ -94,3 +94,8 @@ if(isset($virtue_premium['singleproduct_layout']) && $virtue_premium['singleprod
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+
+<?php if(!empty($_GET['barcode']) && is_user_logged_in()): ?>
+	<a href="<?php echo home_url("/wp-admin/edit.php?s={$_GET['barcode']}&post_status=all&post_type=product") ?>">Vào trang quản lý sản phẩm</a>
+<?php endif; ?>
