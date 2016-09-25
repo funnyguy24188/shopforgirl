@@ -85,4 +85,4 @@ if(isset($virtue_premium['singleproduct_layout']) && $virtue_premium['singleprod
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
 
-<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="15"  width="100%" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="15" order_by="reverse_time" width="100%" data-colorscheme="light"></div>
