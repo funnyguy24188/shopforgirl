@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Virtue\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-08 19:19-0600\n"
-"PO-Revision-Date: Sun Sep 11 2016 19:18:02 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Sun Sep 25 2016 19:52:48 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: \n"
 "Language: Vietnamese\n"
@@ -564,7 +564,7 @@ msgstr ""
 #: ../templates/home/blog-home-onecolumn.php:125
 #: ../templates/home/blog-home.php:133
 msgid "Read More"
-msgstr ""
+msgstr "Xem thêm"
 
 #: ../lib/cleanup.php:201
 msgid "Insert Shortcode"
@@ -3644,10 +3644,6 @@ msgstr ""
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:565 ../templates/recentblog-carousel.php:8
-msgid "Recent Posts"
-msgstr "Bài viết gần đây"
-
 #: ../lib/widgets.php:652 ../lib/widgets.php:896
 msgid "Number of posts to show:"
 msgstr ""
@@ -3892,11 +3888,11 @@ msgstr ""
 
 #: ../templates/entry-meta-subhead.php:3 ../templates/entry-meta.php:2
 msgid "by"
-msgstr ""
+msgstr "Tác giả"
 
 #: ../templates/entry-meta-subhead.php:6
 msgid "posted in:"
-msgstr ""
+msgstr "Trong mục:"
 
 #: ../templates/header-style-three.php:57
 #: ../templates/header-style-two-shrink.php:62
@@ -6734,6 +6730,10 @@ msgstr ""
 #, fuzzy
 msgid "Your Cart"
 msgstr "Giỏ hàng"
+
+#: ../lib/widgets.php:565 ../templates/recentblog-carousel.php:8
+msgid "Recent Posts"
+msgstr "Bài viết gần đây"
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:30
 msgid "This product is currently out of stock and unavailable."

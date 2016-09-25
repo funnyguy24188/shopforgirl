@@ -1,13 +1,11 @@
-jQuery(document).ready(function(){
-    /*jQuery('[id^="shipping_method_"]').click(function(){
-        jQuery.ajax({
-            url : window.location.origin + '/wp-admin/admin-ajax.php',
-            type: 'post',
-            data: {action:'update_shipping_method', shipping_method: jQuery(this).val()},
-            success: function(rep) {
-                console.log(rep);
-            }
-        });
-    });
-*/
+jQuery(document).ready(function () {
+    // move commend facebook to after sidebar
+    if (jQuery('.fb-comments') != 'undefined') {
+
+        var fb_comment = jQuery('.fb-comments');
+        jQuery('.fb-comments').remove();
+        jQuery('#ktsidebar').closest('#content').append(fb_comment);
+    }
+
+
 });
