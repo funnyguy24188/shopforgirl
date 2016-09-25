@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
     // move commend facebook to after sidebar
-    if (jQuery('.fb-comments') != 'undefined' && jQruey('.single-post')) {
+    if (typeof jQuery('.fb-comments') != 'undefined' && typeof jQuery('.single-post') != 'undefined') {
 
         var fb_comment = jQuery('.fb-comments');
         jQuery('.fb-comments').remove();
