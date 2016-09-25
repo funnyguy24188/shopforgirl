@@ -10,11 +10,11 @@ $wp_cache_mobile_prefixes = 'w3c , w3c-, acs-, alav, alca, amoi, audi, avan, ben
 $wp_cache_mod_rewrite = 0; //Added by WP-Cache Manager
 $cache_time_interval = '600'; //Added by WP-Cache Manager
 $cache_schedule_type = 'interval'; //Added by WP-Cache Manager
-$wp_cache_refresh_single_only = '0'; //Added by WP-Cache Manager
+$wp_cache_refresh_single_only = '1'; //Added by WP-Cache Manager
 $wp_cache_make_known_anon = 0; //Added by WP-Cache Manager
 $wp_cache_front_page_checks = 0; //Added by WP-Cache Manager
 $wp_cache_mfunc_enabled = 0; //Added by WP-Cache Manager
-$wp_supercache_304 = 0; //Added by WP-Cache Manager
+$wp_supercache_304 = 1; //Added by WP-Cache Manager
 $wp_cache_no_cache_for_get = 0; //Added by WP-Cache Manager
 $wp_cache_disable_utf8 = 0; //Added by WP-Cache Manager
 $dismiss_readable_warning = 1; //Added by WP-Cache Manager
@@ -23,12 +23,12 @@ $wp_cache_slash_check = 1; //Added by WP-Cache Manager
 if ( ! defined('WPCACHEHOME') )
 	define( 'WPCACHEHOME', WP_CONTENT_DIR . "/plugins/wp-super-cache/" ); //Added by WP-Cache Manager
 
-$cache_compression = 0; // Super cache compression
-$cache_enabled = false; //Added by WP-Cache Manager
+$cache_compression = 1; //Added by WP-Cache Manager
+$cache_enabled = true; //Added by WP-Cache Manager
 $super_cache_enabled = true; //Added by WP-Cache Manager
 $cache_max_time = '1800'; //Added by WP-Cache Manager
 //$use_flock = true; // Set it true or false if you know what to use
-$cache_path = WP_CONTENT_DIR . '/cache/';
+$cache_path = '/var/www/html/shopforgirl/wp-content/cache'; //Added by WP-Cache Manager
 $file_prefix = 'wp-cache-';
 $ossdlcdn = 0;
 
@@ -38,7 +38,7 @@ $cache_acceptable_files = array( 'wp-comments-popup.php', 'wp-links-opml.php', '
 $cache_rejected_uri = array('wp-.*\\.php', 'index\\.php');
 $cache_rejected_user_agent = array ( 0 => 'bot', 1 => 'ia_archive', 2 => 'slurp', 3 => 'crawl', 4 => 'spider', 5 => 'Yandex' );
 
-$cache_rebuild_files = 0; //Added by WP-Cache Manager
+$cache_rebuild_files = 1; //Added by WP-Cache Manager
 
 // Disable the file locking system.
 // If you are experiencing problems with clearing or creating cache files
@@ -89,8 +89,8 @@ $wp_cache_pages[ "pages" ] = 1; //Added by WP-Cache Manager
 $wp_cache_pages[ "single" ] = 0; //Added by WP-Cache Manager
 $wp_cache_pages[ "author" ] = 0; //Added by WP-Cache Manager
 $wp_cache_hide_donation = 0;
-$wp_cache_not_logged_in = 0; //Added by WP-Cache Manager
-$wp_cache_clear_on_post_edit = 0; //Added by WP-Cache Manager
+$wp_cache_not_logged_in = 1; //Added by WP-Cache Manager
+$wp_cache_clear_on_post_edit = 1; //Added by WP-Cache Manager
 $wp_cache_hello_world = 0; //Added by WP-Cache Manager
 $wp_cache_mobile_enabled = 1; //Added by WP-Cache Manager
 $wp_cache_cron_check = 1; //Added by WP-Cache Manager
