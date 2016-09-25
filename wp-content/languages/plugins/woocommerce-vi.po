@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Sun Sep 18 2016 18:26:43 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Mon Sep 26 2016 00:38:54 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -5301,7 +5301,7 @@ msgstr ""
 #: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:202
 #: includes/wc-template-functions.php:1106
 msgid "Description"
-msgstr ""
+msgstr "Mô tả "
 
 #: includes/admin/class-wc-admin-api-keys-table-list.php:41
 #: includes/admin/settings/views/html-keys-edit.php:62
@@ -6334,7 +6334,7 @@ msgstr ""
 #: includes/admin/class-wc-admin-pointers.php:73
 #: templates/single-product/tabs/description.php:25
 msgid "Product Description"
-msgstr ""
+msgstr "Thông tin sản phẩm"
 
 #: includes/admin/class-wc-admin-pointers.php:74
 msgid ""
@@ -15414,10 +15414,6 @@ msgstr ""
 msgid "Sorry, your session has expired."
 msgstr ""
 
-#: includes/class-wc-ajax.php:290
-msgid "Return to shop"
-msgstr "Quay lại shop"
-
 #: includes/class-wc-ajax.php:1370
 #, c-format
 msgid "Item %s stock reduced from %s to %s."
@@ -19823,10 +19819,6 @@ msgstr ""
 msgid "Application Authentication Request"
 msgstr ""
 
-#: templates/cart/cart-empty.php:36
-msgid "Return To Shop"
-msgstr "Quay lại shop"
-
 #: templates/cart/cart-shipping.php:48
 msgid "Shipping costs will be calculated once you have provided your address."
 msgstr ""
@@ -21106,6 +21098,14 @@ msgstr "Điện thoai:"
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/class-wc-ajax.php:290
+msgid "Return to shop"
+msgstr "Quay lại shop"
+
+#: templates/cart/cart-empty.php:36
+msgid "Return To Shop"
+msgstr "Quay lại shop"
 
 #: includes/abstracts/abstract-wc-order.php:1865
 #, c-format
