@@ -97,7 +97,10 @@ class Spg_Barcode_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/spg-barcode-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name . '_admin', plugin_dir_url( __FILE__ ) . 'js/spg-barcode-admin.js', array( 'jquery' ), $this->version, false );
+		if(is_admin()) {
+			wp_enqueue_script( $this->plugin_name . '_admin', plugin_dir_url( __FILE__ ) . 'js/spg-barcode-admin.js', array( 'jquery' ), $this->version, false );
+		}
+
 
 	}
 
