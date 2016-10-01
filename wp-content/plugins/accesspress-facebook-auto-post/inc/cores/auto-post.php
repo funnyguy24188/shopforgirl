@@ -115,6 +115,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     $post_content = str_replace('&nbsp;','',$post_content);
     $post_content = strip_shortcodes($post_content);
     $post_excerpt = $post->post_excerpt;
+    $post_customer_intro = strip_tags(get_field('fb_customer_intro', $post->ID));
     $post_link = get_the_permalink($id);
     $post_author_id = $post->post_author;
     $caption = get_bloginfo('description');
@@ -124,6 +125,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     $message_format = str_replace('#post_excerpt', $post_excerpt, $message_format);
     $message_format = str_replace('#post_link', $post_link, $message_format);
     $message_format = str_replace('#author_name', $author_name, $message_format);
+    $message_format = str_replace('#customer_intro', $post_customer_intro, $message_format);
 
     //echo $message_format;die();
 
