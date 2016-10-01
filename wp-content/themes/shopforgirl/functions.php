@@ -7,6 +7,7 @@ require_once 'src/product/SPGProductDetail.php';
 require_once 'src/customer/SPGCustomerDetail.php';
 require_once 'src/role/SPGRoleBackEnd.php';
 require_once 'src/widget/register-init.php';
+require_once 'src/wp_feature/wp-init.php';
 
 
 $product_mod = new SPGProductMod();
@@ -27,6 +28,8 @@ $customer_finding->init_hook();
 // role
 $role_back_end = new SPGRoleBackEnd();
 $role_back_end->init_hook();
+
+
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 function my_theme_enqueue_styles()
@@ -233,4 +236,5 @@ add_action('pre_get_posts', function ($query) {
     }
 
 });
+
 
