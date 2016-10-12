@@ -31,7 +31,7 @@
                     ?>
                     <?php for ($i = 0; $i < $num; $i++): ?>
                         <div class="print-queue-grid-item">
-                            <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
+                            <img src="<?php echo $url . '?' . time()?>" alt="barcode-<?php echo $product_id ?>">
                         </div>
                     <?php endfor; ?>
                 <?php endforeach; ?>

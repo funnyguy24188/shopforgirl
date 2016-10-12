@@ -183,7 +183,7 @@ class SPGBarCodeMetaBox
             ?>
 
             <div class="product-barcode-metabox">
-                <img src="<?php echo SPG_UPLOAD_URL . "tmp_barcode_$product_id.png" ?>"><br/>
+                <img src="<?php echo SPG_UPLOAD_URL . "tmp_barcode_$product_id.png?" . time() ?>"><br/>
                 <p>Product name: <?php echo $name; ?></p>
                 <!-- <input type="text" placeholder="Barcode prefix"><br/>-->
                 <!--<a href="#">Create product barcode automatic</a>-->
