@@ -144,7 +144,7 @@ class BarCodeWrap
             imagepng($image);
             imagedestroy($image);
         } else {
-            imagepng($image,$filepath);
+            imagepng($image,$filepath,0);
             imagedestroy($image);
         }
     }

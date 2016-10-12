@@ -176,11 +176,10 @@ class SPGBarCodeMetaBox
         // price for print on barcode
         $price = $product->get_price();
 
-        $arg = array('name'=>$name, 'price'=> $price);
-
-        $this->barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 90, 'horizontal', $this->barcodeType, true, $arg);
-        $name = $product->get_formatted_name();
+        $arg = array('name' => $name, 'price' => $price);
         if (!empty($barcode)):
+            $this->barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 90, 'horizontal', $this->barcodeType, true, $arg);
+            $name = $product->get_formatted_name();
             ?>
 
             <div class="product-barcode-metabox">
