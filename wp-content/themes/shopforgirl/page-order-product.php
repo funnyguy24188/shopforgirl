@@ -24,11 +24,11 @@
                                     </div>
 
                                     <div class="col-xs-12 col-sm-3">
-                                        <input id="quantity" class="form-control" type="text" value="1"
+                                        <input id="quantity" class="numberic form-control"  type="number" value="1"
                                                placeholder="Số lượng">
                                     </div>
                                     <div class="col-xs-12 col-sm-2">
-                                        <button id="add-more-product" type="button" class="button">Thêm</button>
+                                        <button id="add-more-product" type="button" class="btn btn-success">Thêm</button>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -40,7 +40,7 @@
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <span class="no-product" style="display: none">Sản phẩm không tồn tại</span>
+                                    <span class="no-product" style="display: none">Sản phẩm không tồn tại hoặc số lượng bán vượt số lượng tồn</span>
                                 </div>
                             </fieldset>
                             <fieldset id="product-list-show">
@@ -115,12 +115,12 @@
 
                                     <div class="col-xs-8 col-sm-8 customer-money-payment-group">
                                         <label class="form-label">Khách đưa</label>
-                                        <input class="form-control" id="customer-money" type="text" name="order[customer_money]" value="0">
+                                        <input class="numberic form-control" id="customer-money"  type="number" name="order[customer_money]" value="0">
                                     </div>
 
 
                                     <div class="col-xs-4 col-sm-4 customer-save-order-group">
-                                        <button class="button primary-button" type="submit">Lưu</button>
+                                        <button class="btn btn-success primary-button" type="submit">Lưu</button>
                                     </div>
                                 </div>
 

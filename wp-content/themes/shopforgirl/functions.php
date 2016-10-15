@@ -6,6 +6,7 @@ require_once 'src/product/SPGProductMod.php';
 require_once 'src/product/SPGProductDetail.php';
 require_once 'src/customer/SPGCustomerDetail.php';
 require_once 'src/role/SPGRoleBackEnd.php';
+require_once 'src/order/SPGOrder.php';
 require_once 'src/widget/register-init.php';
 require_once 'src/wp_feature/wp-init.php';
 
@@ -29,12 +30,16 @@ $customer_finding->init_hook();
 $role_back_end = new SPGRoleBackEnd();
 $role_back_end->init_hook();
 
+// order
+$order = new SPGOrder();
+$order->init_hook();
 
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 function my_theme_enqueue_styles()
 {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), '1.0');
 
 }
 

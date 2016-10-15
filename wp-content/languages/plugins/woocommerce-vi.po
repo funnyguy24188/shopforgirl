@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Mon Sep 26 2016 00:38:54 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Sun Oct 16 2016 01:40:18 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -5288,21 +5288,6 @@ msgstr ""
 msgid "keys"
 msgstr ""
 
-#: includes/admin/class-wc-admin-api-keys-table-list.php:40
-#: includes/admin/class-wc-admin-post-types.php:256
-#: includes/admin/class-wc-admin-setup-wizard.php:227
-#: includes/admin/settings/class-wc-settings-shipping.php:307
-#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:22
-#: includes/admin/settings/views/html-keys-edit.php:16
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:86
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:67
-#: includes/gateways/cod/class-wc-gateway-cod.php:76
-#: includes/gateways/paypal/includes/settings-paypal.php:25
-#: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:202
-#: includes/wc-template-functions.php:1106
-msgid "Description"
-msgstr "Mô tả "
-
 #: includes/admin/class-wc-admin-api-keys-table-list.php:41
 #: includes/admin/settings/views/html-keys-edit.php:62
 msgid "Consumer Key Ending In"
@@ -6330,11 +6315,6 @@ msgid ""
 "Give your new product a name here. This is a required field and will be what "
 "your customers will see in your store."
 msgstr ""
-
-#: includes/admin/class-wc-admin-pointers.php:73
-#: templates/single-product/tabs/description.php:25
-msgid "Product Description"
-msgstr "Thông tin sản phẩm"
 
 #: includes/admin/class-wc-admin-pointers.php:74
 msgid ""
@@ -15669,6 +15649,8 @@ msgid ""
 "You cannot add that amount of &quot;%s&quot; to the cart because there is "
 "not enough stock (%s remaining)."
 msgstr ""
+"Không thể thêm sản phẩm  &quot;%s&quot; vào giỏ hàng vì không đủ số lượng "
+"tồn (còn lại %s)."
 
 #: includes/class-wc-cart.php:966
 #, c-format
@@ -21098,6 +21080,26 @@ msgstr "Điện thoai:"
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/admin/class-wc-admin-api-keys-table-list.php:40
+#: includes/admin/class-wc-admin-post-types.php:256
+#: includes/admin/class-wc-admin-setup-wizard.php:227
+#: includes/admin/settings/class-wc-settings-shipping.php:307
+#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:22
+#: includes/admin/settings/views/html-keys-edit.php:16
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:86
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:67
+#: includes/gateways/cod/class-wc-gateway-cod.php:76
+#: includes/gateways/paypal/includes/settings-paypal.php:25
+#: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:202
+#: includes/wc-template-functions.php:1106
+msgid "Description"
+msgstr "Mô tả "
+
+#: includes/admin/class-wc-admin-pointers.php:73
+#: templates/single-product/tabs/description.php:25
+msgid "Product Description"
+msgstr "Thông tin sản phẩm"
 
 #: includes/class-wc-ajax.php:290
 msgid "Return to shop"

@@ -78,7 +78,7 @@
         display: block;
     }
 
-    .order-product #ktsidebar {
+    .order-product #ktsidebar, .return-product #ktsidebar {
         display: none;
     }
 
@@ -324,6 +324,25 @@
     .onsale {
         background: #c72c00;
     }
+
+    /** return product age **/
+    .return-product header .container  {
+        display: none;
+    }
+
+    .return-product header #topbar .container {
+        display: block;
+    }
+
+    .return-product #ktsidebar {
+        display: none;
+    }
+
+    .return-product footer {
+        display: none;
+    }
+    /** end return product page **/
+
 
 }
 

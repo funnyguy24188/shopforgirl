@@ -40,7 +40,7 @@ class SPGCartGlobalManager
 
     public function add_to_cart($product_id, $quantity = 1)
     {
-        WC()->cart->add_to_cart($product_id, $quantity);
+        return WC()->cart->add_to_cart($product_id, $quantity);
     }
 
     public function remove_product_on_cart($product_id)
@@ -150,7 +150,14 @@ class SPGCartGlobalManager
         $shipping_block = '<span id="shipping_method">chưa tính ship</span>';
         if ($ret['result']) {
             $result = true;
-            $this->add_to_cart($ret['data']['id'], $quantity);
+
+            if (!$this->add_to_cart($ret['data']['id'], $quantity)) {
+                $message = wc_get_notices('error');
+
+                echo json_encode(array('result' => false, 'message' => $message, 'data' => array()));
+                die;
+            }
+          
             $this->calculate_totals();
             $data['cart_items'] = $this->parse_products_data();
             // init first shiping block
@@ -159,12 +166,14 @@ class SPGCartGlobalManager
                 wc_cart_totals_shipping_html();
                 $shipping_block = ob_get_clean();
             }
+
+
         }
         $data['shipping_block'] = $shipping_block;
         $data['cart_total'] = $this->get_total();
 
         echo json_encode(array('result' => $result, 'data' => $data));
-        exit;
+        die;
     }
 
 
