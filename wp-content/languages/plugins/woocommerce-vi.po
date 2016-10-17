@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Sun Oct 16 2016 01:40:18 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Tue Oct 18 2016 01:02:54 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -4951,18 +4951,6 @@ msgstr ""
 msgid "Available on backorder"
 msgstr ""
 
-#: includes/abstracts/abstract-wc-product.php:694
-#: includes/abstracts/abstract-wc-product.php:698
-#: includes/abstracts/abstract-wc-product.php:708
-#: includes/admin/class-wc-admin-post-types.php:405
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:328
-#: includes/admin/reports/class-wc-report-stock.php:115
-#: includes/admin/views/html-bulk-edit-product.php:223
-#: includes/admin/views/html-quick-edit-product.php:166
-#: includes/class-wc-ajax.php:858 includes/class-wc-ajax.php:2466
-msgid "In stock"
-msgstr ""
-
 #: includes/abstracts/abstract-wc-product.php:702
 #, c-format
 msgid "Only %s left in stock"
@@ -4971,11 +4959,6 @@ msgstr ""
 #: includes/abstracts/abstract-wc-product.php:705
 #: includes/abstracts/abstract-wc-product.php:715
 msgid "(also available on backorder)"
-msgstr ""
-
-#: includes/abstracts/abstract-wc-product.php:712
-#, c-format
-msgid "%s in stock"
 msgstr ""
 
 #: includes/abstracts/abstract-wc-product.php:1196
@@ -15643,15 +15626,6 @@ msgid ""
 "stock."
 msgstr ""
 
-#: includes/class-wc-cart.php:945
-#, c-format
-msgid ""
-"You cannot add that amount of &quot;%s&quot; to the cart because there is "
-"not enough stock (%s remaining)."
-msgstr ""
-"Không thể thêm sản phẩm  &quot;%s&quot; vào giỏ hàng vì không đủ số lượng "
-"tồn (còn lại %s)."
-
 #: includes/class-wc-cart.php:966
 #, c-format
 msgid ""
@@ -16117,7 +16091,7 @@ msgstr ""
 #, c-format
 msgid "%s is a required field"
 msgid_plural "%s are required fields"
-msgstr[0] ""
+msgstr[0] "%s là trường bắt buộc"
 msgstr[1] ""
 
 #: includes/class-wc-form-handler.php:853
@@ -19819,10 +19793,6 @@ msgstr ""
 msgid "Apply Coupon"
 msgstr ""
 
-#: templates/cart/cart.php:144
-msgid "Update Cart"
-msgstr ""
-
 #: templates/cart/cross-sells.php:47
 msgid "You may be interested in&hellip;"
 msgstr ""
@@ -21080,6 +21050,36 @@ msgstr "Điện thoai:"
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/abstracts/abstract-wc-product.php:694
+#: includes/abstracts/abstract-wc-product.php:698
+#: includes/abstracts/abstract-wc-product.php:708
+#: includes/admin/class-wc-admin-post-types.php:405
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:328
+#: includes/admin/reports/class-wc-report-stock.php:115
+#: includes/admin/views/html-bulk-edit-product.php:223
+#: includes/admin/views/html-quick-edit-product.php:166
+#: includes/class-wc-ajax.php:858 includes/class-wc-ajax.php:2466
+msgid "In stock"
+msgstr "trong kho"
+
+#: includes/abstracts/abstract-wc-product.php:712
+#, c-format
+msgid "%s in stock"
+msgstr "%s trong kho"
+
+#: templates/cart/cart.php:144
+msgid "Update Cart"
+msgstr "Cập nhật giỏ hàng"
+
+#: includes/class-wc-cart.php:945
+#, c-format
+msgid ""
+"You cannot add that amount of &quot;%s&quot; to the cart because there is "
+"not enough stock (%s remaining)."
+msgstr ""
+"Không thể thêm sản phẩm  &quot;%s&quot; vào giỏ hàng vì không đủ số lượng "
+"tồn (còn lại %s)."
 
 #: includes/admin/class-wc-admin-api-keys-table-list.php:40
 #: includes/admin/class-wc-admin-post-types.php:256

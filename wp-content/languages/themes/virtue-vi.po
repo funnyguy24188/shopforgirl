@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Virtue\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-08 19:19-0600\n"
-"PO-Revision-Date: Sun Sep 25 2016 19:52:48 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Tue Oct 18 2016 01:00:50 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: \n"
 "Language: Vietnamese\n"
@@ -554,18 +554,6 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../lib/cleanup.php:135 ../lib/custom.php:986
-#: ../lib/kad_shortcodes/blog_shortcodes.php:209
-#: ../lib/kad_shortcodes/carousel_shortcodes.php:189
-#: ../lib/kad_shortcodes/testimonial_shortcodes.php:15 ../lib/widgets.php:766
-#: ../lib/widgets.php:772 ../page-testimonial-grid.php:62
-#: ../templates/content-fullpost.php:156
-#: ../templates/content-fullpostfull.php:156
-#: ../templates/home/blog-home-onecolumn.php:125
-#: ../templates/home/blog-home.php:133
-msgid "Read More"
-msgstr "Xem thêm"
-
 #: ../lib/cleanup.php:201
 msgid "Insert Shortcode"
 msgstr ""
@@ -1031,7 +1019,7 @@ msgstr ""
 
 #: ../lib/kad_shortcodes.php:135 ../lib/kad_shortcodes.php:157
 msgid "Size"
-msgstr ""
+msgstr "Kích cỡ"
 
 #: ../lib/kad_shortcodes.php:147
 msgid "Color"
@@ -3886,14 +3874,6 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: ../templates/entry-meta-subhead.php:3 ../templates/entry-meta.php:2
-msgid "by"
-msgstr "Tác giả"
-
-#: ../templates/entry-meta-subhead.php:6
-msgid "posted in:"
-msgstr "Trong mục:"
-
 #: ../templates/header-style-three.php:57
 #: ../templates/header-style-two-shrink.php:62
 #: ../templates/header-style-two.php:53 ../templates/header.php:46
@@ -6719,7 +6699,7 @@ msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:20
 msgid "Clear selection"
-msgstr ""
+msgstr "Xóa lựa chọn"
 
 #: ../woocommerce/single-product/up-sells.php:73
 msgid "You may also like&hellip;"
@@ -6730,6 +6710,26 @@ msgstr ""
 #, fuzzy
 msgid "Your Cart"
 msgstr "Giỏ hàng"
+
+#: ../lib/cleanup.php:135 ../lib/custom.php:986
+#: ../lib/kad_shortcodes/blog_shortcodes.php:209
+#: ../lib/kad_shortcodes/carousel_shortcodes.php:189
+#: ../lib/kad_shortcodes/testimonial_shortcodes.php:15 ../lib/widgets.php:766
+#: ../lib/widgets.php:772 ../page-testimonial-grid.php:62
+#: ../templates/content-fullpost.php:156
+#: ../templates/content-fullpostfull.php:156
+#: ../templates/home/blog-home-onecolumn.php:125
+#: ../templates/home/blog-home.php:133
+msgid "Read More"
+msgstr "Xem thêm"
+
+#: ../templates/entry-meta-subhead.php:3 ../templates/entry-meta.php:2
+msgid "by"
+msgstr "Tác giả"
+
+#: ../templates/entry-meta-subhead.php:6
+msgid "posted in:"
+msgstr "Trong mục:"
 
 #: ../lib/widgets.php:565 ../templates/recentblog-carousel.php:8
 msgid "Recent Posts"

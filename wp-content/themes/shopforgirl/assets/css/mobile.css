@@ -1,4 +1,10 @@
 @media screen and (min-width: 0) {
+    /** footer **/
+    #containerfooter {
+        background: #1f1f1f !important;
+    }
+    /** end footer **/
+
     /** start home **/
     .home #full_imageslider .kt-flex-fullslide {
         background-position-y: 0;
@@ -241,11 +247,11 @@
     #containerfooter .content-ktsi-left .kt_imgsplit_title {
         font-size: 21px;
         line-height: inherit;
-        color: #333;
+        color: #cecece;
     }
 
     #containerfooter .content-ktsi-left .kt_imgsplit_content {
-        color: #333;
+        color: #cecece;
     }
 
     #containerfooter .footercredits {
