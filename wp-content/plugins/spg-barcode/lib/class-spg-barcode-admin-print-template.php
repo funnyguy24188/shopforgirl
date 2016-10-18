@@ -14,16 +14,14 @@ class SPGBarcodePrintTemplate
             <table>
             <?php for ($i = 0; $i < $num; $i++): ?>
                 <tr>
-                    <td>
                     <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
-                    </td>
                 </tr>
             <?php endfor; ?>
             </table>
         <?php endforeach; ?>
         </div>
     <?php else: ?>
-        <p>No barcode in print queue </p>
+        <p>No barcode in print queue</p>
     <?php endif; ?>
         <?php
 
