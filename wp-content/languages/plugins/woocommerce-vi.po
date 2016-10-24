@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Tue Oct 18 2016 01:02:54 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Sun Oct 23 2016 22:10:20 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -16087,13 +16087,6 @@ msgstr ""
 msgid "Please choose a product to add to your cart&hellip;"
 msgstr ""
 
-#: includes/class-wc-form-handler.php:851
-#, c-format
-msgid "%s is a required field"
-msgid_plural "%s are required fields"
-msgstr[0] "%s là trường bắt buộc"
-msgstr[1] ""
-
 #: includes/class-wc-form-handler.php:853
 msgid "Please choose product options&hellip;"
 msgstr ""
@@ -20935,12 +20928,12 @@ msgstr ""
 #: includes/class-wc-post-types.php:442 includes/wc-order-functions.php:192
 msgctxt "Order status"
 msgid "Pending Payment"
-msgstr ""
+msgstr "Chờ thanh toán"
 
 #: includes/class-wc-post-types.php:450 includes/wc-order-functions.php:193
 msgctxt "Order status"
 msgid "Processing"
-msgstr ""
+msgstr "Đang xử lý"
 
 #: includes/class-wc-post-types.php:458 includes/wc-order-functions.php:194
 msgctxt "Order status"
@@ -20950,12 +20943,12 @@ msgstr ""
 #: includes/class-wc-post-types.php:466 includes/wc-order-functions.php:195
 msgctxt "Order status"
 msgid "Completed"
-msgstr ""
+msgstr "Thành công"
 
 #: includes/class-wc-post-types.php:474 includes/wc-order-functions.php:196
 msgctxt "Order status"
 msgid "Cancelled"
-msgstr ""
+msgstr "Hủy"
 
 #: includes/class-wc-post-types.php:482 includes/wc-order-functions.php:197
 msgctxt "Order status"
@@ -20965,7 +20958,7 @@ msgstr ""
 #: includes/class-wc-post-types.php:490 includes/wc-order-functions.php:198
 msgctxt "Order status"
 msgid "Failed"
-msgstr ""
+msgstr "Lỗi"
 
 #: includes/class-wc-product-grouped.php:152
 #: includes/class-wc-product-variable.php:353
@@ -21050,6 +21043,13 @@ msgstr "Điện thoai:"
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/class-wc-form-handler.php:851
+#, c-format
+msgid "%s is a required field"
+msgid_plural "%s are required fields"
+msgstr[0] "%s là trường bắt buộc"
+msgstr[1] ""
 
 #: includes/abstracts/abstract-wc-product.php:694
 #: includes/abstracts/abstract-wc-product.php:698

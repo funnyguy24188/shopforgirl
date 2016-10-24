@@ -3,7 +3,7 @@
 ?>
 <div id="order-page-header" class="titleclass">
     <div class="container">
-        <h2 style="float:left;margin-top:0">Hóa đơn</h2>
+        <h2 style="float:left;margin-top:0"><?php the_title() ?></h2>
         <input type="text" readonly id="total-amount" value="<?php echo $spg_cart->get_total(); ?>">
     </div><!--container-->
 </div><!--titleclass-->

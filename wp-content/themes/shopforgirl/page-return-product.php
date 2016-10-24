@@ -1,6 +1,6 @@
 <div id="return-page-header" class="titleclass">
     <div class="container">
-        <h2 style="float:left;margin-top:0">Trả hàng</h2>
+        <h2 style="float:left;margin-top:0"><?php the_title() ?></h2>
     </div><!--container-->
 </div><!--titleclass-->
 
@@ -43,9 +43,7 @@
                     <th>Số lượng trả lại</th>
                 </tr>
                 </thead>
-                <tbody class="order-detail-body">
-
-                </tbody>
+                <tbody class="order-detail-body"></tbody>
             </table>
         </div>
 

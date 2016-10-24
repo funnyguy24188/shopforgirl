@@ -3,8 +3,8 @@
     #containerfooter {
         background: #1f1f1f !important;
     }
-    /** end footer **/
 
+    /** end footer **/
     /** start home **/
     .home #full_imageslider .kt-flex-fullslide {
         background-position-y: 0;
@@ -19,6 +19,7 @@
         display: flex;
         background-size: cover;
     }
+
     .home .first-showup-block {
         background: url("/wp-content/uploads/1-block.jpg");
     }
@@ -43,7 +44,6 @@
     }
 
     /** end home **/
-
     .current-menu-item a, .current_page_item a, .current-menu-parent a {
         color: #ff5ea1;
     }
@@ -70,7 +70,7 @@
         max-width: 1170px;
     }
 
-    .product-finding header .container, .order-product header .container {
+    .product-finding header .container, .order-product header .container, .order-list header .container {
         display: none;
     }
 
@@ -80,11 +80,11 @@
     }
 
     /** show only topbar **/
-    .product-finding header #topbar .container, .order-product header #topbar .container {
+    .product-finding header #topbar .container, .order-product header #topbar .container, .order-list header #topbar .container {
         display: block;
     }
 
-    .order-product #ktsidebar, .return-product #ktsidebar {
+    .order-product #ktsidebar, .return-product #ktsidebar, .order-list #ktsidebar {
         display: none;
     }
 
@@ -332,7 +332,7 @@
     }
 
     /** return product age **/
-    .return-product header .container  {
+    .return-product header .container {
         display: none;
     }
 
@@ -347,8 +347,69 @@
     .return-product footer {
         display: none;
     }
-    /** end return product page **/
 
+    /** end return product page **/
+    /** Start the orderlist page **/
+    .date-filter-box-wrapper {
+        float: left;
+    }
+
+    .search-box-wrapper {
+        float: right;
+    }
+
+    .search-box-wrapper input {
+        max-width: 265px;
+        float: left;
+    }
+
+    .search-box-wrapper button {
+        margin-left: 5px;
+    }
+
+    .order-list .datepicker-dropdown {
+        top: 378px !important;
+    }
+
+    .order-list .filter-wrapper {
+        margin-top: 30px;
+    }
+
+    .order-status-icon {
+        padding: 5px;
+        border-radius: 3px;
+        color: #ffffff;
+    }
+
+    .order-wc-processing {
+        background: #73a724;
+    }
+
+    .order-wc-completed {
+        background: #2ea2cc;
+    }
+
+    .order-wc-cancelled {
+        background: #a00;
+    }
+
+    .order-wc-failed {
+        background: #d0c21f;
+    }
+
+    .order-wc-pending {
+        background: #ffba00;
+    }
+
+    .table-order-list tbody > tr > td {
+        vertical-align: inherit;
+    }
+
+    .order-list .spg-pagination {
+        float: right;
+    }
+
+    /** end orderlist page **/
 
 }
 

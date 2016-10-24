@@ -14,7 +14,7 @@
             <div class="<?php echo esc_attr($logocclass); ?> clearfix kad-header-left">
                 <div id="logo" class="logocase">
                     <a class="brand logofont" href="<?php echo home_url(); ?>">
-                        <?php if (!empty($virtue_premium['x1_virtue_logo_upload']['url'])) { ?>
+                        <?php if (!empty($virtue_premium['x1_fvirtue_logo_upload']['url'])) { ?>
                             <div id="thelogo"><img src="<?php echo esc_url($virtue_premium['x1_virtue_logo_upload']['url']); ?>" alt="<?php bloginfo('name');?>" class="kad-standard-logo" />
                                 <?php if(!empty($virtue_premium['x2_virtue_logo_upload']['url'])) {?>
                                     <img src="<?php echo esc_url($virtue_premium['x2_virtue_logo_upload']['url']);?>" class="kad-retina-logo" alt="<?php bloginfo('name');?>" style="max-height:<?php echo esc_attr($virtue_premium['x1_virtue_logo_upload']['height']);?>px" /> <?php } ?>

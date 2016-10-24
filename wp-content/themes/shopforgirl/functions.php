@@ -7,6 +7,8 @@ require_once 'src/product/SPGProductDetail.php';
 require_once 'src/customer/SPGCustomerDetail.php';
 require_once 'src/role/SPGRoleBackEnd.php';
 require_once 'src/order/SPGOrder.php';
+require_once 'src/order/SPGOrderList.php';
+require_once 'src/order/SPGOrderReturn.php';
 require_once 'src/widget/register-init.php';
 require_once 'src/wp_feature/wp-init.php';
 
@@ -34,18 +36,29 @@ $role_back_end->init_hook();
 $order = new SPGOrder();
 $order->init_hook();
 
+// order list
+$order_list = new SPGOrderList();
+$order_list->init_hook();
+
+// order return
+$order_return = new SPGOrderReturn();
+$order_return->init_hook();
+
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 function my_theme_enqueue_styles()
 {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), '1.0');
+    wp_enqueue_style('spgDatepickerStyle', get_stylesheet_directory_uri() . '/assets/css/bootstrap-datepicker.min.css', array(), '1.0');
 
 }
 
 add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script('spgScript', get_stylesheet_directory_uri() . '/assets/js/spg_script.js', array('jquery'), '1.0');
+    wp_enqueue_script('spgOrderList', get_stylesheet_directory_uri() . '/assets/js/order-list.js', array('jquery'), '1.0');
+    wp_enqueue_script('spgDatepicker', get_stylesheet_directory_uri() . '/assets/js/bootstrap-datepicker.js', array('jquery'), '1.0');
 
 });
 
@@ -243,3 +256,32 @@ add_action('pre_get_posts', function ($query) {
 });
 
 
+function spg_wp_pagenavi($query = null)
+{
+
+    global $wp_query, $wp_rewrite;
+
+    if (empty($query)) {
+        $query = $wp_query;
+    }
+
+    $pages = '';
+    $big = 999999999; // need an unlikely integer
+    $max = $query->max_num_pages;
+    if (!$current = get_query_var('paged')) $current = 1;
+    $args['base'] = str_replace($big, '%#%', esc_url(get_pagenum_link($big)));
+    $args['total'] = $max;
+    $args['current'] = $current;
+    $args['add_args'] = false;
+
+    $total = 1;
+    $args['mid_size'] = 3;
+    $args['end_size'] = 1;
+    $args['prev_text'] = '«';
+    $args['next_text'] = '»';
+
+    if ($max > 1) echo '<div class="wp-pagenavi">';
+    if ($total == 1 && $max > 1)
+        echo paginate_links($args);
+    if ($max > 1) echo '</div>';
+}

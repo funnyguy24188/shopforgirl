@@ -1,7 +1,7 @@
 <?php require_once('src/product/SPGProductDetail.php') ?>
 <div id="single-product-page-header" class="titleclass">
     <div class="container">
-        <h2 style="float:left;margin-top:0">Thông tin sản phẩm</h2>
+        <h2 style="float:left;margin-top:0"><?php the_title() ?></h2>
     </div><!--container-->
 </div><!--titleclass-->
 

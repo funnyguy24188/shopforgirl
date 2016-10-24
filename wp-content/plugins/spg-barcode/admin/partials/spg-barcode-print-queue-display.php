@@ -43,5 +43,5 @@
     </div>
 </div>
 
-<iframe style="margin: 0; padding:0; display: none" src="<?php echo $url_full_pdf_print ?>"
+<iframe style="margin: 0; padding:0; display: block" src="<?php echo $url_full_pdf_print ?>"
         id="iframe-print-queue"></iframe>
