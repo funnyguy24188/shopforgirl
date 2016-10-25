@@ -16,7 +16,6 @@ require_once 'src/wp_feature/wp-init.php';
 $product_mod = new SPGProductMod();
 $product_mod->init_hook();
 
-
 // order
 $spg_cart = SPGCartGlobal()->get_instance();
 $spg_cart->init_hook();
@@ -284,4 +283,24 @@ function spg_wp_pagenavi($query = null)
     if ($total == 1 && $max > 1)
         echo paginate_links($args);
     if ($max > 1) echo '</div>';
+}
+
+/**
+ * Check current page is  manager page
+ */
+
+function is_manager_page($page_slug = '')
+{
+    global $post;
+    // a list of page help user manage system
+    $page_manager_list = array('order-list', 'order-product', 'product-finding', 'return-product');
+
+    if (empty($page_slug)) {
+        $page_slug = $post->post_name;
+    }
+
+    if (in_array($page_slug, $page_manager_list)) {
+        return true;
+    }
+    return false;
 }
