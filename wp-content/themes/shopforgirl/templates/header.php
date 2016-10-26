@@ -3,6 +3,7 @@
         <?php get_template_part('templates/header', 'topbar'); ?>
     <?php endif; ?>
     <?php global $virtue_premium;
+
     if (isset($virtue_premium['logo_layout'])) {
         if ($virtue_premium['logo_layout'] == 'logocenter') {
             $logocclass = 'col-md-12';
@@ -27,7 +28,7 @@
                 <div class="<?php echo esc_attr($logocclass); ?> clearfix kad-header-left">
                     <div id="logo" class="logocase">
                         <a class="brand logofont" href="<?php echo home_url(); ?>">
-                            <?php if (!empty($virtue_premium['x1_fvirtue_logo_upload']['url'])) { ?>
+                            <?php if (!empty($virtue_premium['x1_virtue_logo_upload']['url'])) { ?>
                                 <div id="thelogo"><img
                                         src="<?php echo esc_url($virtue_premium['x1_virtue_logo_upload']['url']); ?>"
                                         alt="<?php bloginfo('name'); ?>" class="kad-standard-logo"/>
