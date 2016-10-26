@@ -1,4 +1,14 @@
 @media screen and (min-width: 0) {
+    /** kad-banner **/
+    #kad-banner {
+        border-bottom: 2px solid #ff7eb4;
+    }
+
+
+   /** end kad-banner **/
+
+
+
     /** footer **/
     #containerfooter {
         background: #1f1f1f !important;

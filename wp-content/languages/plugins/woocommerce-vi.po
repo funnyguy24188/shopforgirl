@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Sun Oct 23 2016 22:10:20 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Wed Oct 26 2016 23:38:37 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -9994,7 +9994,7 @@ msgstr ""
 #: includes/admin/settings/class-wc-settings-accounts.php:158
 #: includes/class-wc-query.php:117 includes/wc-account-functions.php:93
 msgid "Payment Methods"
-msgstr ""
+msgstr "Hình thức thanh toán"
 
 #: includes/admin/settings/class-wc-settings-accounts.php:159
 msgid "Endpoint for the My Account &rarr; Payment Methods page"
@@ -13310,7 +13310,7 @@ msgstr ""
 
 #: includes/api/class-wc-rest-orders-controller.php:1248
 msgid "Billing address."
-msgstr ""
+msgstr "Địa chỉ thanh toán"
 
 #: includes/api/class-wc-rest-orders-controller.php:1293
 #: includes/api/class-wc-rest-orders-controller.php:1356
@@ -13319,7 +13319,7 @@ msgstr ""
 
 #: includes/api/class-wc-rest-orders-controller.php:1311
 msgid "Shipping address."
-msgstr ""
+msgstr "Địa chỉ giao hàng"
 
 #: includes/api/class-wc-rest-orders-controller.php:1363
 msgid "Payment method ID."
@@ -17000,7 +17000,7 @@ msgstr ""
 #: includes/emails/class-wc-email-customer-on-hold-order.php:30
 #: includes/emails/class-wc-email-customer-processing-order.php:30
 msgid "Thank you for your order"
-msgstr ""
+msgstr "Cám ơn bạn đã đặt hàng"
 
 #: includes/emails/class-wc-email-customer-on-hold-order.php:31
 #: includes/emails/class-wc-email-customer-processing-order.php:31
@@ -17969,6 +17969,8 @@ msgid ""
 "Thank you for your order, please click the button below to pay with credit "
 "card using Simplify Commerce by MasterCard."
 msgstr ""
+"Cảm ơn bạn đã đặt hàng, vui lòng ấn nút dưới đây để thanh toán bằng thẻ tín "
+"dụng"
 
 #: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:646
 msgid "Pay Now"
@@ -20024,17 +20026,17 @@ msgstr ""
 #: templates/emails/email-addresses.php:26
 #: templates/emails/plain/email-addresses.php:23
 msgid "Billing address"
-msgstr ""
+msgstr "Địa chỉ thanh toán"
 
 #: templates/emails/email-addresses.php:32
 #: templates/emails/plain/email-addresses.php:27
 msgid "Shipping address"
-msgstr ""
+msgstr "Địa chỉ giao hàng"
 
 #: templates/emails/email-customer-details.php:26
 #: templates/emails/plain/email-customer-details.php:25
 msgid "Customer details"
-msgstr ""
+msgstr "Thông tin khách hàng"
 
 #: templates/emails/plain/admin-new-order.php:25
 #, c-format
@@ -20284,7 +20286,7 @@ msgstr ""
 
 #: templates/order/order-details-customer.php:23
 msgid "Customer Details"
-msgstr ""
+msgstr "Thông tin khách hàng"
 
 #: templates/order/order-details-customer.php:28
 msgid "Note:"
@@ -20925,40 +20927,15 @@ msgctxt "shop_order post type singular name"
 msgid "Order"
 msgstr ""
 
-#: includes/class-wc-post-types.php:442 includes/wc-order-functions.php:192
-msgctxt "Order status"
-msgid "Pending Payment"
-msgstr "Chờ thanh toán"
-
-#: includes/class-wc-post-types.php:450 includes/wc-order-functions.php:193
-msgctxt "Order status"
-msgid "Processing"
-msgstr "Đang xử lý"
-
 #: includes/class-wc-post-types.php:458 includes/wc-order-functions.php:194
 msgctxt "Order status"
 msgid "On Hold"
 msgstr ""
 
-#: includes/class-wc-post-types.php:466 includes/wc-order-functions.php:195
-msgctxt "Order status"
-msgid "Completed"
-msgstr "Thành công"
-
-#: includes/class-wc-post-types.php:474 includes/wc-order-functions.php:196
-msgctxt "Order status"
-msgid "Cancelled"
-msgstr "Hủy"
-
 #: includes/class-wc-post-types.php:482 includes/wc-order-functions.php:197
 msgctxt "Order status"
 msgid "Refunded"
 msgstr ""
-
-#: includes/class-wc-post-types.php:490 includes/wc-order-functions.php:198
-msgctxt "Order status"
-msgid "Failed"
-msgstr "Lỗi"
 
 #: includes/class-wc-product-grouped.php:152
 #: includes/class-wc-product-variable.php:353
@@ -21043,6 +21020,31 @@ msgstr "Điện thoai:"
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/class-wc-post-types.php:442 includes/wc-order-functions.php:192
+msgctxt "Order status"
+msgid "Pending Payment"
+msgstr "Chờ thanh toán"
+
+#: includes/class-wc-post-types.php:450 includes/wc-order-functions.php:193
+msgctxt "Order status"
+msgid "Processing"
+msgstr "Đang xử lý"
+
+#: includes/class-wc-post-types.php:466 includes/wc-order-functions.php:195
+msgctxt "Order status"
+msgid "Completed"
+msgstr "Thành công"
+
+#: includes/class-wc-post-types.php:474 includes/wc-order-functions.php:196
+msgctxt "Order status"
+msgid "Cancelled"
+msgstr "Hủy"
+
+#: includes/class-wc-post-types.php:490 includes/wc-order-functions.php:198
+msgctxt "Order status"
+msgid "Failed"
+msgstr "Lỗi"
 
 #: includes/class-wc-form-handler.php:851
 #, c-format

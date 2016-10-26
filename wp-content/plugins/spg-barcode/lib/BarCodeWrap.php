@@ -126,8 +126,8 @@ class BarCodeWrap
 
         $location = 10 * $thickness;
         $textcolor = imagecolorallocate($image, 0, 0, 0);
-        imagestring($image, 5, 10, 5, $product_name, $textcolor);
-        imagestring($image, 5, 10, 20, $price, $textcolor);
+        imagestring($image, 3, 10, 5, $product_name, $textcolor);
+        imagestring($image, 3, 10, 20, $price, $textcolor);
         for ( $position = 1 ; $position <= strlen($code_string); $position++ ) {
             $cur_size = ($location + ( substr($code_string, ($position-1), 1) )* $thickness);
             if ( strtolower($orientation) == "horizontal" )
