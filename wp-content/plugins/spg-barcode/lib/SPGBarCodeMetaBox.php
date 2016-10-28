@@ -57,7 +57,11 @@ class SPGBarCodeMetaBox
                 $_SESSION['barcode_print'] = array();
             }
 
-            $_SESSION['barcode_print'][$_POST['product_id']] = $_POST['product_number'];
+            $_SESSION['barcode_print'][$_POST['product_id']] = array(
+                'product_number' => $_POST['product_number'],
+                'product_name' => $_POST['product_name'],
+                'product_price' => $_POST['product_price']
+            );
             echo json_encode(array(
                     'result' => true,
                     'data' => 'Success add to list')
@@ -179,12 +183,14 @@ class SPGBarCodeMetaBox
         $arg = array('name' => $name, 'price' => $price);
         if (!empty($barcode)):
             $this->barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 90, 'horizontal', $this->barcodeType, true, $arg);
-            $name = $product->get_formatted_name();
+            $name = SPGUtil::get_product_simple_name($product);
+            $price = $product->get_price_html();
             ?>
 
             <div class="product-barcode-metabox">
                 <img src="<?php echo SPG_UPLOAD_URL . "tmp_barcode_$product_id.png?" . time() ?>"><br/>
-                <p>Product name: <?php echo $name; ?></p>
+                <strong class="product-name"><?php echo $name ?></strong> |
+                <strong class="product-price"><?php echo $price ?></strong>
                 <!-- <input type="text" placeholder="Barcode prefix"><br/>-->
                 <!--<a href="#">Create product barcode automatic</a>-->
                 <div class="barcode-add-queue">
@@ -192,9 +198,9 @@ class SPGBarCodeMetaBox
                            value="<?php echo $product_id ?>">
                     <div class="add-queue-controls">
                         <input type="text" min="1" max="100" class="barcode-sm-number" name="number_barcode"
-                               placeholder="Barcode number">
+                               placeholder="SL barcode in">
                         <input type="button" class="button button-primary button-large barcode-sm-print"
-                               value="Add to Print">
+                               value="Thêm vào in">
                     </div>
                 </div>
             </div>

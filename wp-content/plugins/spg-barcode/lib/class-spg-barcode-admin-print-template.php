@@ -10,11 +10,16 @@ class SPGBarcodePrintTemplate
         <?php foreach ($barcode_print['items'] as $product_id => $barcodes): ?>
             <?php $num = $barcodes[1];
             $url = $barcodes[0];
+            $product_name = $barcodes[2];
+            $product_price = $barcodes[3];
             ?>
             <table>
             <?php for ($i = 0; $i < $num; $i++): ?>
                 <tr>
                     <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
+                    <span style="font-size: 6px;"><?php echo $product_name ?></span>
+                    <br>
+                    <span style="font-size: 6px;"><?php echo $product_price ?></span>
                 </tr>
             <?php endfor; ?>
             </table>

@@ -120,27 +120,24 @@ class Spg_Barcode_Admin
         $barcode_print = array();
         $url_full_pdf_print = '';
         if (!empty($_SESSION['barcode_print'])) {
-            foreach ($_SESSION['barcode_print'] as $product_id => $number) {
+            foreach ($_SESSION['barcode_print'] as $product_id => $data) {
                 $barcode = SPGUtil::get_product_barcode($product_id);
                 $product = wc_get_product($product_id);
                 if (!empty($barcode)) {
-                    $formatted_name = '';
                     $barcode_engine = new BarCodeWrap();
                     $barcode_file_name = "tmp_barcode_$product_id.png";
                     $tmp_barcode_file = SPG_UPLOAD_PATH . $barcode_file_name;
                     unlink($tmp_barcode_file);
-
-                    $name = ucfirst(SPGUtil::convert_vi_to_en(SPGUtil::get_product_simple_name($product)));
+                    $number = $data['product_number'];
+                    $name = $data['product_name'];
                     // price for print on barcode
-                    $price = $product->get_price();
+                    $price = $data['product_price'];
                     $arg = array('name' => $name, 'price' => $price);
 
                     $barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 80, 'horizontal', SPG_DEFAULT_BARCODE_TYPE, true, $arg, 1);
                     $url = SPG_UPLOAD_URL . $barcode_file_name;
-                    if (!empty($product)) {
-                        $formatted_name = $product->get_formatted_name();
-                    }
-                    $barcode_print['items'][$product_id] = array($url, $number, $formatted_name);
+
+                    $barcode_print['items'][$product_id] = array($url, $number, $name, $price);
 
                 }
 

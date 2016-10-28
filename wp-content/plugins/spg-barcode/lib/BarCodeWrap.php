@@ -109,7 +109,7 @@ class BarCodeWrap
 
         if ( strtolower($orientation) == "horizontal" ) {
             $img_width = $code_length * $thickness;
-            $img_height = $size;
+            $img_height = $size - 30;
         } else {
             $img_width = $size;
             $img_height = $code_length * $thickness;
@@ -125,15 +125,15 @@ class BarCodeWrap
         }
 
         $location = 10 * $thickness;
-        $textcolor = imagecolorallocate($image, 0, 0, 0);
-        imagestring($image, 3, 10, 5, $product_name, $textcolor);
-        imagestring($image, 3, 10, 20, $price, $textcolor);
+       // $textcolor = imagecolorallocate($image, 0, 0, 0);
+       /* imagestring($image, 3, 10, 5, $product_name, $textcolor);
+        imagestring($image, 3, 10, 20, $price, $textcolor);*/
         for ( $position = 1 ; $position <= strlen($code_string); $position++ ) {
             $cur_size = ($location + ( substr($code_string, ($position-1), 1) )* $thickness);
             if ( strtolower($orientation) == "horizontal" )
-                imagefilledrectangle( $image, $location, 40, $cur_size, $img_height, ($position % 2 == 0 ? $white : $black) );
+                imagefilledrectangle( $image, $location, 10, $cur_size, $img_height, ($position % 2 == 0 ? $white : $black) );
             else
-                imagefilledrectangle( $image, 40, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
+                imagefilledrectangle( $image, 10, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
             $location = $cur_size;
         }
 

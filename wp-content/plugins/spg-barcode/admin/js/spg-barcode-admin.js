@@ -4,13 +4,22 @@
         $('.barcode-sm-print').click(function () {
             var product_id = jQuery(this).closest('div.product-barcode-metabox').find('input[name="product_id"]').val();
             var number = jQuery(this).closest('div.product-barcode-metabox').find('input[name="number_barcode"]').val();
+            var product_name = jQuery(this).closest('div.product-barcode-metabox').find('strong[class="product-name"]').text();
+            var product_price = jQuery(this).closest('div.product-barcode-metabox').find('strong[class="product-price"]').text();
+
             jQuery.ajax({
                 type: 'POST',
                 url: window.location.origin + '/wp-admin/admin-ajax.php',
-                data: {action: 'ajax_add_queue_print_barcode', product_id: product_id, product_number: number},
+                data: {
+                    action: 'ajax_add_queue_print_barcode',
+                    product_name: product_name,
+                    product_price: product_price,
+                    product_id: product_id,
+                    product_number: number
+                },
                 success: function (rep) {
                     rep = JSON.parse(rep);
-                    if(rep) {
+                    if (rep) {
                         var message = rep.data;
                         $('.spg-barcode-message p').remove();
                         $('.spg-barcode-message').append('<p>' + message + '</p>');
@@ -19,7 +28,7 @@
             });
         });
 
-        $('#print-barcode-queue-btn').click(function(){
+        $('#print-barcode-queue-btn').click(function () {
             $('#iframe-print-queue')[0].contentWindow.print();
         });
 

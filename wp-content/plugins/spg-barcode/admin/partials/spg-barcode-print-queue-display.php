@@ -2,13 +2,16 @@
     <div class="container">
         <h3>Barcode Queue Grid</h3>
         <div class="main-content">
+            
             <?php if (!empty($barcode_print)): ?>
             <div class="statistic">
                 <ul>
                     <?php foreach ($barcode_print['items'] as $product_id => $barcodes): ?>
-                        <?php $num = $barcodes[1];
-                        $product_name = $barcodes[2]; ?>
-                        <?php ?>
+                        <?php
+                        $num = $barcodes[1];
+                        $product_name = $barcodes[2];
+                        $product_price = $barcodes[3];
+                        ?>
                         <li><?php echo $product_name ?>: <?php echo $num ?></li>
                     <?php endforeach; ?>
                 </ul>
@@ -26,12 +29,16 @@
             <div class="print-queue-grid-wrapper">
 
                 <?php foreach ($barcode_print['items'] as $product_id => $barcodes): ?>
-                    <?php $num = $barcodes[1];
+                    <?php
                     $url = $barcodes[0];
+                    $num = $barcodes[1];
+                    $product_name = $barcodes[2];
+                    $product_price = $barcodes[3];
                     ?>
                     <?php for ($i = 0; $i < $num; $i++): ?>
                         <div class="print-queue-grid-item">
-                            <img src="<?php echo $url . '?' . time()?>" alt="barcode-<?php echo $product_id ?>">
+                            <strong><?php echo $product_name ?></strong>|<strong><?php echo $product_price ?></strong>
+                            <img src="<?php echo $url . '?' . time() ?>" alt="barcode-<?php echo $product_id ?>">
                         </div>
                     <?php endfor; ?>
                 <?php endforeach; ?>
