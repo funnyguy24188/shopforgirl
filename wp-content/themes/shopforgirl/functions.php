@@ -1,4 +1,7 @@
 <?php
+// set timezone Ho Chi Minh
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 if (session_id() == '')
     session_start();
 require_once 'src/bill/SPGCartGlobalManager.php';
