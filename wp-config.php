@@ -1,5 +1,10 @@
 
 <?php
+$host_name = $_SERVER['HTTP_HOST'];
+$parsed_domain = explode('.',$host_name);
+$sub_domain = $parsed_domain[0];
+$database = 'shopforgirl_db_' . $sub_domain;
+
 
 ini_set('xdebug.var_display_max_depth', 50);
 ini_set('xdebug.var_display_max_children', 2560);
@@ -28,7 +33,7 @@ ini_set('xdebug.var_display_max_data', 10240);
 /** The name of the database for WordPress */
 
 define( 'WPCACHEHOME', '/var/www/html/shopforgirl/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'shopforgirl_db');
+define('DB_NAME', $database);
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -91,8 +96,8 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', true);
 define( 'WP_CACHE', true );
-define('WP_SITEURL','http://shopforgirl.local');
-define('WP_HOME','http://shopforgirl.local');
+define('WP_SITEURL',"http://$sub_domain.shopforgirl.local");
+define('WP_HOME',"http://$sub_domain.shopforgirl.local");
 
 /* That's all, stop editing! Happy blogging. */
 
