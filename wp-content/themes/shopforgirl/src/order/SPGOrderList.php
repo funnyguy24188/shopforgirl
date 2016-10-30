@@ -128,7 +128,7 @@ class SPGOrderList extends SPGOrder
                         'order_status' => $order->post_status,
                         'order_status_text' => $all_order_status[$order->post_status],
                         'order_total' => $order->get_total(),
-                        'order_quantity' => $order->get_item_count(),
+                        'order_quantity' => 0,
                         'user_id' => '',
                     ),
                     'customer_short_info' => array(
@@ -143,6 +143,7 @@ class SPGOrderList extends SPGOrder
 
                 foreach ($product_data as $data) {
                     $ret[$order->id]['order_detail'][] = $data;
+                    $ret[$order->id]['order_short_info']['order_quantity'] += absint($data['quantity']);
                 }
             }
             return $ret;

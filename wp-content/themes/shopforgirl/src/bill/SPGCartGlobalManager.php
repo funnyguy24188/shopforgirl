@@ -157,7 +157,7 @@ class SPGCartGlobalManager
                 echo json_encode(array('result' => false, 'message' => $message, 'data' => array()));
                 die;
             }
-          
+
             $this->calculate_totals();
             $data['cart_items'] = $this->parse_products_data();
             // init first shiping block
@@ -241,14 +241,31 @@ class SPGCartGlobalManager
         $customer_finding = new SPGCustomerDetail();
 
         if (!empty($_POST['order'])) {
+            // check the product list not empty
+            if (empty($_POST['order']['product'])) {
+                set_message('error', 'Hóa đơn không được rỗng');
+                return;
+            }
+
+
             $order_status = isset($_POST['order']['status']) ? $_POST['order']['status'] : 'pending';
             $print_order = isset($_POST['order']['print_order']) ? 1 : 0;
 
             $customer_info = $_POST['order']['customer'];
-            $current_user_id = get_current_user_id();
+            $current_user_id = '';
+            $customer_saved = '';
+            $customer_id = '';
             // find customer
             $phone = !empty($customer_info['phone']) ? $customer_info['phone'] : '';
-            $customer_saved = $customer_finding->get_customer_info($phone, false);
+            $email = !empty($customer_info['email']) ? $customer_info['email'] : '';
+            // check username existed with the phone number/email
+            if (!empty($phone)) {
+                $customer_saved = username_exists($phone);
+            }
+            if (!empty($email)) {
+                $customer_saved = username_exists($email);
+            }
+
             $address = !empty($customer_info['address']) ? $customer_info['address'] : '';
             $shipping_address = !empty($customer_info['shipping_address']) ? $customer_info['shipping_address'] : '';
 
@@ -256,6 +273,7 @@ class SPGCartGlobalManager
                 'first_name' => $customer_info['name'],
                 'phone' => $phone,
                 'address_1' => $address,
+                'email' => !empty($customer_info['email']) ? $customer_info['email'] : ''
             );
 
             $shipping_info = array(
@@ -264,20 +282,17 @@ class SPGCartGlobalManager
             );
 
 
-            $customer_id = 0;
-
             if (empty($customer_saved)) {
                 // create new customer info to database
                 $customer_id = $customer_finding->add_new_customer($customer_info);
             } else {
-                $customer_id = $customer_saved['data']['id'];
+                $customer_id = $customer_saved;
             }
 
             // save the product
-
             $order_data = array(
                 'status' => apply_filters('woocommerce_default_order_status', $order_status),
-                'customer_id' => $current_user_id,
+                'customer_id' => $customer_id,
                 'customer_note' => '',
                 'cart_hash' => md5(json_encode(wc_clean(WC()->cart->get_cart_for_session())) . WC()->cart->total),
                 'created_via' => 'checkout',
@@ -349,6 +364,15 @@ class SPGCartGlobalManager
 
                 wc_transaction_query('commit');
 
+
+                // send notification email to the admin
+                WC()->mailer()->emails['WC_Email_New_Order']->trigger($order->id);
+
+                // send notification email to the customer if have email
+                if (!empty($customer_info['email'])) {
+                    WC()->mailer()->emails['WC_Email_Customer_Processing_Order']->trigger($order->id);
+                }
+
                 // empty cart after order  saved
                 $this->empty_cart();
                 // print the order
@@ -356,7 +380,7 @@ class SPGCartGlobalManager
                     $this->call_print_order($order->id);
                 }
 
-                // redirec
+                // redirect
                 wp_redirect('order-product', 301);
 
             } catch (Exception $e) {

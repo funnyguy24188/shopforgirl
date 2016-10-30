@@ -3,6 +3,11 @@
 ?>
 <div id="order-page-header" class="titleclass">
     <div class="container">
+        <?php if (have_message()): ?>
+            <div class="alert alert-dismissible <?php echo (( get_message_type() == 'error' ) ? 'alert-danger' : '') ?>" id="alert-message" role="alert">
+                <?php echo get_message_content(); ?>
+            </div>
+        <?php endif; ?>
         <h2 style="float:left;margin-top:0"><?php the_title() ?></h2>
         <input type="text" readonly id="total-amount" value="<?php echo $spg_cart->get_total(); ?>">
     </div><!--container-->
@@ -24,11 +29,12 @@
                                     </div>
 
                                     <div class="col-xs-12 col-sm-3">
-                                        <input id="quantity" class="numberic form-control"  type="number" value="1"
+                                        <input id="quantity" class="numberic form-control" type="number" value="1"
                                                placeholder="Số lượng">
                                     </div>
                                     <div class="col-xs-12 col-sm-2">
-                                        <button id="add-more-product" type="button" class="btn btn-success">Thêm</button>
+                                        <button id="add-more-product" type="button" class="btn btn-success">Thêm
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -115,7 +121,8 @@
 
                                     <div class="col-xs-8 col-sm-8 customer-money-payment-group">
                                         <label class="form-label">Khách đưa</label>
-                                        <input class="numberic form-control" id="customer-money"  type="number" name="order[customer_money]" value="0">
+                                        <input class="numberic form-control" id="customer-money" type="number"
+                                               name="order[customer_money]" value="0">
                                     </div>
 
 

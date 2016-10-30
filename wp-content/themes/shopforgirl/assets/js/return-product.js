@@ -79,7 +79,6 @@ jQuery(document).ready(function () {
                         jQuery('#alert-message').find('strong').remove();
                         jQuery('#alert-message')
                             .addClass(classes)
-
                             .append(message);
                         autoCloseMessage('#alert-message', 5000);
 
@@ -119,7 +118,21 @@ jQuery(document).ready(function () {
         this.renderOrderDetail = function (data) {
             // clear all first
             tableDetail.find('.order-detail-body tr').remove();
-            jQuery.each(data, function (k, item) {
+
+            // show the order general data
+            for (var attr in data.order_general_info) {
+                var class_attr = '.' + attr.replace(/_/g, '-');
+                if (attr == 'order_status') {
+                    jQuery(class_attr).removeClass(/order-wc-/g);
+                    jQuery(class_attr).addClass('order-' + data.order_general_info[attr]);
+                    jQuery(class_attr).text(data.order_general_info[attr + '_text']);
+                } else {
+                    jQuery(class_attr).text(data.order_general_info[attr]);
+                }
+
+            }
+            // show product row to the table
+            jQuery.each(data.product_data, function (k, item) {
                 var row = '<tr>' +
                     ((item.quantity > 0) ? '<td><input type="checkbox" data-item-id="{item_id}" class="return_chk"></td>' : '<td></td>') +
                     '<td>{stt}</td>' +
@@ -167,7 +180,7 @@ jQuery(document).ready(function () {
             jQuery('.return-quantity').each(function (k, item) {
                 var tdQuantity = parseInt(jQuery(item).closest('tr').find('.td-quantity').text());
                 var returnQuantity = parseInt(jQuery(item).val());
-                if (jQuery(item).prop('disaabled')) {
+                if (jQuery(item).prop('disabled')) {
                     if ((tdQuantity < returnQuantity) || returnQuantity < 1) {
                         ret = false;
                     }

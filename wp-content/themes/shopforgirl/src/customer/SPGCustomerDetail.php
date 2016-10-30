@@ -10,18 +10,39 @@ class SPGCustomerDetail
 
     public function add_new_customer($customer_info)
     {
-        $arg = array('post_type' => 'customer',
-            'post_title' => $customer_info['name'],
-        );
-        $new_customer_id = wp_insert_post($arg);
+        $default_password = substr(uniqid(), 7);
+        $username = '';
+        if (!empty($customer_info['phone'])) {
+            $username = $customer_info['phone'];
+        } else {
+            $username = $customer_info['email'];
+        }
+        // no username
+        if (empty($username)) {
+            return false;
+        }
+        // create new user account with phone or email
+        $new_customer_id = wp_create_user($username, $default_password, $customer_info['email']);
 
         if (!$new_customer_id) {
             return false;
         }
+
+
         // update meta data
-        update_post_meta($new_customer_id, 'wpcf-customer-phone', $customer_info['phone']);
-        update_post_meta($new_customer_id, 'wpcf-customer-email', $customer_info['email']);
-        update_post_meta($new_customer_id, 'wpcf-customer-address', $customer_info['address']);
+        update_user_meta($new_customer_id, 'customer-password', $default_password);
+        if (!empty($customer_info['name'])) {
+            $pos = strpos($customer_info['name'], ' ');
+            $first_name = substr($customer_info['name'], 0, $pos);
+            $last_name = substr($customer_info['name'], $pos + 1);
+            wp_update_user(array('ID' => $new_customer_id,
+                    'user_nicename' => $customer_info['name'],
+                    'display_name' => $customer_info['name'],
+                    'first_name' => $first_name,
+                    'last_name' => $last_name
+                )
+            );
+        }
         return $new_customer_id;
 
     }

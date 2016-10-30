@@ -1,4 +1,9 @@
 <header id="kad-banner" class="banner headerclass kt-not-mobile-sticky" data-header-shrink="0" data-mobile-sticky="0">
+    <!-- Display the shop  branch -->
+        <div class="shop-branch branch-">
+            
+        </div>
+    <!-- End display shop branch -->
     <?php if (kadence_display_topbar()) : ?>
         <?php get_template_part('templates/header', 'topbar'); ?>
     <?php endif; ?>

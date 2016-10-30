@@ -307,3 +307,46 @@ function is_manager_page($page_slug = '')
     }
     return false;
 }
+
+
+function set_message($type, $content)
+{
+    $_SESSION['message']['type'] = $type;
+    $_SESSION['message']['content'] = $content;
+}
+/**
+ * Check the message from the server
+ * @return bool
+ */
+
+function have_message()
+{
+    return !empty($_SESSION['message']);
+}
+
+/**
+ * Get the message type
+ * @return string
+ */
+function get_message_type()
+{
+    if (have_message()) {
+        return $_SESSION['message']['type'];
+    }
+    return '';
+}
+
+/**
+ * Get the message content
+ * @return string
+ */
+function get_message_content()
+{
+    $content = '';
+    if (have_message()) {
+        $content = $_SESSION['message']['content'];
+        unset($_SESSION['message']);
+
+    }
+    return $content;
+}
