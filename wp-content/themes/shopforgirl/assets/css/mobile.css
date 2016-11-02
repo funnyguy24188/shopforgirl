@@ -4,13 +4,11 @@
         border-bottom: 2px solid #ff7eb4;
     }
 
-    .page .contentclass{
-        background: #fff;}
+    .page .contentclass {
+        background: #fff;
     }
 
-
-   /** end kad-banner **/
-    
+    /** end kad-banner **/
     /** footer **/
     #containerfooter {
         background: #1f1f1f !important;
@@ -81,7 +79,6 @@
     .order-product header #topbar .container {
         max-width: 1170px;
     }
-
 
     /** hide the sidebar **/
     .product-finding #ktsidebar {
