@@ -53,6 +53,7 @@ function my_theme_enqueue_styles()
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), '1.0');
     wp_enqueue_style('spgDatepickerStyle', get_stylesheet_directory_uri() . '/assets/css/bootstrap-datepicker.min.css', array(), '1.0');
+    wp_enqueue_style('spgFontAwesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css', array(), '1.0');
 
 }
 
