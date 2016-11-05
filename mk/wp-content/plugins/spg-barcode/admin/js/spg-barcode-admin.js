@@ -9,7 +9,7 @@
 
             jQuery.ajax({
                 type: 'POST',
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 data: {
                     action: 'ajax_add_queue_print_barcode',
                     product_name: product_name,

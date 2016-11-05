@@ -75,7 +75,7 @@ jQuery(document).ready(function () {
         jQuery.ajax({
             method: 'POST',
             dataType: 'json',
-            url: window.location.origin + '/wp-admin/admin-ajax.php',
+            url: ajax_url,
             data: {action: 'get_barcode_auto', product_id: product_id, product_type: product_type},
             success: function (rep) {
                 if (rep.result) {

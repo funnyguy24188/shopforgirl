@@ -58,6 +58,7 @@ function my_theme_enqueue_styles()
 
 add_action('wp_enqueue_scripts', function () {
 
+    wp_enqueue_script('spgInitVars', get_stylesheet_directory_uri() . '/assets/js/init-vars.js', array('jquery'), '1.0');
     wp_enqueue_script('spgScript', get_stylesheet_directory_uri() . '/assets/js/spg_script.js', array('jquery'), '1.0');
     wp_enqueue_script('spgOrderList', get_stylesheet_directory_uri() . '/assets/js/order-list.js', array('jquery'), '1.0');
     wp_enqueue_script('spgDatepicker', get_stylesheet_directory_uri() . '/assets/js/bootstrap-datepicker.js', array('jquery'), '1.0');
@@ -67,6 +68,7 @@ add_action('wp_enqueue_scripts', function () {
 
 add_action('admin_enqueue_scripts', function () {
     // admin script
+    wp_enqueue_script('spgInitVars', get_stylesheet_directory_uri() . '/assets/js/init-vars.js', array('jquery'), '1.0');
     wp_enqueue_script('spgAdminScript', get_stylesheet_directory_uri() . '/assets/js/admin.js', array('jquery'), '1.0');
 
 });
