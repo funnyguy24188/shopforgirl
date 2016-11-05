@@ -6,8 +6,7 @@ jQuery(document).ready(function () {
             var self = this;
             self.renderCart(jQuery('#product-list-show table tbody'), data)
         };
-
-
+        
         this.initDomListener = function () {
             var self = this;
 
@@ -47,8 +46,6 @@ jQuery(document).ready(function () {
             });
             // quantity keydown listener
 
-
-            
 
             // add more product click listener
             jQuery('#add-more-product').click(function (e) {
