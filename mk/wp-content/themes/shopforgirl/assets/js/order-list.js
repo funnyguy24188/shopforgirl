@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
         var orderStatus = order_info.order_status;
         var orderStatusText = order_info.order_status_text;
         jQuery.ajax({
-            url: ajax_url,
+            url: window.location.origin + '/wp-admin/admin-ajax.php',
             method: 'post',
             dataType: 'json',
             data: {action: 'ajax_change_order_status', order_id: orderID, order_status: orderStatus},
@@ -55,7 +55,7 @@ jQuery(document).ready(function () {
     // normallize and reset page when form is submited
     jQuery('#order-list-search-form .submit-btn').click(function () {
         var serialize_data = jQuery('#order-list-search-form').serialize();
-        var base_url = window.location.origin;
+        var base_url = window.location.origin + '/' + spg_branch;
         var path = '/order-list/';
         var url = base_url + path + '?' + serialize_data;
         jQuery('#order-list-search-form').attr('action', url).submit();

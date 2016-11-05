@@ -7,8 +7,7 @@
 
 <div id="content" class="container">
     <div class="tutorial">
-        <strong>Nhập số hóa đơn, load hóa đơn từ hệ thống để trả hàng.
-            <br/>Lưu ý: Số lượng trả lại phải nhỏ hơn hoặc bằng số lượng trên hóa đơn.
+        <strong>Nhập số hóa đơn, load hóa đơn từ hệ thống để trả hàng. Số lượng trả lại phải nhỏ hơn hoặc bằng số lượng trên hóa đơn.
         </strong>
     </div>
     <div class="alert alert-dismissible" id="alert-message" role="alert"></div>
