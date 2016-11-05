@@ -1,10 +1,5 @@
-
 <?php
-$host_name = $_SERVER['HTTP_HOST'];
-$parsed_domain = explode('.',$host_name);
-$sub_domain = $parsed_domain[0];
-$database = 'shopforgirl_db_' . $sub_domain;
-
+const SPG_BRANCH = 'mk';
 
 ini_set('xdebug.var_display_max_depth', 50);
 ini_set('xdebug.var_display_max_children', 2560);
@@ -32,8 +27,8 @@ ini_set('xdebug.var_display_max_data', 10240);
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-define( 'WPCACHEHOME', '/var/www/html/shopforgirl/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', $database);
+define('WPCACHEHOME', '/var/www/html/shopforgirl/' . SPG_BRANCH . '/wp-content/plugins/wp-super-cache/'); //Added by WP-Cache Manager
+define('DB_NAME', 'shopforgirl_db_mk');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -59,17 +54,17 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
+define('AUTH_KEY', 'put your unique phrase here');
+define('SECURE_AUTH_KEY', 'put your unique phrase here');
+define('LOGGED_IN_KEY', 'put your unique phrase here');
+define('NONCE_KEY', 'put your unique phrase here');
+define('AUTH_SALT', 'put your unique phrase here');
 define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('LOGGED_IN_SALT', 'put your unique phrase here');
+define('NONCE_SALT', 'put your unique phrase here');
 
-define( 'DBI_AWS_ACCESS_KEY_ID', 'AKIAI7LTHSGXNA365SZQ' );
-define( 'DBI_AWS_SECRET_ACCESS_KEY', 'zi84hUkl4HN/HjmUgFiYBauKB4vq/U7ZNaXVizQf' );
+define('DBI_AWS_ACCESS_KEY_ID', 'AKIAI7LTHSGXNA365SZQ');
+define('DBI_AWS_SECRET_ACCESS_KEY', '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');
 
 
 /**#@-*/
@@ -80,7 +75,7 @@ define( 'DBI_AWS_SECRET_ACCESS_KEY', 'zi84hUkl4HN/HjmUgFiYBauKB4vq/U7ZNaXVizQf' 
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix = 'wp_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -95,15 +90,15 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
-define( 'WP_CACHE', true );
-define('WP_SITEURL',"http://$sub_domain.shopforgirl.local");
-define('WP_HOME',"http://$sub_domain.shopforgirl.local");
+define('WP_CACHE', true);
+define('WP_SITEURL', "http://shopforgirl.local/" . SPG_BRANCH);
+define('WP_HOME', "http://shopforgirl.local/" . SPG_BRANCH);
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if (!defined('ABSPATH'))
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

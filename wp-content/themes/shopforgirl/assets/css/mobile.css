@@ -31,15 +31,15 @@
     }
 
     .home .first-showup-block {
-        background: url("/wp-content/uploads/1-block.jpg");
+        background: url("/mk/wp-content/uploads/1-block.jpg");
     }
 
     .home .second-showup-block {
-        background: url("/wp-content/uploads/2-block.jpg");
+        background: url("/mk/wp-content/uploads/2-block.jpg");
     }
 
     .home .third-showup-block {
-        background: url("/wp-content/uploads/3-block.jpg");
+        background: url("/mk/wp-content/uploads/3-block.jpg");
     }
 
     .home .widget_virtue_infobox_widget .panel-widget-style a {

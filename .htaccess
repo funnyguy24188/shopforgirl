@@ -6,11 +6,8 @@ RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteRule . mk/index.php [L]
 
-RewriteCond  %{HTTP_HOST} ^shopforgirl.net [NC,OR]
-RewriteCond  %{HTTP_HOST} ^www.shopforgirl.net$
-RewriteRule (.*)$ http://shopforgirl.vn/$1 [R=301,L]
 </IfModule>
 
 # END WordPress
