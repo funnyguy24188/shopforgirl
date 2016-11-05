@@ -117,7 +117,7 @@ jQuery(document).ready(function () {
             return jQuery.ajax({
                 method: 'POST',
                 dataType: 'json',
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 data: {action: 'get_product_info', barcode: barcode}
             });
         };
@@ -126,7 +126,7 @@ jQuery(document).ready(function () {
             return jQuery.ajax({
                 method: 'POST',
                 dataType: 'json',
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 data: {action: 'ajax_add_product_to_cart', barcode: barcode, quantity: quantity}
             });
         };
@@ -136,7 +136,7 @@ jQuery(document).ready(function () {
             return jQuery.ajax({
                 method: 'POST',
                 dataType: 'json',
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 data: {action: 'ajax_remove_product_to_cart', barcode: barcode}
             });
         };
@@ -145,7 +145,7 @@ jQuery(document).ready(function () {
             return jQuery.ajax({
                 method: 'POST',
                 dataType: 'json',
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 data: {action: 'ajax_add_shipping_method', shipping_method: shipping_method}
             });
         };
@@ -157,7 +157,7 @@ jQuery(document).ready(function () {
             return jQuery.ajax({
                 method: 'POST',
                 dataType: 'json',
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 data: {action: 'get_customer_info', phone: phone}
             });
         };

@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
         var orderStatus = order_info.order_status;
         var orderStatusText = order_info.order_status_text;
         jQuery.ajax({
-            url: window.location.origin + '/wp-admin/admin-ajax.php',
+            url: ajax_url,
             method: 'post',
             dataType: 'json',
             data: {action: 'ajax_change_order_status', order_id: orderID, order_status: orderStatus},

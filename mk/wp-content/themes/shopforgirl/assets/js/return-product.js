@@ -103,7 +103,7 @@ jQuery(document).ready(function () {
          */
         this.loadOrder = function (orderID) {
             return jQuery.ajax({
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 method: 'post',
                 dataType: 'json',
                 data: {action: 'ajax_get_order_info', order_id: orderID}
@@ -164,7 +164,7 @@ jQuery(document).ready(function () {
 
             });
             return jQuery.ajax({
-                url: window.location.origin + '/wp-admin/admin-ajax.php',
+                url: ajax_url,
                 method: 'post',
                 dataType: 'json',
                 data: {action: 'ajax_save_return_order', order_id: orderID, return_data: order_data}
