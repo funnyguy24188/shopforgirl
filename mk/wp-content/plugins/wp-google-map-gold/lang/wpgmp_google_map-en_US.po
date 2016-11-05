@@ -1,0 +1,2438 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp google map pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-12 16:18+0530\n"
+"PO-Revision-Date: 2016-02-12 16:18+0530\n"
+"Last-Translator: Flipper Code <hello@flippercode.com>\n"
+"Language-Team: Flipper Code <hello@flippercode.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-SearchPath-0: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-"
+"content/plugins/wp-google-map-gold\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.controller.php:151
+msgid " updated successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.controller.php:152
+msgid " added successfully. You can manage your "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.frontend-tabular.php:221
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.frontend-tabular.php:357
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.tabular.php:223
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.tabular.php:404
+msgid "Selected "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.frontend-templates.php:490
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:63
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:64
+msgid "Choose Marker Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.frontend-templates.php:497
+msgid "Remove Marker Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.map-widget.php:25
+msgid "A widget to display google maps"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.map-widget.php:73
+msgid "Title:"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.map-widget.php:79
+msgid "Select Your Map:"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.map-widget.php:82
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:50
+msgid "Select map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.tabular.php:237
+msgid "Manage "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.tabular.php:571
+msgid "Filter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/core/class.tabular.php:631
+msgid "Select Page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:33
+msgid "Manage Backups"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:79
+msgid "Backup uploaded Successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:81
+msgid "Only .sql file are accepted for upload."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:85
+msgid "Please choose a sql file."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:115
+msgid "Backup has been taken successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:116
+msgid "A Problem encountered while taking backup!"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:149
+msgid "Backup Import Successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/model.backup.php:151
+msgid ".sql imported is missing."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:76
+msgid "Take Backup"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:83
+msgid ""
+"Click below to create a backup of all locations, maps, categories, terms and "
+"routes."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:88
+msgid "Plugin Backup"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:94
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:105
+msgid "Upload Backup"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:100
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:32
+msgid "Choose File"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/backup/views/manage.php:101
+msgid "Please upload backup."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/model.drawing.php:28
+msgid "Drawing"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:39
+msgid "Select Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:48
+msgid "Choose Map for Drawing"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:53
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:45
+msgid "Enter here the location title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:60
+msgid "Draw Shapes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:67
+msgid "Shape Properties"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:73
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:74
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:76
+msgid "Stroke Color"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:83
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:84
+msgid "Fill Color"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:113
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:98
+msgid "Stroke Weight"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:120
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:86
+msgid "Stroke Opacity"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:127
+msgid "Fill Opacity"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:134
+msgid "Radius (Meters)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:140
+msgid "Center Cordinates"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:146
+msgid "NorthEast Corner"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:152
+msgid "SouthWest Corner"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:160
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:161
+msgid "Cordinates"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:166
+msgid "Draw or click on a shape to apply properties."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:171
+msgid "Shape onclick Event"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:179
+msgid "Redirect URL"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:180
+msgid "Redirect url on click."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:187
+msgid "Message on click."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:188
+msgid "Message to display on click."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:192
+msgid "Save Drawing"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:300
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:144
+msgid "not working..."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:302
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:146
+msgid "No results found."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:303
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:147
+msgid "Route is not available for your requested route."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/drawing/views/manage.php:522
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:39
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:138
+msgid "Select"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/model.group_map.php:40
+msgid "Add Marker Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/model.group_map.php:41
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:235
+msgid "Marker Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/model.group_map.php:122
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:165
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:430
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/model.map.php:184
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/model.route.php:143
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/model.group_map.php:124
+msgid "Category updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/model.group_map.php:126
+msgid "Category added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:32
+msgid "Marker Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:32
+msgid "Manage Marker Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:42
+msgid "Parent Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:44
+msgid "Assign parent category if any."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:51
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:56
+msgid "Marker Category Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:54
+msgid "Enter here marker category title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:66
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:67
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/locations-form.php:46
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:126
+msgid "Choose"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/group_map/views/form.php:67
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:68
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:127
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:110
+msgid "Remove"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:41
+msgid "Add Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:42
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:41
+msgid "Manage Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:43
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:9
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:37
+msgid "Import Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:167
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:432
+msgid "Location updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:169
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:434
+msgid "Location added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:267
+msgid "Please select file to be imported."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/model.location.php:269
+msgid "Please upload a valid csv file."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:41
+msgid "Location Information"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:43
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:116
+msgid "Location Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:47
+msgid "Enter Location Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:51
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:117
+msgid "Location Address"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:53
+msgid "Enter here the address. Google auto suggest helps you to choose one."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:56
+msgid "Type Location Address"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:60
+msgid "Latitude and Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:63
+msgid "Enter here the latitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:66
+msgid "Enter the Latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:73
+msgid "Enter here the longitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:76
+msgid "Enter the Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:81
+msgid "City and State"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:84
+msgid "Enter here the city."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:86
+msgid "City"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:93
+msgid "Enter here the state."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:95
+msgid "State"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:100
+msgid "Country and Postal Code"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:103
+msgid "Enter here the country."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:105
+msgid "Country"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:112
+msgid "Enter here the postal code."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:114
+msgid "Postal Code"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:120
+msgid "Current Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:127
+msgid "On Click"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:128
+msgid "Display Infowindow"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:128
+msgid "Redirect"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:136
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:26
+msgid "Infowindow Message"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:138
+msgid "Enter here the infoWindow message."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:147
+msgid "Redirect Url"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:149
+msgid "Enter here the redirect url. e.g http://www.flippercode.com"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:157
+msgid "YES"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:157
+msgid "NO"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:158
+msgid "Open new tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:160
+msgid "Open a new window tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:168
+msgid "Disable Infowindow"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:172
+msgid "Do you want to disable infowindow for this location?"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:176
+msgid "Infowindow Default Open"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:180
+msgid "Check to enable infowindow default open."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:184
+msgid "Marker Draggable"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:188
+msgid "Check if you want to allow visitors to drag the marker."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:192
+msgid "Marker Animation"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:194
+msgid "Please select marker animation."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:200
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:90
+msgid "Extra Field(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:218
+msgid "Field Value"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:226
+msgid "No extra fields found. You can add extra fields from settings page."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:274
+msgid "You don't have categorie(s)."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/form.php:288
+msgid "Save Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:11
+msgid "You must have latitude and longitude in the csv file."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:17
+msgid "Comma (,)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:18
+msgid "Semicolon (;)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:19
+msgid "Colon (:)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:20
+msgid "Bar (|)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:21
+msgid "Tab (\\t)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:22
+msgid "Space ( )"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:25
+msgid "Choose Delimiter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/location/views/import.php:34
+msgid "Please upload a valid CSV file."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/model.map.php:39
+msgid "Add Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/model.map.php:40
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/form.php:32
+msgid "Manage Maps"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/model.map.php:186
+msgid "Map updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/model.map.php:188
+msgid "Map added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/model.map.php:215
+msgid "Copy"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/form.php:32
+msgid "Map Information"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/form.php:56
+msgid "Save Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:24
+msgid "Control Position(s) Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:29
+msgid "Pan Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:31
+msgid "Please select position of pan control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:35
+msgid "Zoom Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:37
+msgid "Please select position of zoom control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:42
+msgid "Zoom Control Style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:44
+msgid "Please select style of zoom control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:49
+msgid "Map Type Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:52
+msgid "Please select position of map type control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:58
+msgid "Map Type Control Style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:60
+msgid "Please select style of map type control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:65
+msgid "Street View Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-position-style-form.php:67
+msgid "Please select position of street view control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:8
+msgid "Control Setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:13
+msgid "Turn Off Pan Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:17
+msgid "Please check to disable pan control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:21
+msgid "Turn Off Zoom Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:25
+msgid "Please check to disable zoom control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:29
+msgid "Turn Off Map Type Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:33
+msgid "Please check to disable map type control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:37
+msgid "Turn Off Scale Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:41
+msgid "Please check to disable scale control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:45
+msgid "Turn Off Street View Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:49
+msgid "Please check to disable street view control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:53
+msgid "Turn Off Overview Map Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/control-setting-form.php:57
+msgid "Please check to disable overview map control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:8
+msgid "Map Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:10
+msgid "Enter here the map title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:15
+msgid "Map Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:17
+msgid "Enter here the map width in pixel. Leave it blank for 100% width."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:21
+msgid "Map Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:23
+msgid "Enter here the map height in pixel."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:33
+msgid "Map Zoom Level"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:35
+msgid "Available options 0 to 19."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:40
+msgid "Map Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:46
+msgid "Turn Off Scrolling Wheel"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:50
+msgid "Please check to disable scroll wheel zoom."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:54
+msgid "Map Draggable"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:58
+msgid "Please check to disable map draggable."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:63
+msgid "45&deg; Imagery"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/general-setting-form.php:67
+msgid ""
+"Apply 45&deg; Imagery ? (only available for map type SATELLITE and HYBRID)."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:9
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:14
+msgid "GEO Tags"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:18
+msgid ""
+"Enable to display location from your own custom fields of posts or custom "
+"post types."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:41
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:42
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:43
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/geotag-form.php:44
+msgid "Custom Field Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/image-overlays.php:9
+msgid "Image Overalys"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/image-overlays.php:15
+msgid "Apply Image Overlays"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/image-overlays.php:19
+msgid "Please check to apply image overlays."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/image-overlays.php:27
+msgid "Image Tiles URL"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:9
+msgid "Infowindow Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:14
+#, php-format
+msgid ""
+"Enter placeholders {marker_title},{marker_address},{marker_message},"
+"{marker_latitude},{marker_longitude}, {extra_field_slug_here}. View complete "
+"list <a target=\"_blank\" href=\"%s\">here</a>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:17
+msgid "Hide Markers on Page Load"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:21
+msgid ""
+"Don't display markers on page load. Display markers after filtration only."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:44
+msgid "Infowindow Message for Posts"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:46
+msgid ""
+"If you want to display post's data in marker infowindow, Use following "
+"placeholder - {post_title}, {post_link}, {post_excerpt}, {post_content}, "
+"{post_featured_image}, {post_categories}, {post_tags}, "
+"{%custom_field_slug_here%}. HTML tags allowed."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:57
+msgid "Show Infowindow on"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:59
+msgid "Open infowindow on Mouse Click or Mouse Hover."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:72
+msgid "InfoWindow Open"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:76
+msgid "Please check to enable infowindow default open."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:81
+msgid "Close InfoWindow"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:85
+msgid "Please check to close infowindow on map click."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:89
+msgid "Select Animation"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:89
+msgid "Mouse Click"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:89
+msgid "Mouse Hover"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:91
+msgid "Bounce Animation"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:93
+msgid ""
+"Apply bounce animation on mousehover or mouse click. BOUNCE indicates that "
+"the marker should bounce in place."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:98
+msgid "Apply Drop Animation"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:102
+msgid "DROP indicates that the marker should drop from the top of the map. "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:107
+msgid "Select Zoom"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:113
+msgid "Change Zoom on Click"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:115
+msgid "Change zoom level of the map on marker click."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:122
+msgid "Center the Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:125
+msgid "Set as center point on marker click"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:131
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:136
+msgid "Layers Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:141
+msgid "Kml/Kmz Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:145
+msgid "Please check to enable Kml/Kmz Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:150
+msgid "KML Link(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:152
+msgid ""
+"Paste here kml or kmz link. you can insert multiple kml or kmz links by "
+"comma (,) separated."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:160
+msgid "Fusion Table Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:164
+msgid "Please check to enable Fusion Table Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:170
+msgid "Fusion Select"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:174
+msgid ""
+"A select property whose value is the column name containing the location "
+"information in your fusion table. "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:181
+msgid "Fusion From"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:185
+msgid "A from property whose value is either of the Encrypted ID."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:192
+#, php-format
+msgid ""
+"Specify Marker icon name from the <a target=\"_blank\" href=\"%s\">supported "
+"Map marker or Icon names</a>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:195
+msgid "Icon Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:206
+msgid "Heat Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:211
+msgid ""
+"Enable heatmaps, where the density of matched locations is depicted using a "
+"palette of colors."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:217
+msgid "Traffic Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:221
+msgid "Please check to enable traffic Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:226
+msgid "Transit Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:230
+msgid "Please check to enable Transit Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:236
+msgid "Bicycling Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/layers-form.php:240
+msgid "Please check to enable Bicycling Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:9
+msgid "Limit Panning Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:15
+msgid "Limit Panning"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:19
+msgid "Apply limit panning. if you enabled,below information can not be empty."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:26
+msgid "South West"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:28
+msgid "Enter here \"South West\" latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:37
+msgid "Enter here \"South West\" longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:45
+msgid "North East"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:47
+msgid "Enter here \"North East\" latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:56
+msgid "Enter here \"North East\" longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:67
+msgid "Zoom Level"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/limit-panning-setting-form.php:69
+msgid "Select zoom level."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:9
+msgid "Listing Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:15
+msgid "Display Listing"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:19
+msgid "Display locations listing below the map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:25
+msgid "Display Search Form"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:29
+msgid "Check to display search form below the map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:35
+msgid "Display Category Filter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:39
+msgid "Check to display category filter."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:46
+msgid "Display Sorting Filter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:50
+msgid "Check to display sorting filter."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:56
+msgid "Display Radius Filter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:60
+msgid ""
+"Check to display radius filter. Recommended to display search results within "
+"certian radius."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:66
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:167
+msgid "Miles"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:66
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:120
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:168
+msgid "KM"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:68
+msgid "Dimension"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:70
+msgid "Choose radius dimension in miles or km."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:77
+msgid "Radius Options"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:79
+msgid "Set radius options. Enter comma seperated numbers."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:86
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:96
+msgid "Display Per Page Filter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:90
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:100
+msgid "Check to enable locations per page filter."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:106
+msgid "Display Print Option"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:110
+msgid "Check to display print option."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:116
+msgid "Display Grid/List Option"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:120
+msgid "Switch between list/grid view."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:126
+msgid "Locations Per Page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:128
+msgid "Set locations to display per page. Default is 10."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:136
+msgid "Before Listing Placeholder"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:138
+msgid "Display a text/html content before display listing."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:143
+msgid "Map Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:148
+msgid "List/Grid"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:150
+msgid "Choose listing style for frontend display."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:174
+msgid "Listing Placeholder"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:176
+msgid ""
+"Use placeholder - {marker_id}, {marker_zoom}, {marker_title}, "
+"{marker_address}, {marker_city}, {marker_state}, {marker_country}, "
+"{marker_postal_code}, {marker_message}, {marker_latitude}, "
+"{marker_longitude}, {marker_icon},{marker_category},{extra_field_slug_here},"
+"{%custom_field_slug_here%}"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:184
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:57
+msgid "Sort By"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:186
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:59
+msgid "Select Sort By."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:187
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:60
+msgid "Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:187
+msgid "Address"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:187
+msgid "Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:193
+msgid "GEOJSON"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:199
+msgid "Paste GEO JSON URL"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/listing-setting-form.php:201
+msgid "Enter GEO JSON Url"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/locations-form.php:41
+msgid "Choose Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/locations-form.php:47
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:88
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:139
+msgid "Select All"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/locations-form.php:48
+msgid "Deselect All"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:8
+msgid "Map's Center"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:14
+msgid "Center Latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:16
+msgid "Enter here the center latitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:20
+msgid "Center Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:22
+msgid "Enter here the center longitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:28
+msgid "Center by Current Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:33
+msgid "Center the map based on visitor's current location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:37
+msgid "Display Circle"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:41
+msgid "Display a circle around the center location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:51
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:342
+msgid "Circle fill color."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:60
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:351
+msgid "Circle fill opacity."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:71
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:362
+msgid "Circle stroke color."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:81
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:372
+msgid "Circle stroke opacity."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:92
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:383
+msgid "Circle stroke weight."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:100
+msgid "Display Marker"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:104
+msgid "Display a marker on center location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:110
+msgid "Infowindow Message for Center Marker"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:112
+msgid "Display custom message on center location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-center-settings.php:121
+msgid "Choose Center Marker Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-style-setting-form.php:9
+msgid "Map Style Setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-style-setting-form.php:61
+msgid "Style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-style-setting-form.php:91
+msgid ""
+"or you can paste Javascript style array here. You can get awesome readymade "
+"styles from <a href=\"http://snazzymaps.com/\" target=\"_blank\">snazzymaps."
+"com</a>"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-style-setting-form.php:100
+msgid "Paste Style here"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/map-style-setting-form.php:102
+msgid "Copy google map style from snazzymaps.com and paste here."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:9
+msgid "Marker Cluster Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:15
+msgid "Apply Marker Cluster"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:19
+msgid "Please check to apply marker cluster."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:25
+msgid "Grid"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:39
+msgid "Max Zoom Level"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:41
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:397
+msgid "Available options 1 to 19."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:50
+msgid "Marker Zoom Level"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:52
+msgid "Set zoom level on marker or location click. Available options 1 to 19."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:62
+msgid "Apply Style(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:66
+msgid "Apply styles to marker clusters?"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:87
+msgid "Icon"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/marker-cluster-setting-form.php:109
+msgid "Mouseover Icon"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:9
+msgid "Overlays Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:15
+msgid "Apply Overlays"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:19
+msgid ""
+"Please check to apply overlays. if enabled, below information can not be "
+"empty."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:26
+msgid "Overlay Border Color"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:28
+msgid "Default is red."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:34
+msgid "Overlay Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:36
+msgid "Enter here overlay width. Default is 200px."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:43
+msgid "Overlay Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:45
+msgid "Enter here overlay height. Default is 200px."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:52
+msgid "Overlay Font size"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:54
+msgid "Enter here Overlay Font Size. Default is 16px."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:61
+msgid "Overlay Border Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:63
+msgid "Enter here Overlay Border Width. Default is 2px."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:70
+msgid "Overlay Border Style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/overlay-setting-form.php:72
+msgid "Select overlay border style."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:9
+msgid "Route Direction Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:15
+msgid "Turn On Map Route Directions"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:19
+msgid "Please check to enable map route directions."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:39
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:66
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:70
+msgid "Route Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:39
+msgid "Travel Mode"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:39
+msgid "Unit System"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/route-direction-form.php:49
+#, php-format
+msgid ""
+"No route found. <a target=\"_blank\" href=\"%s\">Click here</a> to create a "
+"route."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:9
+msgid "Street View Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:15
+msgid "Turn On Street View"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:19
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:29
+msgid "Please check to enable Street View control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:25
+msgid "Turn On Close Button."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:36
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:47
+msgid "Turn Off links Control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:40
+msgid "Please check to disable links control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:51
+msgid "Please check to disable Street View Pan control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:58
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:67
+msgid "POV Heading"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:61
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:70
+msgid "Please enter POV heading."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:77
+msgid "POV Pitch"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/street-view-setting-form.php:80
+msgid "Please enter POV Pitch."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:9
+msgid "Tabs Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:15
+msgid "Display Tabs"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:19
+msgid "Display various tabs on the map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:25
+msgid "Hide Tabs on Load"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:29
+msgid "Hide tabs by default."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:35
+msgid "Display Categories Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:39
+msgid "Display Categories/Locations Tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:47
+msgid "Category Tab Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:50
+msgid "Title of the category tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:53
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:138
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:761
+msgid "Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:60
+msgid "Location Count."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:68
+msgid "Show Location Count"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:72
+msgid "Display location count next to category name."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:78
+msgid "Hide Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:82
+msgid "Hide locations below category selection."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:92
+msgid "Display select all checkbox to select all categories at once."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:98
+msgid "Display Directions Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:102
+msgid "Display Direction Tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:109
+msgid "Direction Tab Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:112
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:422
+msgid "Title of the route tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:115
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:770
+msgid "Directions"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:119
+msgid "Select Unit"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:120
+msgid "miles"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:127
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:151
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:153
+msgid "Start Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:128
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:146
+msgid "Auto Search Textbox"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:128
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:146
+msgid "Location Dropdown"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:136
+msgid "Default Start Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:139
+msgid "Set default start location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:145
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:158
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:156
+msgid "End Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:154
+msgid "Default End Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:157
+msgid "Set default end location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:163
+msgid "Suppress Markers"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:167
+msgid "Check the suppressMarkers property to hide directions markers"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:173
+msgid "Display Nearby Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:177
+msgid "Display nearby tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:184
+msgid "Nearby Tab Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:187
+msgid "Title of the nearby tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:190
+msgid "Nearby Places"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:194
+msgid ""
+"You can select amenities to display in nearby tab to be searchable in the "
+"below list."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:327
+msgid "Display Circle around amenities"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:331
+msgid "Display a circle around the nearby locations."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:395
+msgid "Circle Zoom Level"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:408
+msgid "Display Route Tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:412
+msgid "Display route tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:419
+msgid "Route Tab Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/map/views/map-forms/tab-setting-form.php:425
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:789
+msgid "Routes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:13
+msgid "How to Use"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:15
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:42
+msgid "Go through the steps below to create your first map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:19
+#, php-format
+msgid ""
+"Use our auto suggestion enabled location box to add your location <a href="
+"\"%s\">here</a>. You can add multiple locations.All those locations will be "
+"available to choose when you create your map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:24
+#, php-format
+msgid ""
+"Now <a href=\"%s\">click here</a> to create a map. You can create as many "
+"maps you want to add. Using shortcode, you can add maps on posts/pages."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:29
+msgid ""
+"When done with administrative tasks, you can display map on posts/pages "
+"using. You can create as many maps you want to add. Using shortcode, you can "
+"add maps on posts/pages. Enable map in the widgets section to display in "
+"sidebar."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:39
+msgid "Shortcodes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:45
+msgid ""
+"This plugin provides shortcodes which helpful for a non-programmer and "
+"programmer to display maps dynamically. Below are the shortcode combinations "
+"you may use though possiblity are endless to create combinations of "
+"shortcodes."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:48
+msgid "Display Map using latitude & longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:51
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:78
+msgid "Standard format for shortcode is as below."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:58
+msgid "So you can display any number of markers using this shortcode."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:60
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:86
+msgid "Below are few examples to understand it better."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:62
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:88
+msgid "Single Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:68
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:94
+msgid "Multiple Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:75
+msgid "Display Map using Address"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:108
+msgid "Place holders"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:112
+msgid ""
+"Use following placeholder on infowindow setting or listing placeholder in "
+"map settings."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:115
+msgid "Location ID"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:118
+msgid "Location Message"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:119
+msgid "Location Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:120
+msgid "Location Marker Icon"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:121
+msgid "Location Latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:122
+msgid "Location Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:123
+msgid "Location City"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:124
+msgid "Location State"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:125
+msgid "Location Country"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:126
+msgid "Location Zoom"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:127
+msgid "Location Postal Code"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:130
+msgid ""
+"Use following placeholder if you're showing posts on google maps via geotags "
+"or wp google map meta box."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:133
+msgid "Post Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:134
+msgid "Post Title with Link"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:135
+msgid "Post Excerpt"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:136
+msgid "Post Content"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:137
+msgid "Featured Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:139
+msgid "Tags"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/overview/views/view.php:140
+msgid "Custom Fields"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/permissions/model.permissions.php:28
+msgid "Manage Permissions"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/permissions/model.permissions.php:86
+msgid "Permissions saved successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/permissions/views/manage.php:28
+msgid "Manage Permission(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/permissions/views/manage.php:54
+msgid "Save Permissions"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/model.route.php:39
+msgid "Add Route"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/model.route.php:40
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:63
+msgid "Manage Routes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/model.route.php:145
+msgid "Route updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/model.route.php:147
+msgid "Route added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:63
+msgid "Route Information"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:69
+msgid "Please enter route title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:80
+msgid "Choose route direction stroke color.(Default is Blue)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:81
+msgid "Route Stroke Color"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:88
+msgid "Please select route direction stroke opacity."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:100
+msgid "Please select route stroke weight."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:107
+msgid "Travel Modes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:109
+msgid "Please select travel mode."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:115
+msgid "Unit Systems"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:117
+msgid "Please select unit system."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:124
+msgid "Draggable"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:128
+msgid "Please check to enable route draggable."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:134
+msgid "Optimize Waypoints"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:138
+msgid "Please check to enable optimize waypoints."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:153
+msgid "Please select start location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:160
+msgid "Please select end location."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:166
+msgid "Way Point(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/route/views/form.php:173
+msgid "You can select maximum 8 way point(s)."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/model.settings.php:28
+msgid "Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/model.settings.php:63
+msgid "Setting(s) saved successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:10
+msgid "General Setting(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:12
+msgid "Business API Key"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:14
+msgid "Please insert here Api Key if you signup for google maps business api."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:18
+msgid "ENGLISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:19
+msgid "ARABIC"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:20
+msgid "BASQUE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:21
+msgid "BULGARIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:22
+msgid "BENGALI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:23
+msgid "CATALAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:24
+msgid "CZECH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:25
+msgid "DANISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:26
+msgid "GERMAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:27
+msgid "GREEK"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:28
+msgid "ENGLISH (AUSTRALIAN)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:29
+msgid "ENGLISH (GREAT BRITAIN)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:30
+msgid "SPANISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:31
+msgid "FARSI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:32
+msgid "FINNISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:33
+msgid "FILIPINO"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:34
+msgid "FRENCH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:35
+msgid "GALICIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:36
+msgid "GUJARATI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:37
+msgid "HINDI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:38
+msgid "CROATIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:39
+msgid "HUNGARIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:40
+msgid "INDONESIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:41
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:49
+msgid "ITALIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:42
+msgid "HEBREW"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:43
+msgid "JAPANESE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:44
+msgid "KANNADA"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:45
+msgid "KOREAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:46
+msgid "LITHUANIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:47
+msgid "LATVIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:48
+msgid "MALAYALAM"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:50
+msgid "MARATHI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:51
+msgid "DUTCH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:52
+msgid "NORWEGIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:53
+msgid "POLISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:54
+msgid "PORTUGUESE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:55
+msgid "PORTUGUESE (BRAZIL)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:56
+msgid "PORTUGUESE (PORTUGAL)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:57
+msgid "ROMANIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:58
+msgid "RUSSIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:59
+msgid "SLOVAK"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:60
+msgid "SLOVENIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:61
+msgid "SERBIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:62
+msgid "SWEDISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:63
+msgid "TAGALOG"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:64
+msgid "TAMIL"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:65
+msgid "TELUGU"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:66
+msgid "THAI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:67
+msgid "TURKISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:68
+msgid "UKRAINIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:69
+msgid "VIETNAMESE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:70
+msgid "CHINESE (SIMPLIFIED)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:71
+msgid "CHINESE (TRADITIONAL)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:75
+msgid "Map Language"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:77
+msgid "Choose your language for map. Default is English."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:82
+msgid "Include Scripts in "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:83
+msgid "Header"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:83
+msgid "Footer (Recommanded)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:104
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:131
+msgid "Field Label"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:107
+msgid "Placehoder - "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:137
+msgid "Add More..."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/settings/views/manage.php:148
+msgid "Save Setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:136
+msgid "Select Radius"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:137
+msgid ""
+"Enter address or latitude or longitude or title or city or state or country "
+"or postal code here..."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:140
+msgid "Select Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:141
+msgid "All"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:142
+msgid "Show Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:143
+msgid "Sort by"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:151
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:392
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:611
+msgid "Hide"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:152
+msgid "Show"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:154
+msgid "Start Point"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:155
+msgid "Radius"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:157
+msgid "Take Current Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:158
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:159
+msgid "Your Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:160
+msgid "Driving"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:161
+msgid "Bicycling"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:162
+msgid "Walking"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:163
+msgid "Transit"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:164
+msgid "metric"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:165
+msgid "imperial"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:166
+msgid "Find Direction"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:169
+msgid "Show Amenities"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:170
+msgid "Find Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:171
+msgid "Prev"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:172
+msgid "Next"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:632
+msgid "Select Featured Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/modules/shortcode/views/put-wpgmp.php:777
+msgid "Nearby"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:122
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:487
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:488
+msgid "WP Google Map Pro"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:183
+msgid "Enter Location :"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:191
+msgid "Latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:191
+msgid "Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:200
+msgid "Choose Marker Categories :"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:226
+msgid "Do you want to assign a category? Please create category <a href='"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:236
+msgid "Location Redirect :"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:261
+msgid "Please enter link."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:267
+msgid "Select Map :"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:287
+msgid "Please <a href=\""
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:615
+msgid "Are you sure to delete item?"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:728
+msgid "Choose Icons"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:792
+msgid "Choose marker icon"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:798
+msgid "Choose icon"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:798
+msgid "Search icons"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demolabs/wp-content/plugins/wp-google-map-gold/wp-google-map-gold.php:825
+msgid "Insert into Post"
+msgstr ""
