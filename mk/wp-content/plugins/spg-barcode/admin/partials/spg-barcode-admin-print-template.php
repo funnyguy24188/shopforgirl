@@ -14,14 +14,12 @@ class SPGBarcodePrintTemplate
             $product_price = $barcodes[3];
             ?>
             <table>
-            <?php for ($i = 0; $i < $num; $i++): ?>
-                <tr>
-                    <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
-                    <span style="font-size: 6px;"><?php echo $product_name ?></span>
-                    <br>
-                    <span style="font-size: 6px;"><?php echo $product_price ?></span>
-                </tr>
-            <?php endfor; ?>
+                <?php for ($i = 0; $i < $num; $i++): ?>
+                    <tr>
+                        <img src="<?php echo $url ?>" alt="barcode-<?php echo $product_id ?>">
+                        <span style="font-size: 6px;"><?php echo $product_name . "($product_price)" ?></span>
+                    </tr>
+                <?php endfor; ?>
             </table>
         <?php endforeach; ?>
         </div>

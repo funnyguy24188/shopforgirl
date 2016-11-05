@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__ . '/../lib/class-wp-list-table.php';
-
+/*
 class Spg_Barcode_Admin_List extends SPG_WP_List_Table
 {
 
@@ -17,4 +16,4 @@ class Spg_Barcode_Admin_List extends SPG_WP_List_Table
         return $columns;
     }
 
-}
+}*/

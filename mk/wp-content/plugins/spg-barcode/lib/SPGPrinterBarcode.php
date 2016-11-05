@@ -1,6 +1,6 @@
 <?php
 require_once 'AbstractSPGPrinter.php';
-require_once 'class-spg-barcode-admin-print-template.php';
+require_once __DIR__ . '/../admin/partials/spg-barcode-admin-print-template.php';
 
 
 class SPGPrinterBarcode extends AbstractSPGPrinter
@@ -23,7 +23,7 @@ class SPGPrinterBarcode extends AbstractSPGPrinter
             ob_start();
             SPGBarcodePrintTemplate::render($this->print_data);
             $html = ob_get_clean();
-            $this->pdf_engine = new TCPDF('L', 'mm', array(45,50), true, 'UTF-8', false);
+            $this->pdf_engine = new TCPDF('L', 'mm', array(60, 40), true, 'UTF-8', false);
             $this->init_pdf_engine();
             $this->pdf_engine->SetAutoPageBreak(true, 0);
             $pdf_file_name = substr(uniqid(), 7) . '.pdf';
