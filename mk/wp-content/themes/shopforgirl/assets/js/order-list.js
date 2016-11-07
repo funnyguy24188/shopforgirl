@@ -83,7 +83,7 @@ jQuery(document).ready(function () {
     jQuery('#order-list-search-form .submit-btn').click(function () {
         var serialize_data = jQuery('#order-list-search-form').serialize();
         var base_url = window.location.origin + '/' + spg_branch;
-        var path = '/order-list/';
+        var path = '/order-list/';   
         var url = base_url + path + '?' + serialize_data;
         jQuery('#order-list-search-form').attr('action', url).submit();
     });
