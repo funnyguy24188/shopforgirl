@@ -124,8 +124,7 @@
                                         <input class="numberic form-control" id="customer-money" type="number"
                                                name="order[customer_money]" value="0">
                                     </div>
-
-
+                                    
                                     <div class="col-xs-4 col-sm-4 customer-save-order-group">
                                         <button class="btn btn-success primary-button" type="submit">Lưu</button>
                                     </div>

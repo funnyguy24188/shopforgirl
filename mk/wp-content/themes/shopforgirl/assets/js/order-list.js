@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
         var orderStatus = order_info.order_status;
         var orderStatusText = order_info.order_status_text;
         jQuery.ajax({
-            url: window.location.origin + '/wp-admin/admin-ajax.php',
+            url: ajax_url,
             method: 'post',
             dataType: 'json',
             data: {action: 'ajax_change_order_status', order_id: orderID, order_status: orderStatus},
@@ -51,12 +51,39 @@ jQuery(document).ready(function () {
                 jQuery('#order-id-' + orderID + ' .td-order-status .order-status-icon').text(orderStatusText);
             }
         })
-    })
+    });
+
+    jQuery('.print-order-detail').click(function () {
+        var order_id = jQuery(this).data('order-id');
+
+
+        jQuery.ajax({
+            url: ajax_url,
+            method: 'post',
+            dataType: 'json',
+            data: {action: 'ajax_print_order_detail', order_id: order_id },
+            success: function (rep) {
+                var classes = 'alert-danger';
+                var message = '';
+                if (rep.result) {
+                    classes = 'alert-success';
+                    message = rep.message;
+
+                    var order_pdf_link = rep.data.link;
+                    // insert the pdf file
+                    var div = document.getElementById("printerDiv");
+                    div.innerHTML = '<iframe style="margin: 0; padding:0; display: block" id="printer-iframe" src=' + order_pdf_link + ' onload="this.contentWindow.print();"></iframe>';
+                }
+
+            }
+        })
+    });
+
     // normallize and reset page when form is submited
     jQuery('#order-list-search-form .submit-btn').click(function () {
         var serialize_data = jQuery('#order-list-search-form').serialize();
         var base_url = window.location.origin + '/' + spg_branch;
-        var path =  '/order-list/';
+        var path = '/order-list/';
         var url = base_url + path + '?' + serialize_data;
         jQuery('#order-list-search-form').attr('action', url).submit();
     });

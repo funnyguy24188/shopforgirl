@@ -27,22 +27,25 @@ if (in_array('spg-barcode/spg-barcode.php', apply_filters('active_plugins', get_
             $pdf_size = array('width' => '57', 'height' => '100');
             $pdf_file_name = '';
             if (!empty($this->print_data['items'])) {
-                // calculate the height of the document pdf
-                $count = count($this->print_data['items']);
-                $height = 150 + ($count * 11);
-                $pdf_size['height'] = $height;
-                ob_start();
-                OrderTemplate::render($this->print_data);
-                $order_html = ob_get_clean();
+                try {
+                    // calculate the height of the document pdf
+                    $count = count($this->print_data['items']);
+                    $height = 150 + ($count * 11);
+                    $pdf_size['height'] = $height;
+                    ob_start();
+                    OrderTemplate::render($this->print_data);
+                    $order_html = ob_get_clean();
 
-                $this->pdf_engine = new TCPDF('P', 'mm', array_values($pdf_size), true, 'UTF-8', false);
-                $this->init_pdf_engine();
+                    $this->pdf_engine = new TCPDF('P', 'mm', array_values($pdf_size), true, 'UTF-8', false);
 
-                $pdf_file_name = substr(uniqid(), 7) . '.pdf';
-                $this->pdf_engine->writeHTML($order_html, true, 0, true, true);
-                $this->pdf_engine->lastPage();
-                $this->pdf_engine->Output($this->pdf_convert_path . DIRECTORY_SEPARATOR . $pdf_file_name, 'F');
-
+                    $this->init_pdf_engine();
+                    $pdf_file_name = substr(uniqid(), 7) . '.pdf';
+                    $this->pdf_engine->writeHTML($order_html, true, 0, true, true);
+                    $this->pdf_engine->lastPage();
+                    $this->pdf_engine->Output($this->pdf_convert_path . DIRECTORY_SEPARATOR . $pdf_file_name, 'F');
+                } catch (Exception $e) {
+                    var_dump($e->getMessage());
+                }
             }
             return $pdf_file_name;
         }

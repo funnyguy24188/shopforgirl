@@ -1,6 +1,7 @@
 <?php
 
 require_once 'SPGOrder.php';
+require_once __DIR__ . '/../bill/SPGCartGlobalManager.php';
 
 class SPGOrderList extends SPGOrder
 {
@@ -9,6 +10,40 @@ class SPGOrderList extends SPGOrder
         parent::init_hook();
         add_action('wp_ajax_nopriv_ajax_change_order_status', array($this, 'ajax_change_order_status'));
         add_action('wp_ajax_ajax_change_order_status', array($this, 'ajax_change_order_status'));
+        add_action('wp_ajax_ajax_print_order_detail', array($this, 'ajax_print_order_detail'));
+        add_action('wp_ajax_nopriv_print_order_detail', array($this, 'ajax_print_order_detail'));
+    }
+
+    /**
+     * Print order detail in order list
+     */
+
+    public function ajax_print_order_detail()
+    {
+
+        $order_id = !empty($_POST['order_id']) ? $_POST['order_id'] : '';
+
+        $this->check_valid_order($order_id);
+
+        $temp_cart = SPGCartGlobalManager::get_instance();
+        $temp_cart->call_print_order($order_id);
+        $pdf_order_link = '';
+
+        if (isset($_SESSION['order_pdf_link'])) {
+            $pdf_order_link = $_SESSION['order_pdf_link'];
+            unset($_SESSION['order_pdf_link']);
+        }
+
+
+        echo json_encode(
+            array(
+                'result' => true,
+                'message' => 'Hóa đơn đang được in',
+                'data' => array('link' => $pdf_order_link)
+            )
+        );
+        die;
+
     }
 
     public function ajax_change_order_status()
@@ -46,7 +81,7 @@ class SPGOrderList extends SPGOrder
      * Return a list of order
      */
 
-    public function get_order_list($term = '', $order_statuses = '', $start_date = '', $end_date = '', $page = 1 , $user_id = '')
+    public function get_order_list($term = '', $order_statuses = '', $start_date = '', $end_date = '', $page = 1, $user_id = '')
     {
 
         $posts_per_page = get_option('posts_per_page');

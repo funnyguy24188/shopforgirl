@@ -406,6 +406,8 @@ class SPGCartGlobalManager
 
         $order_items = $order->get_items();
 
+
+
         foreach ($order_items as $item_key => $item) {
             $product_id = 0;
             $barcode = 0;
@@ -422,8 +424,7 @@ class SPGCartGlobalManager
             if (!empty($product_id)) {
                 $barcode = get_post_meta($product_id, '_barcode_field', true);
             }
-
-
+            
             $order_data['items'][] = array('name' => $product_name,
                 'quantity' => $item['qty'],
                 'price' => $item['line_total'],
@@ -435,10 +436,13 @@ class SPGCartGlobalManager
         $order_data['total'] = $order->get_total();
         $order_data['shipping'] = $order->get_total_shipping();
         $order_data['order_id'] = $order_id;
-        $order_data['customer_money'] = !empty($_POST['order']['customer_money']) ? $_POST['order']['customer_money'] : 0;
+        $order_data['order_date'] = date('d-m-Y',strtotime($order->order_date));
+        $order_data['customer_money'] = !empty($_POST['order']['customer_money']) ? $_POST['order']['customer_money'] : null;
         $printer = new SPGPrinterOrder($order_data);
+
         // make the pdf file
         $pdf_file = $printer->print_data();
+
         if ($pdf_file) {
             $_SESSION['order_pdf_link'] = wp_upload_dir()['baseurl'] . DIRECTORY_SEPARATOR . 'order_tmp' . DIRECTORY_SEPARATOR . $pdf_file;
         }

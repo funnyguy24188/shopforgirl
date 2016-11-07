@@ -1,6 +1,5 @@
 <?php require_once 'src/order/SPGOrder.php' ?>
 <?php require_once 'src/order/SPGOrderList.php' ?>
-
 <?php
 /**
  * Get order list
@@ -89,9 +88,11 @@ $current_user = wp_get_current_user();
                                 </span>
                                 </td>
                                 <td>
-                                <a href="#"><i class="fa fa-print" aria-hidden="true"></i></a>
+                                <a href="#" data-order-id="<?php echo $order_id ?>" class="print-order-detail"><i
+                                        class="fa fa-print" aria-hidden="true"></i></a>
                                 <?php if (in_array('administrator', $current_user->roles) || in_array('shop_manager', $current_user->roles)): ?>
-                                    <a href="<?php echo site_url("wp-admin/post.php?post=$order_id&action=edit") ?>"><i
+                                    <a target="_blank"
+                                       href="<?php echo site_url("wp-admin/post.php?post=$order_id&action=edit") ?>"><i
                                             class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 <?php endif; ?>
                             <select class="change-order-status">
@@ -160,6 +161,7 @@ $current_user = wp_get_current_user();
     </div>
 </div>
 
+<div id="printerDiv" style="display: none"></div>
 
 <div class="modal fade" tabindex="-1" id="change-order-modal" role="dialog">
     <div class="modal-dialog" role="document">
