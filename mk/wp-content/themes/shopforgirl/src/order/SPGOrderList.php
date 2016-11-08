@@ -11,7 +11,7 @@ class SPGOrderList extends SPGOrder
         add_action('wp_ajax_nopriv_ajax_change_order_status', array($this, 'ajax_change_order_status'));
         add_action('wp_ajax_ajax_change_order_status', array($this, 'ajax_change_order_status'));
         add_action('wp_ajax_ajax_print_order_detail', array($this, 'ajax_print_order_detail'));
-        add_action('wp_ajax_nopriv_print_order_detail', array($this, 'ajax_print_order_detail'));
+        add_action('wp_ajax_nopriv_ajax_print_order_detail', array($this, 'ajax_print_order_detail'));
     }
 
     /**
@@ -20,6 +20,7 @@ class SPGOrderList extends SPGOrder
 
     public function ajax_print_order_detail()
     {
+
 
         $order_id = !empty($_POST['order_id']) ? $_POST['order_id'] : '';
 
