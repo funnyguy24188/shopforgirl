@@ -134,7 +134,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     if(!$product) {
         $price = '';
     } else {
-        $price = $product->get_price();
+        $price = $product->get_price_html();
     }
     
     $message_format = str_replace('#barcode', $barcode, $message_format);
