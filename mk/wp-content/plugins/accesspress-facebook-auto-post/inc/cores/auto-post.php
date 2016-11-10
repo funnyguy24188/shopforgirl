@@ -140,11 +140,10 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
 
         if ($sale_price == $price) {
             $sale_price = '';
-            $price = wc_format_decimal($price) . get_woocommerce_currency();
         } else {
-            $sale_price = wc_format_decimal($sale_price) . get_woocommerce_currency();
-            $price = wc_format_decimal($price) . get_woocommerce_currency();
+            $sale_price = 'Khuyến mãi:' . '<big><b>' . wc_format_decimal($sale_price) . get_woocommerce_currency() . '</b></big>';
         }
+        $price = 'Giá:' . wc_format_decimal($price) . get_woocommerce_currency();
     }
 
     $message_format = str_replace('#barcode', $barcode, $message_format);
