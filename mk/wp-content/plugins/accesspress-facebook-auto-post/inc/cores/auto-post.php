@@ -31,28 +31,28 @@ if (count($categories) == 0) {
  *  in facebook
  * */
 if (in_array($post_type, $account_details['post_types']) && $account_extra_details['authorize_status'] == 1 && $category_flag) {
-    
+
     /**
      * Account Details
      * [application_id] => 1651381158424608
-      [application_secret] => a697762125e735da3bea0309ee36c0d0
-      [facebook_user_id] => devteam2070
-      [message_format] => Test Post
-      [include_image] => 1
-      [post_image] => featured_image
-      [custom_image_url] => adsfasdfasdf
-      [auto_publish_pages] => Array
-      (
-      [0] => 1
-      [1] => 881870878545563
-      [2] => 1505719796374561
-      )
-
-      [post_types] => Array
-      (
-      [0] => post
-      [1] => page
-      )
+     * [application_secret] => a697762125e735da3bea0309ee36c0d0
+     * [facebook_user_id] => devteam2070
+     * [message_format] => Test Post
+     * [include_image] => 1
+     * [post_image] => featured_image
+     * [custom_image_url] => adsfasdfasdf
+     * [auto_publish_pages] => Array
+     * (
+     * [0] => 1
+     * [1] => 881870878545563
+     * [2] => 1505719796374561
+     * )
+     *
+     * [post_types] => Array
+     * (
+     * [0] => post
+     * [1] => page
+     * )
      * */
     foreach ($account_details as $key => $val) {
         $$key = $val;
@@ -61,60 +61,60 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     /**
      * Account Extra Details
      * Array
-      (
-      [authorize_status] => 1
-      [pages] => Array
-      (
-      [0] => stdClass Object
-      (
-      [access_token] =>
-      [category] => App page
-      [name] => AccessPress Social Auto Post
-      [id] => 881870878545563
-      [perms] => Array
-      (
-      [0] => ADMINISTER
-      [1] => EDIT_PROFILE
-      [2] => CREATE_CONTENT
-      [3] => MODERATE_CONTENT
-      [4] => CREATE_ADS
-      [5] => BASIC_ADMIN
-      )
-
-      )
-
-      [1] => stdClass Object
-      (
-      [access_token] =>
-      [category] => Organization
-      [name] => Testing page
-      [id] => 1505719796374561
-      [perms] => Array
-      (
-      [0] => ADMINISTER
-      [1] => EDIT_PROFILE
-      [2] => CREATE_CONTENT
-      [3] => MODERATE_CONTENT
-      [4] => CREATE_ADS
-      [5] => BASIC_ADMIN
-      )
-
-      )
-
-      )
-
-      [access_token] =>
-      )
-      #post_title,#post_content,#post_excerpt,#post_link,#author_name
+     * (
+     * [authorize_status] => 1
+     * [pages] => Array
+     * (
+     * [0] => stdClass Object
+     * (
+     * [access_token] =>
+     * [category] => App page
+     * [name] => AccessPress Social Auto Post
+     * [id] => 881870878545563
+     * [perms] => Array
+     * (
+     * [0] => ADMINISTER
+     * [1] => EDIT_PROFILE
+     * [2] => CREATE_CONTENT
+     * [3] => MODERATE_CONTENT
+     * [4] => CREATE_ADS
+     * [5] => BASIC_ADMIN
+     * )
+     *
+     * )
+     *
+     * [1] => stdClass Object
+     * (
+     * [access_token] =>
+     * [category] => Organization
+     * [name] => Testing page
+     * [id] => 1505719796374561
+     * [perms] => Array
+     * (
+     * [0] => ADMINISTER
+     * [1] => EDIT_PROFILE
+     * [2] => CREATE_CONTENT
+     * [3] => MODERATE_CONTENT
+     * [4] => CREATE_ADS
+     * [5] => BASIC_ADMIN
+     * )
+     *
+     * )
+     *
+     * )
+     *
+     * [access_token] =>
+     * )
+     * #post_title,#post_content,#post_excerpt,#post_link,#author_name
      * */
     foreach ($account_extra_details as $key => $val) {
         $$key = $val;
     }
     $post_title = $post->post_title;
-    $barcode = get_post_meta($post->ID,'_barcode_field',true);
+    $barcode = get_post_meta($post->ID, '_barcode_field', true);
     $product = wc_get_product($post->ID);
     $post_content = strip_tags($post->post_content);
-    $post_content = str_replace('&nbsp;','',$post_content);
+    $post_content = str_replace('&nbsp;', '', $post_content);
     $post_content = strip_shortcodes($post_content);
     $post_excerpt = $post->post_excerpt;
     $post_customer_intro = strip_tags(get_field('fb_customer_intro', $post->ID));
@@ -128,25 +128,25 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     $message_format = str_replace('#post_link', $post_link, $message_format);
     $message_format = str_replace('#author_name', $author_name, $message_format);
     $message_format = str_replace('#customer_intro', $post_customer_intro, $message_format);
-    if(!$barcode) {
+    if (!$barcode) {
         $barcode = '';
     }
-    if(!$product) {
+    if (!$product) {
         $price = '';
         $sale_price = '';
     } else {
         $sale_price = $product->get_sale_price();
         $price = $product->get_price();
 
-        if($sale_price == $price) {
+        if ($sale_price == $price) {
             $sale_price = '';
-            $price = wc_price($price);
+            $price = wc_format_decimal($price) . get_woocommerce_currency();
         } else {
-            $sale_price = wc_price($sale_price);
-            $price = wc_price($price);
+            $sale_price = wc_format_decimal($sale_price) . get_woocommerce_currency();
+            $price = wc_format_decimal($price) . get_woocommerce_currency();
         }
     }
-    
+
     $message_format = str_replace('#barcode', $barcode, $message_format);
     $message_format = str_replace('#price', $price, $message_format);
     $message_format = str_replace('#sale_price', $sale_price, $message_format);
@@ -168,7 +168,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
                 'secret' => $application_secret,
                 'cookie' => true
             ));
-           // var_dump($fb);
+            // var_dump($fb);
             if ($post_format == 'simple') {  //For Simple Text Message Posting
                 $attachment = array('message' => $message_format,
                     'access_token' => $access_token);
@@ -184,16 +184,16 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
                 } else {
                     $picture = trim($custom_image_url);
                 }
-                
-                $description = ($post_content!='')?substr($post_content,0,10000):'';
-                
+
+                $description = ($post_content != '') ? substr($post_content, 0, 10000) : '';
+
                 $attachment = array('message' => $message_format,
                     'access_token' => $access_token,
                     'link' => $post_link,
                     'name' => $post_title,
                     'caption' => $caption,
                     'description' => $description,
-                    'actions' => array(array('name' => $post_title,'link' => $post_link)),
+                    'actions' => array(array('name' => $post_title, 'link' => $post_link)),
                     'picture' => $picture
                 );
             }
@@ -203,7 +203,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
             try {
 
                 $result = $fb->api('/' . $page_id . '/feed/', 'post', $attachment);
-                do_action('afap_after_post',$post_id);
+                do_action('afap_after_post', $post_id);
                 //var_dump($result);
                 /**
                  * Logged as success
@@ -218,7 +218,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
                 $error_message = $e->getMessage();
                 $log_status = 0;
                 $log_details = $error_message;
-                do_action('atap_error_post',$e);
+                do_action('atap_error_post', $e);
             }
 
             /**
@@ -227,17 +227,17 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
             global $wpdb;
             $log_table_name = $wpdb->prefix . 'afap_logs';
             $wpdb->insert(
-                    $log_table_name, array(
+                $log_table_name, array(
                 'post_id' => $id,
                 'log_status' => $log_status,
                 'log_time' => $log_time,
                 'log_details' => $log_details
-                    ), array(
-                '%d',
-                '%d',
-                '%s',
-                '%s'
-                    )
+            ), array(
+                    '%d',
+                    '%d',
+                    '%s',
+                    '%s'
+                )
             );
         } //foreach auto publish pages
     } //If autopublish page is not empty check closed
