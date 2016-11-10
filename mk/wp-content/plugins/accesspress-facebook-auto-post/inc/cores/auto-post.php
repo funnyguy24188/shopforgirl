@@ -141,9 +141,9 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
         if ($sale_price == $price) {
             $sale_price = '';
         } else {
-            $sale_price = 'Khuyến mãi:' . '<big><b>' . wc_format_decimal($sale_price) . get_woocommerce_currency() . '</b></big>';
+            $sale_price = ' ==> Khuyến mãi:' .  '#' . ($sale_price / 1000) . 'k )' ;
         }
-        $price = 'Giá:' . wc_format_decimal($price) . get_woocommerce_currency();
+        $price = 'Giá:' . '#' .  ($price/1000) . 'k';
     }
 
     $message_format = str_replace('#barcode', $barcode, $message_format);
