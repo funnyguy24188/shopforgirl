@@ -111,6 +111,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
         $$key = $val;
     }
     $post_title = $post->post_title;
+    $barcode = get_post_meta($post->ID,'_barcode_field',true);
     $post_content = strip_tags($post->post_content);
     $post_content = str_replace('&nbsp;','',$post_content);
     $post_content = strip_shortcodes($post_content);
@@ -126,7 +127,10 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     $message_format = str_replace('#post_link', $post_link, $message_format);
     $message_format = str_replace('#author_name', $author_name, $message_format);
     $message_format = str_replace('#customer_intro', $post_customer_intro, $message_format);
-
+    if(!$barcode) {
+        $barcode = '';
+    }
+    $message_format = str_replace('#barcode', $barcode, $message_format);
     //echo $message_format;die();
 
     if (is_array($auto_post_pages) && !empty($auto_post_pages)) {
