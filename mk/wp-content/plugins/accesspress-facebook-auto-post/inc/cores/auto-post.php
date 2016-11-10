@@ -141,7 +141,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
         if ($sale_price == $price) {
             $sale_price = '';
         } else {
-            $sale_price = ' ==> Khuyến mãi:' .  '#' . ($sale_price / 1000) . 'k )' ;
+            $sale_price = ' ==> Khuyến mãi:' .  '#' . ($sale_price / 1000) . 'k' ;
         }
         $price = 'Giá:' . '#' .  ($price/1000) . 'k';
     }
