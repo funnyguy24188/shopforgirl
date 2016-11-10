@@ -133,12 +133,23 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     }
     if(!$product) {
         $price = '';
+        $sale_price = '';
     } else {
-        $price = $product->get_price_html();
+        $sale_price = $product->get_sale_price();
+        $price = $product->get_price();
+
+        if($sale_price == $price) {
+            $sale_price = '';
+            $price = wc_price($price);
+        } else {
+            $sale_price = wc_price($sale_price);
+            $price = wc_price($price);
+        }
     }
     
     $message_format = str_replace('#barcode', $barcode, $message_format);
     $message_format = str_replace('#price', $price, $message_format);
+    $message_format = str_replace('#sale_price', $sale_price, $message_format);
     //echo $message_format;die();
 
     if (is_array($auto_post_pages) && !empty($auto_post_pages)) {
