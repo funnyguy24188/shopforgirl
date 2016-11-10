@@ -112,6 +112,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     }
     $post_title = $post->post_title;
     $barcode = get_post_meta($post->ID,'_barcode_field',true);
+    $product = wc_get_product($post->ID);
     $post_content = strip_tags($post->post_content);
     $post_content = str_replace('&nbsp;','',$post_content);
     $post_content = strip_shortcodes($post_content);
@@ -130,7 +131,14 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
     if(!$barcode) {
         $barcode = '';
     }
+    if(!$product) {
+        $price = '';
+    } else {
+        $price = $product->get_price();
+    }
+    
     $message_format = str_replace('#barcode', $barcode, $message_format);
+    $message_format = str_replace('#price', $price, $message_format);
     //echo $message_format;die();
 
     if (is_array($auto_post_pages) && !empty($auto_post_pages)) {
