@@ -138,7 +138,7 @@ if (in_array($post_type, $account_details['post_types']) && $account_extra_detai
         $sale_price = $product->get_sale_price();
         $price = $product->get_regular_price();
 
-        if ($sale_price == $price) {
+        if ($sale_price == $price || !$sale_price) {
             $sale_price = '';
         } else {
             $sale_price = ' ==> Khuyến mãi:' .  '#' . ($sale_price / 1000) . 'k' ;
