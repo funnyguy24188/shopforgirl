@@ -110,9 +110,9 @@ class Spg_Barcode_Admin
 
     public function register_barcode_page()
     {
-        add_menu_page('SPG Barcode', 'SPG Barcode', 'manage_options', 'spg_barcode', array($this, 'render_barcode_print_queue_page'));
-        add_submenu_page('spg_barcode', 'SPG Barcode Print queue', 'SPG Barcode Print queue', 'manage_options', 'spg_barcode_queue_print', array($this, 'render_barcode_print_queue_page'));
-        add_submenu_page('spg_barcode', 'SPG Barcode Product Prefix', 'SPG Barcode Product Prefix', 'manage_options', 'spg_barcode_prefix', array($this, 'render_barcode_product_prefix'));
+        add_menu_page('SPG Barcode', 'SPG Barcode', 'allow_spg_plugin', 'spg_barcode', array($this, 'render_barcode_print_queue_page'));
+        add_submenu_page('spg_barcode', 'SPG Barcode Print queue', 'SPG Barcode Print queue', 'allow_spg_plugin', 'spg_barcode_queue_print', array($this, 'render_barcode_print_queue_page'));
+        add_submenu_page('spg_barcode', 'SPG Barcode Product Prefix', 'SPG Barcode Product Prefix', 'allow_spg_plugin', 'spg_barcode_prefix', array($this, 'render_barcode_product_prefix'));
     }
 
     public function render_barcode_print_queue_page()

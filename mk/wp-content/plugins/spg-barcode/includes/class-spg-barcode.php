@@ -32,6 +32,9 @@ require_once __DIR__ . '/../lib/SPGBarCodeMetaBox.php';
 class Spg_Barcode
 {
 
+    // allow non-admin role access plugin
+    protected $allowed_roles = array('staff', 'administrator');
+
     /**
      * The loader that's responsible for maintaining and registering all hooks that power
      * the plugin.
@@ -156,8 +159,16 @@ class Spg_Barcode
     private function define_admin_hooks()
     {
 
-        $plugin_admin = new Spg_Barcode_Admin($this->get_plugin_name(), $this->get_version());
+        // User permission  allow for staff member
+        foreach ($this->allowed_roles as $role_name) {
+            $role = get_role($role_name);
+            if($role) {
+                $role->add_cap('allow_spg_plugin', true);
+            }
+        }
 
+
+        $plugin_admin = new Spg_Barcode_Admin($this->get_plugin_name(), $this->get_version());
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
