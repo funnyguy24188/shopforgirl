@@ -412,5 +412,12 @@
 
     /** end orderlist page **/
 
+
+    /** Hot deal **/
+    .page-id-530 .kad_product_wrapper {
+        margin-top: 15px;
+    }
+    /** end hot deal **/
+
 }
 
