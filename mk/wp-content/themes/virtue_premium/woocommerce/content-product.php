@@ -32,10 +32,10 @@ if ( ! $product || ! $product->is_visible() )
 
 $product_column = $woocommerce_loop['columns'];
 	if ($product_column == '1') {$itemsize = 'tcol-md-12 tcol-sm-12 tcol-xs-12 tcol-ss-12'; $productimgwidth = 300;}
- 	else if ($product_column == '2') {$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $productimgwidth = 300;} 
-		                else if ($product_column == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $productimgwidth = 400;} 
-		                else if ($product_column == '6'){ $itemsize = 'tcol-md-2 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $productimgwidth = 240;} 
-		                else if ($product_column == '5'){ $itemsize = 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $productimgwidth = 240;} 
+ 	else if ($product_column == '2') {$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $productimgwidth = 300;}
+		                else if ($product_column == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $productimgwidth = 400;}
+		                else if ($product_column == '6'){ $itemsize = 'tcol-md-2 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $productimgwidth = 240;}
+		                else if ($product_column == '5'){ $itemsize = 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $productimgwidth = 240;}
 		                else {$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $productimgwidth = 300;}
 
 // Increase loop count
@@ -59,14 +59,14 @@ $classes[] = 'kad_product_fade_in';
 $classes[] = 'kt_item_fade_in';
 
 $terms = get_the_terms( $post->ID, 'product_cat' );
-if ( $terms && ! is_wp_error( $terms ) ) : 
+if ( $terms && ! is_wp_error( $terms ) ) :
 	$links = array();
 	foreach ( $terms as $term ) {$links[] = $term->slug;}
 	$links = preg_replace("/[^a-zA-Z 0-9]+/", " ", $links);
-	$links = str_replace(' ', '-', $links);	
-	$tax = join( " ", $links );		
-	else :	
-	$tax = '';	
+	$links = str_replace(' ', '-', $links);
+	$tax = join( " ", $links );
+	else :
+	$tax = '';
 endif;
 ?>
 <div class="<?php echo esc_attr($itemsize);?> <?php echo strtolower($tax);?> kad_product">
@@ -83,14 +83,14 @@ endif;
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-			do_action( 'woocommerce_before_shop_loop_item_title' ); ?> 
+			do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 
-			
+
              </a>
             <div class="details_product_item">
 			<div class="product_details">
 				<a href="<?php the_permalink(); ?>" class="product_item_link">
-				<?php 
+				<?php
 				/**
 			 	* woocommerce_shop_loop_item_title hook
 			 	*
@@ -102,7 +102,7 @@ endif;
 				<?php if(isset($virtue_premium['shop_excerpt']) && $virtue_premium['shop_excerpt'] == 1) {
 				} else { ?>
 					<div class="product_excerpt">
-						<?php global $post; 
+						<?php global $post;
 						if ($post->post_excerpt){
 							echo apply_filters( 'archive_woocommerce_short_description', $post->post_excerpt );
 						} else {
@@ -111,7 +111,7 @@ endif;
 					</div>
 				<?php } ?>
 			</div>
-		
+
 		<?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook

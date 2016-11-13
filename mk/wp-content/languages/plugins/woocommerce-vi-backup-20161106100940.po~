@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 2.6.4\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2016-07-26 14:49:58+00:00\n"
-"PO-Revision-Date: Wed Oct 26 2016 23:37:44 GMT+0700 (ICT)\n"
+"PO-Revision-Date: Sun Nov 06 2016 10:08:46 GMT+0700 (ICT)\n"
 "Last-Translator: anbui <buinguyentruongan.2601@gmail.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: Vietnamese\n"
@@ -9991,11 +9991,6 @@ msgstr ""
 msgid "Endpoint for the My Account &rarr; Addresses page"
 msgstr ""
 
-#: includes/admin/settings/class-wc-settings-accounts.php:158
-#: includes/class-wc-query.php:117 includes/wc-account-functions.php:93
-msgid "Payment Methods"
-msgstr "Hình thức thanh toán"
-
 #: includes/admin/settings/class-wc-settings-accounts.php:159
 msgid "Endpoint for the My Account &rarr; Payment Methods page"
 msgstr ""
@@ -13308,17 +13303,9 @@ msgstr ""
 msgid "Sum of all taxes."
 msgstr ""
 
-#: includes/api/class-wc-rest-orders-controller.php:1248
-msgid "Billing address."
-msgstr "Địa chỉ thanh toán"
-
 #: includes/api/class-wc-rest-orders-controller.php:1293
 #: includes/api/class-wc-rest-orders-controller.php:1356
 msgid "Country code in ISO 3166-1 alpha-2 format."
-msgstr ""
-
-#: includes/api/class-wc-rest-orders-controller.php:1311
-msgid "Shipping address."
 msgstr ""
 
 #: includes/api/class-wc-rest-orders-controller.php:1363
@@ -16997,11 +16984,6 @@ msgid ""
 "after an order is placed on-hold."
 msgstr ""
 
-#: includes/emails/class-wc-email-customer-on-hold-order.php:30
-#: includes/emails/class-wc-email-customer-processing-order.php:30
-msgid "Thank you for your order"
-msgstr "Cám ơn bạn đã đặt hàng"
-
 #: includes/emails/class-wc-email-customer-on-hold-order.php:31
 #: includes/emails/class-wc-email-customer-processing-order.php:31
 msgid "Your {site_title} order receipt from {order_date}"
@@ -17963,14 +17945,6 @@ msgstr ""
 #: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:329
 msgid "There was a problem adding this card."
 msgstr ""
-
-#: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:637
-msgid ""
-"Thank you for your order, please click the button below to pay with credit "
-"card using Simplify Commerce by MasterCard."
-msgstr ""
-"Cảm ơn bạn đã đặt hàng, vui lòng ấn nút dưới đây để thanh toán bằng thẻ tín "
-"dụng"
 
 #: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:646
 msgid "Pay Now"
@@ -19987,6 +19961,8 @@ msgid ""
 "Your order has been received and is now being processed. Your order details "
 "are shown below for your reference:"
 msgstr ""
+"Đơn đặt hàng của bạn đã được nhận và đang xử lý. Vui lòng tham khảo chi tiết "
+"hóa đơn dưới đây."
 
 #: templates/emails/customer-refunded-order.php:30
 #, c-format
@@ -20022,21 +19998,6 @@ msgstr ""
 #: templates/emails/customer-reset-password.php:33
 msgid "Click here to reset your password"
 msgstr ""
-
-#: templates/emails/email-addresses.php:26
-#: templates/emails/plain/email-addresses.php:23
-msgid "Billing address"
-msgstr "Địa chỉ thanh toán"
-
-#: templates/emails/email-addresses.php:32
-#: templates/emails/plain/email-addresses.php:27
-msgid "Shipping address"
-msgstr ""
-
-#: templates/emails/email-customer-details.php:26
-#: templates/emails/plain/email-customer-details.php:25
-msgid "Customer details"
-msgstr "Thông tin khách hàng"
 
 #: templates/emails/plain/admin-new-order.php:25
 #, c-format
@@ -20283,10 +20244,6 @@ msgstr ""
 #: templates/order/order-again.php:25
 msgid "Order Again"
 msgstr ""
-
-#: templates/order/order-details-customer.php:23
-msgid "Customer Details"
-msgstr "Thông tin khách hàng"
 
 #: templates/order/order-details-customer.php:28
 msgid "Note:"
@@ -21020,6 +20977,51 @@ msgstr "Điện thoai:"
 #, fuzzy
 msgid "Product"
 msgstr "Sản phẩm"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:158
+#: includes/class-wc-query.php:117 includes/wc-account-functions.php:93
+msgid "Payment Methods"
+msgstr "Hình thức thanh toán"
+
+#: includes/api/class-wc-rest-orders-controller.php:1248
+msgid "Billing address."
+msgstr "Địa chỉ thanh toán"
+
+#: includes/api/class-wc-rest-orders-controller.php:1311
+msgid "Shipping address."
+msgstr "Địa chỉ giao hàng"
+
+#: includes/emails/class-wc-email-customer-on-hold-order.php:30
+#: includes/emails/class-wc-email-customer-processing-order.php:30
+msgid "Thank you for your order"
+msgstr "Cám ơn bạn đã đặt hàng"
+
+#: includes/gateways/simplify-commerce/class-wc-gateway-simplify-commerce.php:637
+msgid ""
+"Thank you for your order, please click the button below to pay with credit "
+"card using Simplify Commerce by MasterCard."
+msgstr ""
+"Cảm ơn bạn đã đặt hàng, vui lòng ấn nút dưới đây để thanh toán bằng thẻ tín "
+"dụng"
+
+#: templates/emails/email-addresses.php:26
+#: templates/emails/plain/email-addresses.php:23
+msgid "Billing address"
+msgstr "Địa chỉ thanh toán"
+
+#: templates/emails/email-addresses.php:32
+#: templates/emails/plain/email-addresses.php:27
+msgid "Shipping address"
+msgstr "Địa chỉ giao hàng"
+
+#: templates/emails/email-customer-details.php:26
+#: templates/emails/plain/email-customer-details.php:25
+msgid "Customer details"
+msgstr "Thông tin khách hàng"
+
+#: templates/order/order-details-customer.php:23
+msgid "Customer Details"
+msgstr "Thông tin khách hàng"
 
 #: includes/class-wc-post-types.php:442 includes/wc-order-functions.php:192
 msgctxt "Order status"
