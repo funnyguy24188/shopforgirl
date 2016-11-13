@@ -11,6 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta property="fb:app_id" content="508842445974753" />
   <meta property="fb:admins" content="100001811255272"/>
+  <meta http-equiv="content-language" content="vi" />
   <meta name="google-site-verification" content="1np5vmNALlMdJ8JGfYNc5XytY1k_P95xynqYGaT4XPg" />
   <?php wp_head(); ?>
   
