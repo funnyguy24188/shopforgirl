@@ -7,25 +7,9 @@ global $virtue_premium, $woocommerce_loop, $wp_query;
 if (empty($woocommerce_loop['columns']))
     $woocommerce_loop['columns'] = apply_filters('loop_shop_columns', 4);
 
-if (isset($virtue_premium['shop_slider'])) {
-    $shop_slider = $virtue_premium['shop_slider'];
-} else {
-    $shop_slider = 0;
-}
-if (is_shop() and ($shop_slider == '1')) {
-    $choose_shop_slider = $virtue_premium['choose_shop_slider'];
-    if ($choose_shop_slider == "rev") {
-        get_template_part('templates/shop/rev', 'slider');
-    } else if ($choose_shop_slider == "ksp") {
-        get_template_part('templates/shop/ksp', 'slider');
-    } else if ($choose_shop_slider == "flex") {
-        get_template_part('templates/shop/flex', 'slider');
-    } else if ($choose_shop_slider == "fullwidth") {
-        get_template_part('templates/shop/flex', 'slider-fullwidth');
-    } else if ($choose_shop_slider == "cyclone") {
-        get_template_part('templates/shop/shortcode', 'slider');
-    }
-} ?>
+masterslider("hot-deal");
+
+?>
 
 <?php
 $args = array(
