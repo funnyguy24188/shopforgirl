@@ -89,6 +89,7 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
+define('FS_METHOD', 'direct');
 define('WP_DEBUG', true);
 define('WP_CACHE', true);
 define('WP_SITEURL', "http://shopforgirl.local/" . SPG_BRANCH);
