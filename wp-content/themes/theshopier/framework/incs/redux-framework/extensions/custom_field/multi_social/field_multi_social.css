@@ -1,0 +1,46 @@
+/* line 2, field_multi_social.scss */
+.redux-container-multi_social ul.nth-multi-socials {
+  margin: 0;
+  padding: 0;
+}
+/* line 6, field_multi_social.scss */
+.redux-container-multi_social ul.nth-multi-socials li {
+  padding: 10px 0px;
+  border-top: 1px dashed #ccc;
+}
+/* line 9, field_multi_social.scss */
+.redux-container-multi_social ul.nth-multi-socials li:first-child {
+  border-top: none;
+}
+/* line 16, field_multi_social.scss */
+.redux-container-multi_social .nth-multi-socials-remove {
+  color: #F00;
+  padding: 2px 4px;
+  margin-left: 5px;
+  font-size: 1.2em;
+}
+/* line 21, field_multi_social.scss */
+.redux-container-multi_social .nth-multi-socials-remove:hover {
+  color: #E80C0C;
+  text-decoration: none;
+}
+/* line 27, field_multi_social.scss */
+.redux-container-multi_social label {
+  width: 90px;
+}
+/* line 29, field_multi_social.scss */
+.redux-container-multi_social .nth-multi-socials-add {
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 782px) {
+  /* line 37, field_multi_social.scss */
+  .redux-container-multi_social input {
+    clear: both;
+  }
+  /* line 41, field_multi_social.scss */
+  .redux-container-multi_social .redux-multi-text-remove {
+    margin: 0;
+    float: right;
+  }
+}
