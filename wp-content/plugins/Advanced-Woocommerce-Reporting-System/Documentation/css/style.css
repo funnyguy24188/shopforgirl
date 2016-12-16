@@ -1,0 +1,162 @@
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+	 font-family:'Open Sans';
+}
+html,body{
+	height:100%;
+	
+}
+.sidebox{
+	width:20%;
+	background: #FAFAFA;
+	height:100%;
+	display:inline-block;
+	padding:0px;
+	color:#000000;
+	vertical-align:top;
+	overflow:auto ;
+	border-right:3px solid #909256;
+}
+.sidebox h2{
+	font-size:29px;
+	line-height: 40px;
+	padding:20px;
+	text-align:center;
+	background-color:#F8F5F5;
+	font-weight:normal;
+}
+.sidebox h2 a{
+	text-decoration: none;
+	color: #333;
+}
+
+.sidebox h3{
+	padding:5px;
+	font-weight:none;
+}
+.sidebox h3 a{
+	text-decoration:none;
+	color:#000000;
+	transition:all .3s ease;
+	-moz-transition:all .3s ease;
+	-webkit-transitiona:all .3s ease;
+	-ms-transition:all .3s ease;
+	-o-transition:all .3s ease;
+	-khtml-transition:all .3s ease;
+}
+.sidebox h3:hover a{
+	color:#D1D1D1;
+}
+.sidebox ul{
+	padding: 0px 10px 0px 10px;
+	font-weight:none;
+	line-height:40px;
+}
+.sidebox ul li{
+	margin:5px;
+	list-style:none;
+	border-bottom:1px solid #ccc;
+}
+.sidebox ul li a{
+	text-decoration:none;
+	color:#000000;
+	transition:all .3s ease;
+	-moz-transition:all .3s ease;
+	-webkit-transitiona:all .3s ease;
+	-ms-transition:all .3s ease;
+	-o-transition:all .3s ease;
+	-khtml-transition:all .3s ease;
+}
+.sidebox ul li:hover a{
+	padding-left:10px;
+}
+.contbox{
+	width:80%;
+	background: #FFFFFF;
+	height:100%;
+	display:inline-block;
+	padding:0px;
+	overflow:auto ;
+	vertical-align:top;
+}
+.box{
+	
+	width:100%;
+	min-height:200px;
+	padding:20px;
+	padding-left:60px;
+	border-top: 1px solid #d3d8dd;
+	border-bottom: 1px solid #d3d8dd;
+}
+.box h2{
+	font-size: 24px;
+	line-height: 40px;
+	text-align: justify;
+	font-weight: normal;
+	padding-top: 15px;
+	padding-bottom: 3px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+}
+.box h3{
+	font-size:16px;
+	line-height: 35px;
+	text-align:justify;
+	padding-top:15px;
+	padding-bottom:20px;
+}
+.box *{
+	font-size:15px;
+	line-height: 35px;
+	text-align:justify;
+}
+
+.box p strong,.box ul li strong{
+	font-weight: 600;
+}
+
+.box .warning-box{
+	  background-color: #f39c12;
+	  border-radius: 5px;
+	  color: #fff;
+	  padding: 10px;
+}
+
+.box .note-box{
+	  background-color: #3498db;
+	  border-radius: 5px;
+	  color: #fff;
+	  padding: 10px;
+}
+
+.box .note-box a{
+	  color: #fff;
+}
+
+.box ul{
+	margin-left:20px;
+	line-height: 35px;
+}
+.box ul ul{
+	margin-left:30px;
+	line-height: 35px;
+}
+.box:nth-of-type(odd){
+	background: #F2F3F4;
+}
+#flashchecker{
+	width:100%;
+	background:red;
+	color:white;
+}
+#flashchecker p{
+	width:100%;
+	text-align:center;
+	
+}
+#flashchecker h3{
+	width:100%;
+	text-align:center;
+}
