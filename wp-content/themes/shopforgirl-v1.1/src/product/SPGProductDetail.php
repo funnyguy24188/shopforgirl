@@ -19,7 +19,7 @@ class SPGProductDetail
      */
     public function add_barcode_to_product_detail()
     {
-        wc_get_template_part('templates/content-barcode-loop-item');
+        wc_get_template_part('templates/content-barcode');
     }
 
     /**
@@ -28,7 +28,7 @@ class SPGProductDetail
 
     public function add_barcode_to_product_item()
     {
-        wc_get_template_part('templates/content-barcode');
+        wc_get_template_part('templates/content-barcode-loop-item');
     }
 
     /**
