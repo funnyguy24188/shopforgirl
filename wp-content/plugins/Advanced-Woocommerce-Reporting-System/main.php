@@ -68,7 +68,7 @@ if(!class_exists('pw_report_wcreport_class')){
 			
 			$field=__PW_REPORT_WCREPORT_FIELDS_PERFIX__.'activate_purchase_code';
 			$this->pw_plugin_status=get_option($field);
-			
+
 			if(get_option(__PW_REPORT_WCREPORT_FIELDS_PERFIX__.'dashboard_status')=='false' && get_option(__PW_REPORT_WCREPORT_FIELDS_PERFIX__.'dashboard_alt')!='dashboard'){
 				$pw_plugin_main_url=get_option(__PW_REPORT_WCREPORT_FIELDS_PERFIX__.'dashboard_alt');
 				$pw_plugin_main_url=explode("admin.php?page=",$pw_plugin_main_url);

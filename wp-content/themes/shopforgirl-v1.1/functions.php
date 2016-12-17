@@ -1,4 +1,5 @@
 <?php
+define('SPG_TEMPLATE_PATH', get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'templates');
 // set timezone Ho Chi Minh
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
@@ -15,6 +16,9 @@ require_once 'src/order/SPGOrderReturn.php';
 require_once 'src/widget/register-init.php';
 require_once 'src/wp_feature/wp-init.php';
 
+
+$product_detail = new SPGProductDetail();
+$product_detail->init_hook();
 
 $product_mod = new SPGProductMod();
 $product_mod->init_hook();
@@ -319,6 +323,7 @@ function set_message($type, $content)
     $_SESSION['message']['type'] = $type;
     $_SESSION['message']['content'] = $content;
 }
+
 /**
  * Check the message from the server
  * @return bool

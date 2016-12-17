@@ -1,4 +1,5 @@
 <?php
+require_once(get_home_path() . 'wp-content/plugins/spg-barcode/lib/BarCodeWrap.php');
 
 /**
  * Class SPGProductDetail
@@ -6,6 +7,29 @@
  */
 class SPGProductDetail
 {
+
+    public function init_hook()
+    {
+        add_action('woocommerce_single_product_summary', array($this, 'add_barcode_to_product_detail'));
+        add_action('woocommerce_after_shop_loop_item_title', array($this, 'add_barcode_to_product_item'));
+    }
+
+    /**
+     * Add barcode field to product detail
+     */
+    public function add_barcode_to_product_detail()
+    {
+        wc_get_template_part('templates/content-barcode-loop-item');
+    }
+
+    /**
+     * Add barcode field to product item in product list
+     */
+
+    public function add_barcode_to_product_item()
+    {
+        wc_get_template_part('templates/content-barcode');
+    }
 
     /**
      * Get the main product id
@@ -91,6 +115,32 @@ class SPGProductDetail
 
     }
 
+    /**
+     * Get barcode field
+     * @param $product
+     */
+    public static function get_barcode_field($product)
+    {
+
+        $base_url = wp_get_upload_dir()['baseurl'];
+        $product_id = self::get_product_id($product);
+        $barcode_file_name = "tmp_barcode_$product_id.png";
+        $tmp_barcode_file = SPG_UPLOAD_PATH . $barcode_file_name;
+
+        $barcode_url = $base_url . DIRECTORY_SEPARATOR . 'tmp_barcode' . DIRECTORY_SEPARATOR . $barcode_file_name;
+        $barcode_image = '<img src={barcode_path}  alt="barcode-image"/>';
+        $barcode_engine = new BarCodeWrap();
+
+        $barcode = get_post_meta($product_id, '_barcode_field', true);
+        unlink($tmp_barcode_file);
+        $args = array('name' => '', 'price' => '');
+        $barcode_engine->generate_barcode($tmp_barcode_file, $barcode, 90, 'horizontal', SPG_DEFAULT_BARCODE_TYPE, true, $args);
+        $barcode_image = str_replace('{barcode_path}', $barcode_url, $barcode_image);
+
+        return $barcode_image;
+
+    }
+
     public function get_product_info($barcode = '', $echo = true)
     {
         if (!$barcode) {
@@ -108,7 +158,7 @@ class SPGProductDetail
             'sale_price' => ''
         );
         $ret = array();
-        
+
 
         if (empty($barcode)) {
 
@@ -186,7 +236,7 @@ class SPGProductDetail
         $ret = array(
             'result' => true,
             'data' => $ret_pattern,
-            'raw_post'=>$post
+            'raw_post' => $post
         );
 
         if ($echo) {
