@@ -360,3 +360,5 @@ function get_message_content()
     }
     return $content;
 }
+
+
