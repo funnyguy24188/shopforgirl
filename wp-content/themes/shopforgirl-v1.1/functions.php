@@ -68,7 +68,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('spgScript', get_stylesheet_directory_uri() . '/assets/js/spg_script.js', array('jquery'), '1.0');
     wp_enqueue_script('spgOrderList', get_stylesheet_directory_uri() . '/assets/js/order-list.js', array('jquery'), '1.1');
     wp_enqueue_script('spgDatepicker', get_stylesheet_directory_uri() . '/assets/js/bootstrap-datepicker.js', array('jquery'), '1.0');
-    wp_enqueue_script('spgSnowStorm', get_stylesheet_directory_uri() . '/assets/js/snowstorm.js', array('jquery'), '1.0');
 
 });
 

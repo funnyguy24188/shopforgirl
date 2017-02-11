@@ -244,24 +244,5 @@
     }
     /** end footer **/
 
-    /** xmas 2016 **/
-    #xmas-tree {
-        position: fixed;
-        z-index: 500;
-        left: 20px;
-        bottom: 20px;
-    }
-    .xmas-section {
-        position: fixed;
-        z-index: 400;
-        bottom: -50px;
-        left: 0;
-        width: 100%;
-        height: 104px;
-        background: url('../../images/snowheap.png') repeat-x bottom left;
-    }
-
-    /** end xmas **/
-
 }
 
