@@ -1,54 +1,47 @@
 <?php
+
+//require_once get_home_path() . 'vendor/autoload.php';
+
 define('SPG_TEMPLATE_PATH', get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'templates');
 // set timezone Ho Chi Minh
-date_default_timezone_set('Asia/Ho_Chi_Minh');
+///date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 if (session_id() == '')
     session_start();
-require_once 'src/bill/SPGCartGlobalManager.php';
-require_once 'src/product/SPGProductMod.php';
-require_once 'src/product/SPGProductDetail.php';
-require_once 'src/customer/SPGCustomerDetail.php';
-require_once 'src/role/SPGRoleBackEnd.php';
-require_once 'src/order/SPGOrder.php';
-require_once 'src/order/SPGOrderList.php';
-require_once 'src/order/SPGOrderReturn.php';
-require_once 'src/widget/register-init.php';
-require_once 'src/wp_feature/wp-init.php';
 
 
-$product_detail = new SPGProductDetail();
+/*$product_detail = new \Product\SPGProductDetail();
 $product_detail->init_hook();
 
-$product_mod = new SPGProductMod();
+$product_mod = new \Product\SPGProductMod();
 $product_mod->init_hook();
 
 // order
-$spg_cart = SPGCartGlobal()->get_instance();
+$spg_cart = \Bill\SPGCartGlobalManager::get_instance();
 $spg_cart->init_hook();
 
 
 // customer finding
-$customer_finding = new SPGCustomerDetail();
+$customer_finding = new \Customer\SPGCustomerDetail();
 $customer_finding->init_hook();
 // init_shipping
 
 
 // role
-$role_back_end = new SPGRoleBackEnd();
+$role_back_end = new \Role\SPGRoleBackEnd();
 $role_back_end->init_hook();
 
 // order
-$order = new SPGOrder();
+$order = new \Order\SPGOrder();
 $order->init_hook();
 
 // order list
-$order_list = new SPGOrderList();
+$order_list = new \Order\SPGOrderList();
 $order_list->init_hook();
 
 // order return
-$order_return = new SPGOrderReturn();
-$order_return->init_hook();
+$order_return = new \Order\SPGOrderReturn();
+$order_return->init_hook();*/
 
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
