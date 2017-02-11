@@ -31,8 +31,5 @@ $classes = apply_filters('theshopier_main_footer_class',$classes);
 <?php do_action('theshopier_footer_before_body_endtag');?>
 
 <?php wp_footer(); ?>
-<div class="xmas-section">
-    <img id="xmas-tree" src="<?php echo get_stylesheet_directory_uri() . '/images/treesnow.png'; ?>">
-</div>
 </body>
 </html>
